@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found — VSTREL</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#050b18">
+<style>
+  :root{--bg:#050b18;--ink:#e8eefb;--ink-2:#93a4c2;--ink-3:#64748b;--line:rgba(120,170,230,.14);--accent:#53c5df}
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;min-height:100vh;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang TC","Noto Sans TC","Microsoft JhengHei",Helvetica,Arial,sans-serif;
+    line-height:1.65;-webkit-font-smoothing:antialiased;
+    display:flex;align-items:center;justify-content:center;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+    background:
+      radial-gradient(900px 520px at 78% -8%, rgba(37,99,235,.22), transparent 62%),
+      radial-gradient(700px 420px at 8% 4%, rgba(83,197,223,.10), transparent 60%);
+  }
+  .wrap{position:relative;z-index:1;max-width:520px;padding-left:24px;padding-right:24px;padding-block:64px}
+  svg.mark{width:84px;height:84px;display:block;margin:0 0 30px -4px}
+  .code{font-size:12px;letter-spacing:.2em;color:var(--accent);font-weight:600;margin:0 0 12px}
+  h1{margin:0 0 14px;font-size:clamp(24px,6vw,34px);line-height:1.25;letter-spacing:-.015em;font-weight:700}
+  p{margin:0 0 28px;color:var(--ink-2);font-size:16px}
+  .links{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;font-size:14.5px}
+  .links a{color:#bae6fd;text-decoration:none;border-bottom:1px solid rgba(186,230,253,.3);padding-bottom:2px}
+  .links a:hover{border-bottom-color:#bae6fd}
+  .sep{color:var(--ink-3);opacity:.5}
+  @media (max-width:520px){ .sep{display:none} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <svg class="mark" viewBox="0 0 512 512" role="img" aria-label="VSTREL">
+    <defs><linearGradient id="vg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6DCBDD"/><stop offset="0.25" stop-color="#66C9DE"/><stop offset="0.5" stop-color="#53C5DF"/><stop offset="0.75" stop-color="#3DC3E3"/><stop offset="1" stop-color="#31C3E7"/>
+    </linearGradient></defs>
+    <path d="M 38.4 65.6 L 256.9 446.4 L 473.6 65.6 L 321.7 66.2 L 236.9 214.5 L 250.9 241.2 L 335.6 95.3 L 365.9 95.9 L 256.3 287.2 L 154.0 108.6 L 123.7 108.0 L 256.9 339.8 L 396.1 95.9 L 427.0 95.3 L 256.3 393.7 L 69.9 68.1 Z" fill="url(#vg)" fill-rule="evenodd"/>
+  </svg>
+
+  <p class="code">ERROR 404</p>
+  <h1 data-en="This page doesn't exist." data-zh="這個頁面不存在。">This page doesn't exist.</h1>
+  <p data-en="The link may be out of date, or the address may have a typo." data-zh="可能是連結已經失效，或是網址打錯了。">The link may be out of date, or the address may have a typo.</p>
+
+  <div class="links">
+    <a href="/" data-en="Back to home" data-zh="回首頁">Back to home</a>
+    <span class="sep">·</span>
+    <a href="/terms/" data-en="Terms" data-zh="服務條款">Terms</a>
+    <span class="sep">·</span>
+    <a href="/privacy/" data-en="Privacy" data-zh="隱私權政策">Privacy</a>
+    <span class="sep">·</span>
+    <a href="mailto:tim@vstrel.com">tim@vstrel.com</a>
+  </div>
+
+</div>
+
+<script>
+  // follow the language the visitor last chose on the site, else their browser
+  var lang = null;
+  try { lang = localStorage.getItem('vstrel-lang'); } catch(e){}
+  if (lang !== 'en' && lang !== 'zh') {
+    lang = (navigator.language || '').toLowerCase().indexOf('zh') === 0 ? 'zh' : 'en';
+  }
+  document.documentElement.lang = (lang === 'zh') ? 'zh-Hant' : 'en';
+  var nodes = document.querySelectorAll('[data-en]');
+  for (var i = 0; i < nodes.length; i++) {
+    var t = nodes[i].getAttribute('data-' + lang);
+    if (t !== null) nodes[i].textContent = t;
+  }
+</script>
+
+</body>
+</html>
