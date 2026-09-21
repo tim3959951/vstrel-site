@@ -86,8 +86,8 @@ padding:12px 26px;border-radius:9px;margin:4px 10px 4px 0}
   <nav class="top"><a href="/palvoo/">服務說明</a><a href="/palvoo/pricing/">費用</a><a href="/palvoo/terms/">貨主條款</a><a href="/palvoo/carrier/">承運人條款</a><a href="/palvoo/refund/">取消與退款</a></nav>
 </div></header>
 <main class="wrap" style="padding-block:44px">
-<h1>Palvoo 費用政策</h1><div class="rule"></div><p class="meta">版本 <span data-fill>v1.0（草稿）</span>　最後更新：<span data-fill>民國 115 年 __ 月 __ 日</span>　生效日：<span data-fill>民國 115 年 __ 月 __ 日</span></p>
-<div class="todo"><p><strong>草稿：</strong>黃色底線處為尚未拍板的數字。這一頁是金流業者與 App 審核一定會看的頁面，數字定案前不要上線。</p></div>
+<h1>Palvoo 費用政策</h1><div class="rule"></div><p class="meta">版本 <span data-fill>v1.0（草稿）</span>　最後更新：民國 115 年 9 月 21 日　生效日：<span data-fill>民國 115 年 __ 月 __ 日</span></p>
+<div class="todo"><p><strong>草稿：</strong>本頁的費率、級距與時限已與系統實際設定核對一致（2026-09-21）。黃色底線處為<strong>尚未拍板</strong>的項目：公司統一編號與登記地址（等商業登記）、金流業者、生效日、以及少數尚未決定的時限。<strong>本頁尚未經律師審閱。</strong></p></div>
 <p class="lead">這一頁說明運費怎麼算、平台向誰收多少、以及調價時我們怎麼通知你。本頁為<a href="/palvoo/terms/">貨主服務條款</a>與<a href="/palvoo/carrier/">承運人條款</a>之一部分。</p>
 
 <h2>一、誰付什麼</h2>
@@ -99,37 +99,47 @@ padding:12px 26px;border-radius:9px;margin:4px 10px 4px 0}
 </table></div>
 <div class="note"><p>平台服務費<strong>只向承運人單邊收取</strong>。貨主在結帳頁看到的金額，就是全部要付的金額。</p></div>
 
-<h2>二、運費怎麼算</h2>
-<p>運費於下單時由系統計算並顯示，成立後不再變動（第三點所列之實際發生費用除外）。計算因素包含：</p>
+<h2>二、參考價怎麼算</h2>
+<p>本平台於下單時依<strong>公開費率</strong>計算並顯示該筆運送的<strong>參考價</strong>。<strong>承運人承接即表示同意以該金額承運，該金額就成為他對這張單的報價</strong>；不接受該價格的承運人可以不接。平台<strong>不決定承運人的報價</strong>，也不持有運費。訂單成立後參考價不再變動（第三點所列之實際發生費用除外）。</p>
+<p>計算因素：</p>
 <ul>
-<li>起運地與卸貨地之間的行駛距離</li>
-<li>車型（17 噸大貨車、聯結車、拖板車等）</li>
-<li>卸貨站點數量</li>
-<li>出車時段與日期</li>
-<li>貨物型態（整車或拼車棧板數）</li>
+<li><strong>行駛道路里程</strong>（依路線服務計算；查不到路線時退回直線距離換算，訂單上會記錄里程來源）</li>
+<li><strong>車型級距</strong>（下表）</li>
+<li><strong>棧板數</strong>（或整車）</li>
+<li><strong>卸貨站點數量</strong>（繞路的里程已經含在里程裡，每站另收的只是停車的時間成本）</li>
+<li><strong>加價項目</strong>（升降尾門、隨車搬運工、防雨／防曬遮蔽、統一發票 —— 見第三點）</li>
 </ul>
+<h3>車型級距與基本費率</h3>
+<div class="tw"><table>
+<tr><th>級距</th><th>俗稱</th><th>車斗長</th><th>載重</th><th>起步價</th><th>每公里</th><th>每板</th><th>最多</th></tr>
+<tr><td>11 噸級</td><td>六輪中型</td><td>6.0 m</td><td>6 噸</td><td>NT$1,200</td><td>NT$30</td><td>NT$120</td><td>8 板</td></tr>
+<tr><td>17 噸級</td><td>十輪大貨車</td><td>7.5 m</td><td>10 噸</td><td>NT$1,500</td><td>NT$38</td><td>NT$150</td><td>12 板</td></tr>
+<tr><td>26 噸級</td><td>三軸十二輪</td><td>9.6 m</td><td>15 噸</td><td>NT$2,000</td><td>NT$48</td><td>NT$150</td><td>16 板</td></tr>
+<tr><td>35 噸拖板</td><td>半聯結車／平板</td><td>12.2 m</td><td>24 噸</td><td>NT$2,600</td><td>NT$60</td><td>NT$150</td><td>22 板</td></tr>
+</table></div>
+<p style="font-size:14px;color:#767d8b">基本運費＝起步價＋（道路里程 × 每公里費率）＋（棧板數 × 每板費率）。實際可選級距以 App 內顯示為準。</p>
 
 <h2>三、加價與額外費用</h2>
 <div class="tw"><table>
 <tr><th>項目</th><th>計算方式</th><th>由誰負擔</th></tr>
-<tr><td>多停一個卸貨站點</td><td><span data-fill>每站 NT$__（中南部）／NT$__（北部）</span></td><td>貨主</td></tr>
-<tr><td>現場等待逾時</td><td>超過<span data-fill>__ 分鐘</span>後，每<span data-fill>__ 分鐘</span>加收 <span data-fill>NT$__</span></td><td>貨主</td></tr>
+<tr><td>多停一個卸貨站點</td><td>每站 <strong>NT$1,200</strong>（全台單一價，不分地區）</td><td>貨主</td></tr>
+<tr><td>升降尾門（油壓尾門）</td><td>每趟 <strong>NT$1,000</strong>。勾選後只會派給車上真的有尾門的承運人</td><td>貨主</td></tr>
+<tr><td>隨車搬運工</td><td>每人 <strong>NT$3,000</strong>（0–2 人）</td><td>貨主</td></tr>
+<tr><td>防雨／防曬遮蔽（帆布、廂車）</td><td>每趟 <strong>NT$300</strong></td><td>貨主</td></tr>
+<tr><td>指定開立統一發票</td><td>運費之 <strong>10%</strong></td><td>貨主</td></tr>
+<tr><td>現場等待逾時</td><td>承運人抵達後 <strong>60 分鐘</strong>內應完成裝貨／卸貨；逾時部分每滿 <strong>30 分鐘</strong>加收 <strong>NT$500</strong>，單筆上限 <strong>NT$5,000</strong>。App 內即時顯示累計金額。因承運人自身因素（例如設備未備妥）造成的等待不計入</td><td>貨主</td></tr>
 <tr><td>過路費、吊掛費、進場費</td><td>實支實付，由承運人代墊後併入結算</td><td>貨主</td></tr>
 <tr><td>因貨主現場無人或地址錯誤而空跑</td><td><span data-fill>運費之 __%</span></td><td>貨主</td></tr>
 </table></div>
 
 <h2>四、平台服務費率</h2>
-<h3>開站保障費率（Launch Rate）</h3>
-<p>自服務開始起至<span data-fill>民國 115 年 __ 月 __ 日</span>止，所有承運人適用<span data-fill>__%</span>之平台服務費率。此期間結束前<span data-fill>__ 日</span>，我們會在本頁與 App 內公告後續費率。</p>
-<h3>成熟期費率</h3>
-<p>保障期結束後，費率依承運人<strong>當月完成訂單數</strong>分級，跑得多的抽得少：</p>
 <div class="tw"><table>
-<tr><th>當月完成訂單數</th><th>平台服務費率</th></tr>
-<tr><td><span data-fill>__ 單以下</span></td><td><span data-fill>__%</span></td></tr>
-<tr><td><span data-fill>__ – __ 單</span></td><td><span data-fill>__%</span></td></tr>
-<tr><td><span data-fill>__ 單以上</span></td><td><span data-fill>__%</span></td></tr>
+<tr><th>適用對象</th><th>平台服務費率</th></tr>
+<tr><td><strong>開站保障費率</strong>：開站期間加入的承運人，自其<strong>承接第一張訂單起一個月內</strong></td><td><strong>5%</strong></td></tr>
+<tr><td>保障期屆滿後，以及其後加入的承運人</td><td><strong>10%</strong></td></tr>
 </table></div>
-<p>費率於<span data-fill>次月</span>結算時依當月實際完成訂單數適用。</p>
+<p>保障期是<strong>跟著每一位承運人自己走的</strong>：時鐘從他承接第一張訂單那一刻起算，不是一個全平台共同的截止日。還沒接過單的人，時鐘還沒開始。</p>
+<p>平台服務費<strong>只向承運人收取</strong>，自該筆運費中扣除，貨主端不另收手續費。訂單取消費與等候費同樣扣除相同比例的手續費後，餘額全額轉付給受影響的承運人。</p>
 
 <h2>五、調價規則</h2>
 <ul>
@@ -140,7 +150,7 @@ padding:12px 26px;border-radius:9px;margin:4px 10px 4px 0}
 
 <h2>六、結算與撥款</h2>
 <ul>
-<li>結算週期：<span data-fill>__（待定）</span></li>
+<li>結算週期：該筆運送<strong>完成滿七日</strong>後列入可撥款，並於其後最近之每月<strong>十日</strong>撥付。</li>
 <li>運費扣除平台服務費後，由金流業者<strong>直接撥付至承運人本人名義之銀行帳戶</strong>，不經 Palvoo 帳戶轉手。</li>
 <li>進入爭議程序之訂單，該筆款項得暫緩撥付至爭議處理完畢。</li>
 </ul>
@@ -154,20 +164,22 @@ padding:12px 26px;border-radius:9px;margin:4px 10px 4px 0}
 
 <h2>八、費用範例</h2>
 <div class="card">
-<p style="margin-bottom:10px"><strong>範例：桃園 → 台中，17 噸大貨車，單一卸貨點</strong></p>
+<p style="margin-bottom:10px"><strong>範例：桃園市區 → 臺中市區（道路里程 137.3 km），17 噸級，8 板，單一卸貨點，不指定發票</strong></p>
 <div class="tw"><table>
-<tr><td>貨主支付運費</td><td style="text-align:right">NT$ <span data-fill>__,___</span></td></tr>
-<tr><td>平台服務費（<span data-fill>__%</span>）</td><td style="text-align:right">－NT$ <span data-fill>__,___</span></td></tr>
-<tr><td><strong>承運人實收</strong></td><td style="text-align:right"><strong>NT$ <span data-fill>__,___</span></strong></td></tr>
+<tr><td>起步價＋里程費（NT$1,500 ＋ 137.3 km × NT$38）</td><td style="text-align:right">NT$ 6,717</td></tr>
+<tr><td>棧板費（8 板 × NT$150）</td><td style="text-align:right">NT$ 1,200</td></tr>
+<tr><td><strong>貨主支付運費</strong></td><td style="text-align:right"><strong>NT$ 7,920</strong></td></tr>
+<tr><td>平台服務費（10%）</td><td style="text-align:right">－NT$ 792</td></tr>
+<tr><td><strong>承運人實收</strong></td><td style="text-align:right"><strong>NT$ 7,128</strong></td></tr>
 </table></div>
-<p style="margin-bottom:0;font-size:14px;color:#767d8b">本例未含過路費等代墊項目。</p>
+<p style="margin-bottom:0;font-size:14px;color:#767d8b">同一趟若指定開立統一發票，運費為 NT$8,710（加收 NT$790）。本例未含過路費等代墊項目。實際金額以下單頁顯示者為準。</p>
 </div>
 
 </main>
 <footer class="f"><div class="wrap">
 <p><strong style="color:#a9b0bd">Palvoo</strong> 由 維斯托有限公司（VSTREL CO., LTD.）營運</p>
 <p>統一編號：<span data-fill>商業登記完成後補列</span>　地址：<span data-fill>高雄市（登記完成後補列）</span></p>
-<p>客服信箱：<a href="mailto:tim@vstrel.com">tim@vstrel.com</a>　客服時間：<span data-fill>平日 09:00–18:00</span></p>
+<p>客服信箱：<a href="mailto:tim@vstrel.com">tim@vstrel.com</a>　客服時間：平日 09:00–18:00</p>
 <p style="margin-top:12px"><a href="/palvoo/terms/">貨主服務條款</a>　<a href="/palvoo/carrier/">承運人條款</a>　<a href="/palvoo/pricing/">費用政策</a>　<a href="/palvoo/refund/">取消與退款政策</a>　<a href="/privacy/">隱私權政策</a></p>
 </div></footer>
 </body>
