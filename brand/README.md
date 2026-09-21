@@ -14,3 +14,13 @@ Dark ground: #050b18
 
 Clear space: at least 25% of the mark's height on every side.
 Do not add glow, drop shadows, outlines, or rotate the mark.
+
+## Social
+
+| File | Where |
+|---|---|
+| `social/avatar-dark-1024.png` | LinkedIn / IG / FB / YouTube profile picture |
+| `social/avatar-white-1024.png` | Same, for platforms or docs on a light ground |
+| `social/linkedin-banner-1128x191.png` | LinkedIn company page cover |
+
+Avatars carry 26% padding so nothing is clipped when a platform crops to a circle.
