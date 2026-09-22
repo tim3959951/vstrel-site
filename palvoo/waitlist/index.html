@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Palvoo 等候名單｜先登記，開放時第一批通知你</title>
+<meta name="description" content="Palvoo 大貨車與聯結拖板車媒合平台。開放前先登記，開放時第一批通知，並拿到一組專屬推薦碼。">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<meta name="theme-color" content="#0B0D12">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Palvoo">
+<meta property="og:url" content="https://vstrel.com/palvoo/waitlist/">
+<meta property="og:title" content="Palvoo 等候名單｜先登記，開放時第一批通知你">
+<meta property="og:description" content="Palvoo 大貨車與聯結拖板車媒合平台。開放前先登記，開放時第一批通知，並拿到一組專屬推薦碼。">
+<meta property="og:image" content="https://vstrel.com/palvoo/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="zh_TW">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root{--bg:#0B0D12;--card:#12151c;--ink:#e9ecf2;--ink2:#a9b0bd;--ink3:#767d8b;
+--line:rgba(255,255,255,.10);--line2:rgba(255,255,255,.06);--o:#FF6A13;--ok:#2ecc71}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang TC','Noto Sans TC','Microsoft JhengHei',Helvetica,Arial,sans-serif;
+line-height:1.75;-webkit-font-smoothing:antialiased;font-size:16px}
+a{color:#ffb07a;text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:820px;margin:0 auto;padding-left:22px;padding-right:22px}
+header.top{border-bottom:1px solid var(--line2);position:sticky;top:0;z-index:20;
+background:rgba(11,13,18,.88);backdrop-filter:saturate(140%) blur(8px)}
+.topin{max-width:820px;margin:0 auto;padding:14px 22px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;color:#fff}
+.brand svg{width:26px;height:26px;display:block}
+.navsp{flex:1 1 auto;min-width:8px}
+nav.top a{font-size:14px;color:var(--ink2);white-space:nowrap}
+nav.top a+a{margin-left:16px}
+h1{font-size:clamp(27px,5.4vw,38px);line-height:1.25;letter-spacing:-.015em;margin:0 0 14px;font-weight:700}
+h2{font-size:clamp(19px,3.4vw,23px);line-height:1.4;margin:44px 0 14px;font-weight:700;
+padding-top:22px;border-top:1px solid var(--line2)}
+h2:first-of-type{border-top:0;padding-top:0}
+h3{font-size:17px;margin:26px 0 10px;font-weight:650;color:#fff}
+p{margin:0 0 15px;color:var(--ink2)}
+ul,ol{margin:0 0 16px;padding-left:22px;color:var(--ink2)}
+li{margin:0 0 8px}
+strong{color:var(--ink);font-weight:650}
+.lead{font-size:18px;color:var(--ink2);margin-bottom:26px}
+.rule{width:64px;height:4px;border-radius:2px;background:var(--o);margin:0 0 26px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin:0 0 18px}
+.card h3{margin-top:0}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:0 0 20px}
+@media (max-width:680px){.grid{grid-template-columns:1fr}}
+.note{border-left:3px solid var(--o);background:rgba(255,106,19,.07);
+border-radius:0 10px 10px 0;padding:14px 18px;margin:0 0 20px}
+.note p:last-child{margin-bottom:0}
+.todo{border-left:3px solid #ffd24a;background:rgba(255,210,74,.09);
+border-radius:0 10px 10px 0;padding:14px 18px;margin:0 0 20px;font-size:14.5px}
+.todo p:last-child{margin-bottom:0}
+.tw{overflow-x:auto;margin:0 0 20px;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:460px;font-size:15px}
+th,td{padding:11px 14px;text-align:left;border-bottom:1px solid var(--line2);vertical-align:top}
+th{color:var(--ink3);font-weight:600;font-size:13.5px;letter-spacing:.02em;white-space:nowrap}
+td{color:var(--ink2)}
+.meta{font-size:13.5px;color:var(--ink3);margin:0 0 30px}
+.art{margin:0 0 20px}
+.art>.n{font-weight:650;color:#fff;margin:0 0 8px;font-size:16px}
+.art ol{margin-top:6px}
+footer.f{border-top:1px solid var(--line2);margin-top:60px;padding:28px 0 46px;font-size:13.5px;color:var(--ink3)}
+footer.f p{color:var(--ink3);margin:0 0 7px;font-size:13.5px}
+footer.f a{color:var(--ink3);text-decoration:underline}
+.pill{display:inline-block;font-size:12.5px;color:var(--o);border:1px solid rgba(255,106,19,.35);
+border-radius:999px;padding:3px 11px;margin:0 0 16px}
+.btn{display:inline-block;background:var(--o);color:#fff;font-weight:650;font-size:15.5px;
+padding:12px 26px;border-radius:9px;margin:4px 10px 4px 0}
+.btn:hover{text-decoration:none;opacity:.92}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.toc{font-size:14.5px}
+.toc a{color:var(--ink2);display:block;padding:3px 0}
+[data-fill]{color:#ffd24a;border-bottom:1px dashed rgba(255,210,74,.55)}
+
+label{display:block;font-size:14px;color:var(--ink2);margin:0 0 6px;font-weight:600}
+input[type=text],input[type=email],input[type=tel],input[type=number],select{
+width:100%;background:#0e1118;color:var(--ink);border:1px solid var(--line);border-radius:9px;
+padding:11px 13px;font-size:16px;font-family:inherit}
+input:focus,select:focus{outline:none;border-color:var(--o)}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:0 0 16px}
+@media (max-width:680px){.f2{grid-template-columns:1fr}}
+.fld{margin:0 0 16px}
+.hint{font-size:13px;color:var(--ink3);margin:6px 0 0}
+.seg{display:flex;gap:10px;margin:0 0 24px;flex-wrap:wrap}
+.seg button{flex:1 1 200px;background:transparent;color:var(--ink2);border:1px solid var(--line);
+border-radius:10px;padding:16px 18px;font-size:16px;font-family:inherit;cursor:pointer;text-align:left;line-height:1.5}
+.seg button b{display:block;color:var(--ink);font-size:17px;margin:0 0 3px}
+.seg button[aria-pressed=true]{border-color:var(--o);background:rgba(255,106,19,.09);color:var(--ink)}
+.chk{display:flex;align-items:flex-start;gap:9px;margin:0 0 10px;font-weight:400;color:var(--ink2);font-size:15px}
+.chk input{width:18px;height:18px;margin:4px 0 0;accent-color:var(--o);flex:0 0 auto}
+button.go{background:var(--o);color:#fff;font-weight:650;font-size:16.5px;border:0;
+padding:14px 30px;border-radius:9px;font-family:inherit;cursor:pointer;width:100%}
+button.go[disabled]{opacity:.5;cursor:default}
+.err{color:#ff8b6b;font-size:14.5px;margin:12px 0 0}
+.code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:30px;letter-spacing:.14em;
+color:var(--o);font-weight:700;margin:6px 0 4px;word-break:break-all}
+.hide{display:none}
+</style>
+</head>
+<body>
+<header class="top"><div class="topin">
+  <a class="brand" href="/palvoo/"><svg viewBox="0 0 512 512" aria-hidden="true"><g transform="skewX(-11) translate(34,0)"><path d="M118 96 H314 A88 88 0 0 1 314 272 H196 V416 H118 Z M196 140 H314 A44 44 0 0 1 314 228 H196 Z" fill="#fff" fill-rule="evenodd"/></g><rect x="24" y="150" width="70" height="20" rx="10" fill="#fff" opacity=".85"/><rect x="4" y="204" width="90" height="20" rx="10" fill="#fff" opacity=".5"/><rect x="34" y="258" width="60" height="20" rx="10" fill="#fff" opacity=".3"/></svg>Palvoo</a>
+  <span class="navsp"></span>
+  <nav class="top"><a href="/palvoo/">服務說明</a><a href="/palvoo/waitlist/">先登記</a><a href="/palvoo/pricing/">費用</a><a href="/palvoo/terms/">貨主條款</a><a href="/palvoo/carrier/">承運人條款</a><a href="/palvoo/refund/">取消與退款</a></nav>
+</div></header>
+
+<main class="wrap" style="padding-block:44px">
+
+<span class="pill">開放前先登記</span>
+<h1>先卡位，開放時第一批通知你。</h1>
+<div class="rule"></div>
+<p class="lead">Palvoo 還在準備正式開放。現在留下資料，我們開放時會第一批通知你，並給你一組<strong>專屬推薦碼</strong>——註冊時填進去就能用。</p>
+
+<div class="note">
+<p>我們問的每一格，都是<strong>之後真的會拿來配對的條件</strong>（車型、設備、跑的縣市）。不會拿來做其他用途，也不會提供給第三方。詳見<a href="/privacy/">隱私權政策</a>。</p>
+</div>
+
+<div id="form">
+<h2>你是哪一邊？</h2>
+<div class="seg">
+  <button type="button" id="b-shipper" aria-pressed="true" onclick="pick('shipper')">
+    <b>我要找車</b>工廠、農場、建材行、貿易商——有貨要出的人</button>
+  <button type="button" id="b-driver" aria-pressed="false" onclick="pick('driver')">
+    <b>我要接單</b>大貨車、聯結車、拖板車司機或車行</button>
+</div>
+
+<h2>怎麼聯絡你</h2>
+<div class="f2">
+  <div><label for="email">Email <span style="color:var(--o)">*</span></label>
+       <input type="email" id="email" autocomplete="email" placeholder="you@example.com"></div>
+  <div><label for="phone">手機 <span style="color:var(--o)">*</span></label>
+       <input type="tel" id="phone" autocomplete="tel" placeholder="09xxxxxxxx"></div>
+</div>
+
+<div id="shipper">
+  <h2>你的出貨狀況</h2>
+  <div class="f2">
+    <div><label for="company">公司／單位名稱</label><input type="text" id="company" placeholder="例：大有培養土"></div>
+    <div><label for="tax_id">統一編號</label><input type="text" id="tax_id" inputmode="numeric" placeholder="8 碼，選填">
+         <p class="hint">填了之後，開放時發票與首單優惠會直接綁上，不用再補。</p></div>
+  </div>
+  <div class="f2">
+    <div><label for="opm">每個月大約幾趟</label><input type="number" id="opm" min="0" max="10000" placeholder="例：12"></div>
+    <div><label for="how_now">現在都怎麼叫車</label>
+      <select id="how_now"><option value="">（不想說）</option>
+        <option value="agency">找車行</option><option value="regular">固定幾個司機</option>
+        <option value="own">自己有車</option><option value="adhoc">臨時到處問</option></select></div>
+  </div>
+  <div class="f2">
+    <div><label for="s_county">主要出貨縣市</label><select id="s_county"><option value="">（不想說）</option><option>基隆市</option><option>臺北市</option><option>新北市</option><option>桃園市</option><option>新竹市</option><option>新竹縣</option><option>苗栗縣</option><option>臺中市</option><option>彰化縣</option><option>南投縣</option><option>雲林縣</option><option>嘉義市</option><option>嘉義縣</option><option>臺南市</option><option>高雄市</option><option>屏東縣</option><option>臺東縣</option><option>花蓮縣</option><option>宜蘭縣</option></select></div>
+    <div><label for="to_county">最常送到哪裡</label><select id="to_county"><option value="">（不想說）</option><option>基隆市</option><option>臺北市</option><option>新北市</option><option>桃園市</option><option>新竹市</option><option>新竹縣</option><option>苗栗縣</option><option>臺中市</option><option>彰化縣</option><option>南投縣</option><option>雲林縣</option><option>嘉義市</option><option>嘉義縣</option><option>臺南市</option><option>高雄市</option><option>屏東縣</option><option>臺東縣</option><option>花蓮縣</option><option>宜蘭縣</option></select></div>
+  </div>
+</div>
+
+<div id="driver" class="hide">
+  <h2>你的車</h2>
+  <div class="f2">
+    <div><label for="d_county">主要接單縣市（你的地盤）</label><select id="d_county"><option value="">（不想說）</option><option>基隆市</option><option>臺北市</option><option>新北市</option><option>桃園市</option><option>新竹市</option><option>新竹縣</option><option>苗栗縣</option><option>臺中市</option><option>彰化縣</option><option>南投縣</option><option>雲林縣</option><option>嘉義市</option><option>嘉義縣</option><option>臺南市</option><option>高雄市</option><option>屏東縣</option><option>臺東縣</option><option>花蓮縣</option><option>宜蘭縣</option></select></div>
+    <div><label for="class_id">車型級距</label>
+      <select id="class_id"><option value="">（不想說）</option>
+        <option value="11t">11 噸級（六輪中型）</option><option value="17t">17 噸級（十輪大貨車）</option>
+        <option value="26t">26 噸級（三軸十二輪）</option><option value="35t">35 噸拖板（半聯結車／平板）</option></select></div>
+  </div>
+  <div class="fld"><label>車上有什麼設備</label>
+    <label class="chk"><input type="checkbox" id="has_tail_lift"><span>油壓升降尾門</span></label>
+    <label class="chk"><input type="checkbox" id="has_pallet_jack"><span>車上備有油壓拖板車</span></label>
+    <label class="chk"><input type="checkbox" id="can_side_load"><span>開放式平板／可從側邊裝卸</span></label>
+    <label class="chk"><input type="checkbox" id="can_cover"><span>可以蓋帆布／廂式車</span></label>
+    <p class="hint">這幾格決定你收不收得到需要這些條件的單。之後在 App 裡還可以改。</p>
+  </div>
+</div>
+
+<div class="fld" style="margin-top:26px"><button class="go" id="go" onclick="send()">送出登記</button></div>
+<p class="hint">送出即表示同意我們以 Email 或電話與你聯絡。你隨時可以來信 <a href="mailto:tim@vstrel.com">tim@vstrel.com</a> 要求刪除。</p>
+<p class="err hide" id="err"></p>
+</div>
+
+<div id="done" class="hide">
+<h1 style="margin-top:0">登記好了。</h1>
+<div class="rule"></div>
+<p class="lead" id="donemsg"></p>
+<div class="card">
+  <p style="margin-bottom:0">你的專屬推薦碼</p>
+  <p class="code" id="code"></p>
+  <p style="margin-bottom:0" class="hint">開放時註冊，把這組碼填進「推薦碼」欄位。<strong>只在註冊當下填得進去</strong>，之後補不了，先截圖存著。</p>
+</div>
+<p>有問題直接寫信給我們：<a href="mailto:tim@vstrel.com">tim@vstrel.com</a></p>
+</div>
+
+</main>
+<footer class="f"><div class="wrap">
+<p><strong style="color:#a9b0bd">Palvoo</strong> 由 維斯托有限公司（VSTREL CO., LTD.）營運</p>
+<p>統一編號：<span data-fill>商業登記完成後補列</span>　地址：高雄市三民區義安街18巷1號</p>
+<p>客服信箱：<a href="mailto:tim@vstrel.com">tim@vstrel.com</a>　客服時間：平日 09:00–18:00</p>
+<p style="margin-top:12px"><a href="/palvoo/terms/">貨主服務條款</a>　<a href="/palvoo/carrier/">承運人條款</a>　<a href="/palvoo/pricing/">費用政策</a>　<a href="/palvoo/refund/">取消與退款政策</a>　<a href="/privacy/">隱私權政策</a></p>
+</div></footer>
+
+<script>
+// 這個端點是 Edge Function，不是資料庫。填表的人沒有帳號，而「anon 不可以執行
+// 任何 public 函式」是系統的硬規矩，所以對外的入口一律走 Edge Function，
+// 由它拿 service_role 去叫 waitlist_join()。這一頁不需要、也沒有任何金鑰。
+var API = 'https://iyjodzxjodygjpkvlvwt.supabase.co/functions/v1/waitlist-join';
+var role = 'shipper';
+function $(id) { return document.getElementById(id); }
+
+function pick(r) {
+  role = r;
+  $('b-shipper').setAttribute('aria-pressed', String(r === 'shipper'));
+  $('b-driver').setAttribute('aria-pressed', String(r === 'driver'));
+  $('shipper').className = r === 'shipper' ? '' : 'hide';
+  $('driver').className = r === 'driver' ? '' : 'hide';
+}
+
+function fail(m) { var e = $('err'); e.textContent = m; e.className = 'err'; }
+
+async function send() {
+  $('err').className = 'err hide';
+  var body = { role: role, email: $('email').value.trim(), phone: $('phone').value.trim() };
+  if (!body.email) return fail('請填 Email。');
+  if (!body.phone) return fail('請填手機 —— 開放的時候我們要找得到你。');
+
+  if (role === 'shipper') {
+    body.company = $('company').value.trim();
+    body.tax_id = $('tax_id').value.trim();
+    if ($('opm').value) body.orders_per_month = Number($('opm').value);
+    body.how_now = $('how_now').value;
+    body.county = $('s_county').value;
+    body.to_county = $('to_county').value;
+  } else {
+    body.county = $('d_county').value;
+    body.class_id = $('class_id').value;
+    body.has_tail_lift = $('has_tail_lift').checked;
+    body.has_pallet_jack = $('has_pallet_jack').checked;
+    body.can_side_load = $('can_side_load').checked;
+    body.can_cover = $('can_cover').checked;
+  }
+
+  var go = $('go');
+  go.disabled = true; go.textContent = '送出中…';
+  try {
+    var res = await fetch(API, {
+      method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body)
+    });
+    var data = await res.json();
+    if (!res.ok) { throw new Error(data && data.error ? data.error : '送出失敗，請稍後再試'); }
+    $('code').textContent = data.code;
+    $('donemsg').textContent = data.already
+      ? '你之前已經登記過了，這是你原本的推薦碼 —— 沒有重複登記，不用再送一次。'
+      : (role === 'shipper'
+         ? '我們開放的時候會第一批通知你。'
+         : '我們開放的時候會第一批通知你。到時候記得帶著駕照、行照與保險證明，審核過就能接單。');
+    $('form').className = 'hide';
+    $('done').className = '';
+    window.scrollTo(0, 0);
+  } catch (e) {
+    fail(e.message || '送出失敗，請稍後再試');
+  } finally {
+    go.disabled = false; go.textContent = '送出登記';
+  }
+}
+</script>
+</body>
+</html>
