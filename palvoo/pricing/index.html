@@ -87,15 +87,15 @@ padding:12px 26px;border-radius:9px;margin:4px 10px 4px 0}
 </div></header>
 <main class="wrap" style="padding-block:44px">
 <h1>Palvoo 費用政策</h1><div class="rule"></div><p class="meta">版本 <span data-fill>v1.0（草稿）</span>　最後更新：民國 115 年 9 月 22 日　生效日：<span data-fill>民國 115 年 __ 月 __ 日</span></p>
-<div class="todo"><p><strong>草稿：</strong>本頁的費率、級距與時限已與系統實際設定核對一致（2026-09-22）。黃色底線處為<strong>尚未拍板</strong>的項目：公司統一編號與登記地址（等商業登記）、金流業者、生效日、以及少數尚未決定的時限。<strong>本頁尚未經律師審閱。</strong></p></div>
+<div class="todo"><p><strong>草稿：</strong>本頁的費率、級距與時限已與系統實際設定核對一致（2026-09-23）。黃色底線處為<strong>尚未拍板</strong>的項目：公司統一編號與登記地址（等商業登記）、金流業者、生效日、以及少數尚未決定的時限。<strong>本頁尚未經律師審閱。</strong></p></div>
 <p class="lead">這一頁說明運費怎麼算、平台向誰收多少、以及調價時我們怎麼通知你。本頁為<a href="/palvoo/terms/">貨主服務條款</a>與<a href="/palvoo/carrier/">承運人條款</a>之一部分。</p>
 
 <h2>一、誰付什麼</h2>
 <div class="tw"><table>
 <tr><th>角色</th><th>支付／收取</th></tr>
 <tr><td>貨主</td><td>支付<strong>運費</strong>（含基本運費與適用之加價項目）。不另收平台手續費。</td></tr>
-<tr><td>承運人</td><td>取得運費扣除<strong>平台服務費</strong>後之餘額。</td></tr>
-<tr><td>Palvoo</td><td>向承運人收取<strong>平台服務費</strong>，自運費中扣除。</td></tr>
+<tr><td>承運人</td><td>取得運費扣除<strong>金流手續費</strong>與<strong>平台服務費</strong>後之餘額。</td></tr>
+<tr><td>Palvoo</td><td>向承運人收取<strong>平台服務費</strong>，自運費中扣除（算法見第四點）。</td></tr>
 </table></div>
 <div class="note"><p>平台服務費<strong>只向承運人單邊收取</strong>。貨主在結帳頁看到的金額，就是全部要付的金額。</p></div>
 
@@ -126,7 +126,7 @@ padding:12px 26px;border-radius:9px;margin:4px 10px 4px 0}
 <tr><td>升降尾門（油壓尾門）</td><td>每趟 <strong>NT$1,000</strong>。勾選後只會派給車上真的有尾門的承運人</td><td>貨主</td></tr>
 <tr><td>司機幫忙搬（人力搬運）</td><td><strong>上貨與下貨分開計算</strong>，每一端依該車申報的貨物總重量：4 噸以下每端 <strong>NT$1,500</strong>、4–8 噸每端 <strong>NT$2,500</strong>、8 噸以上每端 <strong>NT$4,000</strong>。兩端都要就是相加。<br>這是<strong>承運人本人下車動手</strong>的勞力補貼，平台不另外派人隨車；勾選後只會通知願意動手的承運人。不加購時承運人只負責開車與綁繩蓋帆布，沒有下車搬貨的義務。</td><td>貨主</td></tr>
 <tr><td>防雨／防曬遮蔽（帆布、廂車）</td><td>每趟 <strong>NT$300</strong></td><td>貨主</td></tr>
-<tr><td>指定由<strong>可開立統一發票之承運人</strong>承運</td><td>運費之 <strong>10%</strong>。<strong>此加成全額歸承運人，平台不從中抽成</strong>（平台服務費以加成前的金額計算）。<br>這不是「開發票要加錢」：統一發票是營業人的法定義務。可開立統一發票的承運人為一般稅額營業人，負擔營業稅與開立成本，因此與不開立發票的承運人是<strong>兩種不同的價格</strong>；下表費率為<strong>未指定</strong>時的價格，不指定即等於便宜 10%。</td><td>貨主</td></tr>
+<tr><td>指定由<strong>可開立統一發票之承運人</strong>承運</td><td>運費之 <strong>10%</strong>。此加成是運費的一部分，跟其他加價項目一樣<strong>計入平台服務費的計算</strong>（見第四點）。<br>這不是「開發票要加錢」：統一發票是營業人的法定義務。可開立統一發票的承運人為一般稅額營業人，負擔營業稅與開立成本，因此與不開立發票的承運人是<strong>兩種不同的價格</strong>；下表費率為<strong>未指定</strong>時的價格，不指定即等於便宜 10%。</td><td>貨主</td></tr>
 <tr><td>現場等待逾時</td><td>承運人抵達後 <strong>60 分鐘</strong>內應完成裝貨／卸貨；逾時部分每滿 <strong>30 分鐘</strong>加收 <strong>NT$500</strong>，單筆上限 <strong>NT$5,000</strong>。App 內即時顯示累計金額。因承運人自身因素（例如設備未備妥）造成的等待不計入。<br><strong>等候費不以運費為上限</strong>：等的是承運人的時間，跟這一趟開多遠無關——短程的單等三小時，對他的損失跟長程的單等三小時是一樣的。（訂單取消費則有「不超過運費」的上限，因為那是按運費比例計算的。）</td><td>貨主</td></tr>
 <tr><td>過路費、吊掛費、進場費</td><td>實支實付，由承運人代墊後併入結算</td><td>貨主</td></tr>
 <tr><td>因貨主現場無人或地址錯誤而空跑</td><td>依<a href="/palvoo/refund/">取消與退款政策</a>之「承運人已抵達裝貨地點後」處理：運費 <strong>50%</strong>。本頁不另計費用</td><td>貨主</td></tr>
@@ -139,7 +139,8 @@ padding:12px 26px;border-radius:9px;margin:4px 10px 4px 0}
 <tr><td>保障期屆滿後，以及其後加入的承運人</td><td><strong>10%</strong></td></tr>
 </table></div>
 <p>保障期是<strong>跟著每一位承運人自己走的</strong>：時鐘從他承接第一張訂單那一刻起算，不是一個全平台共同的截止日。還沒接過單的人，時鐘還沒開始。</p>
-<p>平台服務費<strong>只向承運人收取</strong>，自該筆運費中扣除，貨主端不另收手續費。訂單取消費與等候費同樣扣除相同比例的手續費後，餘額全額轉付給受影響的承運人。</p>
+<p><strong>平台服務費＝（貨主支付的全部費用－金流手續費）× 平台服務費率</strong>。全部費用包含基本運費（含重貨加價）與<strong>所有</strong>加價項目（多停站點、升降尾門、司機幫忙搬、防雨／防曬遮蔽、統一發票加成），<strong>沒有例外</strong>。金流手續費是金流業者就這筆付款收取的費用；金流業者尚未確定，目前以 0% 計。承運人實收＝全部費用－金流手續費－平台服務費。</p>
+<p>平台服務費<strong>只向承運人收取</strong>，自該筆運費中扣除，貨主端不另收手續費。訂單取消費與等候費也是同一個算法：先扣除金流手續費，再依該筆訂單的平台服務費率扣除平台服務費，餘額全額轉付給受影響的承運人。</p>
 
 <h2>五、調價規則</h2>
 <ul>
@@ -150,8 +151,8 @@ padding:12px 26px;border-radius:9px;margin:4px 10px 4px 0}
 
 <h2>六、結算與撥款</h2>
 <ul>
-<li><strong>可撥款</strong>：該筆運送<strong>完成滿 7 日</strong>後，扣除平台服務費的餘額就記在承運人帳上，App 裡看得到金額與預計撥款日。這一段 Palvoo 負責算對。</li><li><strong>撥付</strong>：由金流業者在撥款日執行，現行撥款日是<strong>每月 10 日</strong>，撥當天之前已經列為可撥款的。撥款日會跟著金流業者的結算週期調整，改的時候在這裡公告。</li><li><strong>從運送完成起最長 45 日內撥付</strong>——撥款日怎麼調，這個上限不動。（同業常見是月結 30–60 天票期。）</li>
-<li>運費扣除平台服務費後，由金流業者<strong>直接撥付至承運人本人名義之銀行帳戶</strong>，不經 Palvoo 帳戶轉手。</li>
+<li><strong>可撥款</strong>：該筆運送<strong>完成滿 7 日</strong>後，扣除金流手續費與平台服務費的餘額就記在承運人帳上，App 裡看得到金額與預計撥款日。這一段 Palvoo 負責算對。</li><li><strong>撥付</strong>：由金流業者在撥款日執行，現行撥款日是<strong>每月 10 日</strong>，撥當天之前已經列為可撥款的。撥款日會跟著金流業者的結算週期調整，改的時候在這裡公告。</li><li><strong>從運送完成起最長 45 日內撥付</strong>——撥款日怎麼調，這個上限不動。（同業常見是月結 30–60 天票期。）</li>
+<li>運費扣除金流手續費與平台服務費後，由金流業者<strong>直接撥付至承運人本人名義之銀行帳戶</strong>，不經 Palvoo 帳戶轉手。</li>
 <li>進入爭議程序之訂單，該筆款項得暫緩撥付至爭議處理完畢。</li>
 </ul>
 
@@ -169,10 +170,11 @@ padding:12px 26px;border-radius:9px;margin:4px 10px 4px 0}
 <tr><td>起步價＋里程費（NT$1,100 ＋ 超過 50 公里的 87.3 km × NT$21）</td><td style="text-align:right">NT$ 2,933</td></tr>
 <tr><td>棧板費（8 板 × NT$250）</td><td style="text-align:right">NT$ 2,000</td></tr>
 <tr><td><strong>貨主支付運費</strong></td><td style="text-align:right"><strong>NT$ 4,930</strong></td></tr>
-<tr><td>平台服務費（10%）</td><td style="text-align:right">－NT$ 493</td></tr>
+<tr><td>金流手續費（0%）</td><td style="text-align:right">－NT$ 0</td></tr>
+<tr><td>平台服務費（10%）：（NT$4,930 － NT$0）× 10%</td><td style="text-align:right">－NT$ 493</td></tr>
 <tr><td><strong>承運人實收</strong></td><td style="text-align:right"><strong>NT$ 4,437</strong></td></tr>
 </table></div>
-<p style="margin-bottom:0;font-size:14px;color:#767d8b">同一趟若指定開立統一發票，運費為 NT$5,420（加收 NT$490）。本例未含過路費等代墊項目。實際金額以下單頁顯示者為準。</p>
+<p style="margin-bottom:0;font-size:14px;color:#767d8b">同一趟若指定開立統一發票，運費為 NT$5,420（加收 NT$490），平台服務費 NT$542、承運人實收 NT$4,878（發票加成一樣計入平台服務費）。本例未含過路費等代墊項目。實際金額以下單頁顯示者為準。</p>
 </div>
 
 </main>
