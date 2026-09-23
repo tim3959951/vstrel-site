@@ -140,22 +140,23 @@ color:var(--o);font-weight:700;margin:6px 0 4px;word-break:break-all}
 
 <div id="shipper">
   <h2>你的出貨狀況</h2>
+  <!-- 2026-09-23 Tim：這份名單是上線前的統計 —— 看各地缺的是貨主還是司機、缺哪一種車。
+       所以只問統計要用的四件事，而且四件都必填；公司名稱、統編拿掉（也可能是個人戶，註冊 App 時再填）。 -->
   <div class="f2">
-    <div><label for="company">公司／單位名稱</label><input type="text" id="company" placeholder="例：大有培養土"></div>
-    <div><label for="tax_id">統一編號</label><input type="text" id="tax_id" inputmode="numeric" placeholder="8 碼，選填">
-         <p class="hint">填了之後，開放時發票與首單優惠會直接綁上，不用再補。</p></div>
+    <div><label for="s_county">主要出貨縣市 <span style="color:var(--o)">*</span></label><select id="s_county"><option value="">請選擇</option><option>基隆市</option><option>臺北市</option><option>新北市</option><option>桃園市</option><option>新竹市</option><option>新竹縣</option><option>苗栗縣</option><option>臺中市</option><option>彰化縣</option><option>南投縣</option><option>雲林縣</option><option>嘉義市</option><option>嘉義縣</option><option>臺南市</option><option>高雄市</option><option>屏東縣</option><option>臺東縣</option><option>花蓮縣</option><option>宜蘭縣</option></select></div>
+    <div><label for="to_county">最常送到哪裡 <span style="color:var(--o)">*</span></label><select id="to_county"><option value="">請選擇</option><option>基隆市</option><option>臺北市</option><option>新北市</option><option>桃園市</option><option>新竹市</option><option>新竹縣</option><option>苗栗縣</option><option>臺中市</option><option>彰化縣</option><option>南投縣</option><option>雲林縣</option><option>嘉義市</option><option>嘉義縣</option><option>臺南市</option><option>高雄市</option><option>屏東縣</option><option>臺東縣</option><option>花蓮縣</option><option>宜蘭縣</option></select></div>
   </div>
   <div class="f2">
-    <div><label for="opm">每個月大約幾趟</label><input type="number" id="opm" min="0" max="10000" placeholder="例：12"></div>
-    <div><label for="how_now">現在都怎麼叫車</label>
-      <select id="how_now"><option value="">（不想說）</option>
-        <option value="agency">找車行</option><option value="regular">固定幾個司機</option>
-        <option value="own">自己有車</option><option value="adhoc">臨時到處問</option></select></div>
+    <div><label for="opm">每個月大約幾趟 <span style="color:var(--o)">*</span></label><input type="number" id="opm" min="1" max="10000" inputmode="numeric" placeholder="例：12"></div>
+    <div><label for="s_class_id">通常叫哪一種車 <span style="color:var(--o)">*</span></label>
+      <select id="s_class_id"><option value="">請選擇</option>
+        <option value="11t">11 噸級（六輪中型）</option><option value="17t">17 噸級（十輪大貨車）</option>
+        <option value="26t">26 噸級（三軸十二輪）</option><option value="35t">35 噸拖板（半聯結車／平板）</option></select></div>
   </div>
-  <div class="f2">
-    <div><label for="s_county">主要出貨縣市</label><select id="s_county"><option value="">（不想說）</option><option>基隆市</option><option>臺北市</option><option>新北市</option><option>桃園市</option><option>新竹市</option><option>新竹縣</option><option>苗栗縣</option><option>臺中市</option><option>彰化縣</option><option>南投縣</option><option>雲林縣</option><option>嘉義市</option><option>嘉義縣</option><option>臺南市</option><option>高雄市</option><option>屏東縣</option><option>臺東縣</option><option>花蓮縣</option><option>宜蘭縣</option></select></div>
-    <div><label for="to_county">最常送到哪裡</label><select id="to_county"><option value="">（不想說）</option><option>基隆市</option><option>臺北市</option><option>新北市</option><option>桃園市</option><option>新竹市</option><option>新竹縣</option><option>苗栗縣</option><option>臺中市</option><option>彰化縣</option><option>南投縣</option><option>雲林縣</option><option>嘉義市</option><option>嘉義縣</option><option>臺南市</option><option>高雄市</option><option>屏東縣</option><option>臺東縣</option><option>花蓮縣</option><option>宜蘭縣</option></select></div>
-  </div>
+  <div class="fld"><label for="how_now">現在都怎麼叫車</label>
+    <select id="how_now"><option value="">（不想說）</option>
+      <option value="agency">找車行</option><option value="regular">固定幾個司機</option>
+      <option value="own">自己有車</option><option value="adhoc">臨時到處問</option></select></div>
 </div>
 
 <div id="driver" class="hide">
@@ -226,12 +227,17 @@ async function send() {
   if (!body.phone) return fail('請填手機 —— 開放的時候我們要找得到你。');
 
   if (role === 'shipper') {
-    body.company = $('company').value.trim();
-    body.tax_id = $('tax_id').value.trim();
-    if ($('opm').value) body.orders_per_month = Number($('opm').value);
-    body.how_now = $('how_now').value;
     body.county = $('s_county').value;
     body.to_county = $('to_county').value;
+    body.orders_per_month = Number($('opm').value);
+    body.class_id = $('s_class_id').value;
+    body.how_now = $('how_now').value;
+    if (!body.county) return fail('請選擇主要出貨縣市。');
+    if (!body.to_county) return fail('請選擇最常送到哪裡。');
+    if (!(body.orders_per_month >= 1 && body.orders_per_month <= 10000) || Math.floor(body.orders_per_month) !== body.orders_per_month) {
+      return fail('請填每個月大約幾趟（1 以上的整數）。');
+    }
+    if (!body.class_id) return fail('請選擇通常叫哪一種車。');
   } else {
     body.county = $('d_county').value;
     body.class_id = $('class_id').value;
