@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Palvoo 等候名單｜先登記，開放時第一批通知您</title>
-<meta name="description" content="Palvoo 大貨車與聯結拖板車媒合平台。開放前先登記，開放時第一批通知，並拿到一組專屬推薦碼。">
+<title>Palvoo 預先登記</title>
+<meta name="description" content="Palvoo 大型貨車與聯結拖板車運輸媒合平台。正式開放前預先登記，本公司將於開放時優先通知，並提供專屬推薦碼。">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <meta name="theme-color" content="#0B0D12">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Palvoo">
 <meta property="og:url" content="https://vstrel.com/palvoo/waitlist/">
-<meta property="og:title" content="Palvoo 等候名單｜先登記，開放時第一批通知您">
-<meta property="og:description" content="Palvoo 大貨車與聯結拖板車媒合平台。開放前先登記，開放時第一批通知，並拿到一組專屬推薦碼。">
+<meta property="og:title" content="Palvoo 預先登記">
+<meta property="og:description" content="Palvoo 大型貨車與聯結拖板車運輸媒合平台。正式開放前預先登記，本公司將於開放時優先通知，並提供專屬推薦碼。">
 <meta property="og:image" content="https://vstrel.com/palvoo/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -107,27 +107,27 @@ color:var(--o);font-weight:700;margin:6px 0 4px;word-break:break-all}
 <header class="top"><div class="topin">
   <a class="brand" href="/palvoo/"><svg viewBox="0 0 512 512" aria-hidden="true"><g transform="skewX(-11) translate(34,0)"><path d="M118 96 H314 A88 88 0 0 1 314 272 H196 V416 H118 Z M196 140 H314 A44 44 0 0 1 314 228 H196 Z" fill="#fff" fill-rule="evenodd"/></g><rect x="24" y="150" width="70" height="20" rx="10" fill="#fff" opacity=".85"/><rect x="4" y="204" width="90" height="20" rx="10" fill="#fff" opacity=".5"/><rect x="34" y="258" width="60" height="20" rx="10" fill="#fff" opacity=".3"/></svg>Palvoo</a>
   <span class="navsp"></span>
-  <nav class="top"><a href="/palvoo/">服務說明</a><a href="/palvoo/waitlist/">先登記</a><a href="/palvoo/pricing/">費用</a><a href="/palvoo/terms/">貨主條款</a><a href="/palvoo/carrier/">承運人條款</a><a href="/palvoo/refund/">取消與退款</a></nav>
+  <nav class="top"><a href="/palvoo/">服務說明</a><a href="/palvoo/waitlist/">預先登記</a><a href="/palvoo/pricing/">費用</a><a href="/palvoo/terms/">貨主條款</a><a href="/palvoo/carrier/">承運人條款</a><a href="/palvoo/refund/">取消與退款</a></nav>
 </div></header>
 
 <main class="wrap" style="padding-block:44px">
 
-<span class="pill">開放前先登記</span>
-<h1>先登記，開放時第一批通知您。</h1>
+<span class="pill">正式開放前預先登記</span>
+<h1>預先登記，開放時優先通知您。</h1>
 <div class="rule"></div>
-<p class="lead">Palvoo 正在準備正式開放。現在留下資料，開放時我們會第一批通知您，並提供一組<strong>專屬推薦碼</strong>，註冊時填入即可使用。</p>
+<p class="lead">Palvoo 即將正式開放。完成登記後，本公司將於開放時優先通知您，並提供<strong>專屬推薦碼</strong>，供註冊時使用。</p>
 
 <div class="note">
-<p>我們問的每一格，都是<strong>之後真的會拿來配對的條件</strong>（車型、設備、跑的縣市）。不會拿來做其他用途，也不會提供給第三方。詳見<a href="/privacy/">隱私權政策</a>。</p>
+<p>本表所填資料（縣市、車型、設備等），<strong>僅用於正式開放時通知您、核發推薦碼，以及本公司規劃各地區服務與車型配置之統計</strong>，不作其他用途，亦不提供予第三人。詳見<a href="/privacy/">隱私權政策</a>。</p>
 </div>
 
 <div id="form">
 <h2>請選擇您的身分</h2>
 <div class="seg">
   <button type="button" id="b-shipper" aria-pressed="true" onclick="pick('shipper')">
-    <b>我要找車</b>工廠、農場、建材行、貿易商等有貨要出的人</button>
+    <b>貨主</b>工廠、農場、建材行、貿易商等出貨單位</button>
   <button type="button" id="b-driver" aria-pressed="false" onclick="pick('driver')">
-    <b>我要接單</b>大貨車、聯結車、拖板車司機或車行</button>
+    <b>承運人</b>大貨車、聯結車、拖板車司機或車行</button>
 </div>
 
 <h2>聯絡方式</h2>
@@ -140,45 +140,43 @@ color:var(--o);font-weight:700;margin:6px 0 4px;word-break:break-all}
 
 <div id="shipper">
   <h2>出貨狀況</h2>
-  <!-- 2026-09-23 Tim：這份名單是上線前的統計 —— 看各地缺的是貨主還是司機、缺哪一種車。
-       所以只問統計要用的四件事，而且四件都必填；公司名稱、統編拿掉（也可能是個人戶，註冊 App 時再填）。 -->
   <div class="f2">
     <div><label for="s_county">主要出貨縣市 <span style="color:var(--o)">*</span></label><select id="s_county"><option value="">請選擇</option><option>基隆市</option><option>臺北市</option><option>新北市</option><option>桃園市</option><option>新竹市</option><option>新竹縣</option><option>苗栗縣</option><option>臺中市</option><option>彰化縣</option><option>南投縣</option><option>雲林縣</option><option>嘉義市</option><option>嘉義縣</option><option>臺南市</option><option>高雄市</option><option>屏東縣</option><option>臺東縣</option><option>花蓮縣</option><option>宜蘭縣</option></select></div>
-    <div><label for="to_county">最常送到哪裡 <span style="color:var(--o)">*</span></label><select id="to_county"><option value="">請選擇</option><option>基隆市</option><option>臺北市</option><option>新北市</option><option>桃園市</option><option>新竹市</option><option>新竹縣</option><option>苗栗縣</option><option>臺中市</option><option>彰化縣</option><option>南投縣</option><option>雲林縣</option><option>嘉義市</option><option>嘉義縣</option><option>臺南市</option><option>高雄市</option><option>屏東縣</option><option>臺東縣</option><option>花蓮縣</option><option>宜蘭縣</option></select></div>
+    <div><label for="to_county">主要送達縣市 <span style="color:var(--o)">*</span></label><select id="to_county"><option value="">請選擇</option><option>基隆市</option><option>臺北市</option><option>新北市</option><option>桃園市</option><option>新竹市</option><option>新竹縣</option><option>苗栗縣</option><option>臺中市</option><option>彰化縣</option><option>南投縣</option><option>雲林縣</option><option>嘉義市</option><option>嘉義縣</option><option>臺南市</option><option>高雄市</option><option>屏東縣</option><option>臺東縣</option><option>花蓮縣</option><option>宜蘭縣</option></select></div>
   </div>
   <div class="f2">
-    <div><label for="opm">每個月大約幾趟 <span style="color:var(--o)">*</span></label><input type="number" id="opm" min="1" max="10000" inputmode="numeric" placeholder="例：12"></div>
-    <div><label for="s_class_id">通常叫哪一種車 <span style="color:var(--o)">*</span></label>
+    <div><label for="opm">每月出貨趟次（約） <span style="color:var(--o)">*</span></label><input type="number" id="opm" min="1" max="10000" inputmode="numeric" placeholder="例：12"></div>
+    <div><label for="s_class_id">常用車型 <span style="color:var(--o)">*</span></label>
       <select id="s_class_id"><option value="">請選擇</option>
         <option value="11t">11 噸級（六輪中型）</option><option value="17t">17 噸級（十輪大貨車）</option>
         <option value="26t">26 噸級（三軸十二輪）</option><option value="35t">35 噸拖板（半聯結車／平板）</option></select></div>
   </div>
-  <div class="fld"><label for="how_now">現在都怎麼叫車</label>
-    <select id="how_now"><option value="">（不想說）</option>
-      <option value="agency">找車行</option><option value="regular">固定幾個司機</option>
-      <option value="own">自己有車</option><option value="adhoc">臨時到處問</option></select></div>
+  <div class="fld"><label for="how_now">目前叫車方式</label>
+    <select id="how_now"><option value="">（不提供）</option>
+      <option value="agency">委託車行</option><option value="regular">固定配合之司機</option>
+      <option value="own">自有車輛</option><option value="adhoc">臨時詢價</option></select></div>
 </div>
 
 <div id="driver" class="hide">
   <h2>車輛資料</h2>
   <div class="f2">
-    <div><label for="d_county">主要接單縣市</label><select id="d_county"><option value="">（不想說）</option><option>基隆市</option><option>臺北市</option><option>新北市</option><option>桃園市</option><option>新竹市</option><option>新竹縣</option><option>苗栗縣</option><option>臺中市</option><option>彰化縣</option><option>南投縣</option><option>雲林縣</option><option>嘉義市</option><option>嘉義縣</option><option>臺南市</option><option>高雄市</option><option>屏東縣</option><option>臺東縣</option><option>花蓮縣</option><option>宜蘭縣</option></select></div>
+    <div><label for="d_county">主要接單縣市</label><select id="d_county"><option value="">（不提供）</option><option>基隆市</option><option>臺北市</option><option>新北市</option><option>桃園市</option><option>新竹市</option><option>新竹縣</option><option>苗栗縣</option><option>臺中市</option><option>彰化縣</option><option>南投縣</option><option>雲林縣</option><option>嘉義市</option><option>嘉義縣</option><option>臺南市</option><option>高雄市</option><option>屏東縣</option><option>臺東縣</option><option>花蓮縣</option><option>宜蘭縣</option></select></div>
     <div><label for="class_id">車型級距</label>
-      <select id="class_id"><option value="">（不想說）</option>
+      <select id="class_id"><option value="">（不提供）</option>
         <option value="11t">11 噸級（六輪中型）</option><option value="17t">17 噸級（十輪大貨車）</option>
         <option value="26t">26 噸級（三軸十二輪）</option><option value="35t">35 噸拖板（半聯結車／平板）</option></select></div>
   </div>
-  <div class="fld"><label>車上有什麼設備</label>
+  <div class="fld"><label>車輛設備</label>
     <label class="chk"><input type="checkbox" id="has_tail_lift"><span>油壓升降尾門</span></label>
     <label class="chk"><input type="checkbox" id="has_pallet_jack"><span>車上備有油壓拖板車</span></label>
     <label class="chk"><input type="checkbox" id="can_side_load"><span>開放式平板／可從側邊裝卸</span></label>
-    <label class="chk"><input type="checkbox" id="can_cover"><span>可以蓋帆布／廂式車</span></label>
-    <p class="hint">這幾項會影響您能收到哪些單，之後可在 App 內修改。</p>
+    <label class="chk"><input type="checkbox" id="can_cover"><span>可覆蓋帆布／廂式車</span></label>
+    <p class="hint">上列設備將影響您於 App 內可收到之訂單通知，註冊後得於 App 內修改。</p>
   </div>
 </div>
 
 <div class="fld" style="margin-top:26px"><button class="go" id="go" onclick="send()">送出登記</button></div>
-<p class="hint">送出即表示同意我們以 Email 或電話與您聯絡。您可隨時來信 <a href="mailto:tim@vstrel.com">tim@vstrel.com</a> 要求刪除資料。</p>
+<p class="hint">送出即表示您同意本公司以電子郵件或電話與您聯絡。您得隨時來信 <a href="mailto:tim@vstrel.com">tim@vstrel.com</a> 要求刪除資料。</p>
 <p class="err hide" id="err"></p>
 </div>
 
@@ -189,9 +187,9 @@ color:var(--o);font-weight:700;margin:6px 0 4px;word-break:break-all}
 <div class="card">
   <p style="margin-bottom:0">您的專屬推薦碼</p>
   <p class="code" id="code"></p>
-  <p style="margin-bottom:0" class="hint">開放後註冊時，請將這組碼填入「推薦碼」欄位。<strong>推薦碼只能在註冊當下填寫</strong>，之後無法補填，建議先截圖保存。</p>
+  <p style="margin-bottom:0" class="hint">正式開放後註冊時，請將此推薦碼填入「推薦碼」欄位。<strong>推薦碼僅得於註冊時填寫</strong>，事後無法補填，請先行截圖保存。</p>
 </div>
-<p>如有問題，請來信：<a href="mailto:tim@vstrel.com">tim@vstrel.com</a></p>
+<p>如有疑問，請來信：<a href="mailto:tim@vstrel.com">tim@vstrel.com</a></p>
 </div>
 
 </main>
@@ -203,9 +201,6 @@ color:var(--o);font-weight:700;margin:6px 0 4px;word-break:break-all}
 </div></footer>
 
 <script>
-// 這個端點是 Edge Function，不是資料庫。填表的人沒有帳號，而「anon 不可以執行
-// 任何 public 函式」是系統的硬規矩，所以對外的入口一律走 Edge Function，
-// 由它拿 service_role 去叫 waitlist_join()。這一頁不需要、也沒有任何金鑰。
 var API = 'https://iyjodzxjodygjpkvlvwt.supabase.co/functions/v1/waitlist-join';
 var role = 'shipper';
 function $(id) { return document.getElementById(id); }
@@ -224,7 +219,7 @@ async function send() {
   $('err').className = 'err hide';
   var body = { role: role, email: $('email').value.trim(), phone: $('phone').value.trim() };
   if (!body.email) return fail('請填寫 Email。');
-  if (!body.phone) return fail('請填寫手機，開放時我們才能聯絡您。');
+  if (!body.phone) return fail('請填寫手機號碼，以便開放時與您聯絡。');
 
   if (role === 'shipper') {
     body.county = $('s_county').value;
@@ -233,11 +228,11 @@ async function send() {
     body.class_id = $('s_class_id').value;
     body.how_now = $('how_now').value;
     if (!body.county) return fail('請選擇主要出貨縣市。');
-    if (!body.to_county) return fail('請選擇最常送到哪裡。');
+    if (!body.to_county) return fail('請選擇主要送達縣市。');
     if (!(body.orders_per_month >= 1 && body.orders_per_month <= 10000) || Math.floor(body.orders_per_month) !== body.orders_per_month) {
-      return fail('請填每個月大約幾趟（1 以上的整數）。');
+      return fail('請填寫每月出貨趟次（1 以上之整數）。');
     }
-    if (!body.class_id) return fail('請選擇通常叫哪一種車。');
+    if (!body.class_id) return fail('請選擇常用車型。');
   } else {
     body.county = $('d_county').value;
     body.class_id = $('class_id').value;
@@ -257,10 +252,10 @@ async function send() {
     if (!res.ok) { throw new Error(data && data.error ? data.error : '送出失敗，請稍後再試'); }
     $('code').textContent = data.code;
     $('donemsg').textContent = data.already
-      ? '您已經登記過了，這是您原本的推薦碼，不需要再送出一次。'
+      ? '您已完成登記，以下為您原有之推薦碼，無須重複送出。'
       : (role === 'shipper'
-         ? '開放時我們會第一批通知您。'
-         : '開放時我們會第一批通知您。屆時請準備駕照、行照與保險證明，審核通過即可接單。');
+         ? '本公司將於正式開放時優先通知您。'
+         : '本公司將於正式開放時優先通知您。屆時請備妥駕駛執照、行車執照及保險證明，審核通過後即可承接訂單。');
     $('form').className = 'hide';
     $('done').className = '';
     window.scrollTo(0, 0);
