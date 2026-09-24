@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Palvoo 等候名單｜先登記，開放時第一批通知你</title>
+<title>Palvoo 等候名單｜先登記，開放時第一批通知您</title>
 <meta name="description" content="Palvoo 大貨車與聯結拖板車媒合平台。開放前先登記，開放時第一批通知，並拿到一組專屬推薦碼。">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <meta name="theme-color" content="#0B0D12">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Palvoo">
 <meta property="og:url" content="https://vstrel.com/palvoo/waitlist/">
-<meta property="og:title" content="Palvoo 等候名單｜先登記，開放時第一批通知你">
+<meta property="og:title" content="Palvoo 等候名單｜先登記，開放時第一批通知您">
 <meta property="og:description" content="Palvoo 大貨車與聯結拖板車媒合平台。開放前先登記，開放時第一批通知，並拿到一組專屬推薦碼。">
 <meta property="og:image" content="https://vstrel.com/palvoo/og.png">
 <meta property="og:image:width" content="1200">
@@ -113,24 +113,24 @@ color:var(--o);font-weight:700;margin:6px 0 4px;word-break:break-all}
 <main class="wrap" style="padding-block:44px">
 
 <span class="pill">開放前先登記</span>
-<h1>先卡位，開放時第一批通知你。</h1>
+<h1>先登記，開放時第一批通知您。</h1>
 <div class="rule"></div>
-<p class="lead">Palvoo 還在準備正式開放。現在留下資料，我們開放時會第一批通知你，並給你一組<strong>專屬推薦碼</strong>——註冊時填進去就能用。</p>
+<p class="lead">Palvoo 正在準備正式開放。現在留下資料，開放時我們會第一批通知您，並提供一組<strong>專屬推薦碼</strong>，註冊時填入即可使用。</p>
 
 <div class="note">
 <p>我們問的每一格，都是<strong>之後真的會拿來配對的條件</strong>（車型、設備、跑的縣市）。不會拿來做其他用途，也不會提供給第三方。詳見<a href="/privacy/">隱私權政策</a>。</p>
 </div>
 
 <div id="form">
-<h2>你是哪一邊？</h2>
+<h2>請選擇您的身分</h2>
 <div class="seg">
   <button type="button" id="b-shipper" aria-pressed="true" onclick="pick('shipper')">
-    <b>我要找車</b>工廠、農場、建材行、貿易商——有貨要出的人</button>
+    <b>我要找車</b>工廠、農場、建材行、貿易商等有貨要出的人</button>
   <button type="button" id="b-driver" aria-pressed="false" onclick="pick('driver')">
     <b>我要接單</b>大貨車、聯結車、拖板車司機或車行</button>
 </div>
 
-<h2>怎麼聯絡你</h2>
+<h2>聯絡方式</h2>
 <div class="f2">
   <div><label for="email">Email <span style="color:var(--o)">*</span></label>
        <input type="email" id="email" autocomplete="email" placeholder="you@example.com"></div>
@@ -139,7 +139,7 @@ color:var(--o);font-weight:700;margin:6px 0 4px;word-break:break-all}
 </div>
 
 <div id="shipper">
-  <h2>你的出貨狀況</h2>
+  <h2>出貨狀況</h2>
   <!-- 2026-09-23 Tim：這份名單是上線前的統計 —— 看各地缺的是貨主還是司機、缺哪一種車。
        所以只問統計要用的四件事，而且四件都必填；公司名稱、統編拿掉（也可能是個人戶，註冊 App 時再填）。 -->
   <div class="f2">
@@ -160,9 +160,9 @@ color:var(--o);font-weight:700;margin:6px 0 4px;word-break:break-all}
 </div>
 
 <div id="driver" class="hide">
-  <h2>你的車</h2>
+  <h2>車輛資料</h2>
   <div class="f2">
-    <div><label for="d_county">主要接單縣市（你的地盤）</label><select id="d_county"><option value="">（不想說）</option><option>基隆市</option><option>臺北市</option><option>新北市</option><option>桃園市</option><option>新竹市</option><option>新竹縣</option><option>苗栗縣</option><option>臺中市</option><option>彰化縣</option><option>南投縣</option><option>雲林縣</option><option>嘉義市</option><option>嘉義縣</option><option>臺南市</option><option>高雄市</option><option>屏東縣</option><option>臺東縣</option><option>花蓮縣</option><option>宜蘭縣</option></select></div>
+    <div><label for="d_county">主要接單縣市</label><select id="d_county"><option value="">（不想說）</option><option>基隆市</option><option>臺北市</option><option>新北市</option><option>桃園市</option><option>新竹市</option><option>新竹縣</option><option>苗栗縣</option><option>臺中市</option><option>彰化縣</option><option>南投縣</option><option>雲林縣</option><option>嘉義市</option><option>嘉義縣</option><option>臺南市</option><option>高雄市</option><option>屏東縣</option><option>臺東縣</option><option>花蓮縣</option><option>宜蘭縣</option></select></div>
     <div><label for="class_id">車型級距</label>
       <select id="class_id"><option value="">（不想說）</option>
         <option value="11t">11 噸級（六輪中型）</option><option value="17t">17 噸級（十輪大貨車）</option>
@@ -173,25 +173,25 @@ color:var(--o);font-weight:700;margin:6px 0 4px;word-break:break-all}
     <label class="chk"><input type="checkbox" id="has_pallet_jack"><span>車上備有油壓拖板車</span></label>
     <label class="chk"><input type="checkbox" id="can_side_load"><span>開放式平板／可從側邊裝卸</span></label>
     <label class="chk"><input type="checkbox" id="can_cover"><span>可以蓋帆布／廂式車</span></label>
-    <p class="hint">這幾格決定你收不收得到需要這些條件的單。之後在 App 裡還可以改。</p>
+    <p class="hint">這幾項會影響您能收到哪些單，之後可在 App 內修改。</p>
   </div>
 </div>
 
 <div class="fld" style="margin-top:26px"><button class="go" id="go" onclick="send()">送出登記</button></div>
-<p class="hint">送出即表示同意我們以 Email 或電話與你聯絡。你隨時可以來信 <a href="mailto:tim@vstrel.com">tim@vstrel.com</a> 要求刪除。</p>
+<p class="hint">送出即表示同意我們以 Email 或電話與您聯絡。您可隨時來信 <a href="mailto:tim@vstrel.com">tim@vstrel.com</a> 要求刪除資料。</p>
 <p class="err hide" id="err"></p>
 </div>
 
 <div id="done" class="hide">
-<h1 style="margin-top:0">登記好了。</h1>
+<h1 style="margin-top:0">登記完成。</h1>
 <div class="rule"></div>
 <p class="lead" id="donemsg"></p>
 <div class="card">
-  <p style="margin-bottom:0">你的專屬推薦碼</p>
+  <p style="margin-bottom:0">您的專屬推薦碼</p>
   <p class="code" id="code"></p>
-  <p style="margin-bottom:0" class="hint">開放時註冊，把這組碼填進「推薦碼」欄位。<strong>只在註冊當下填得進去</strong>，之後補不了，先截圖存著。</p>
+  <p style="margin-bottom:0" class="hint">開放後註冊時，請將這組碼填入「推薦碼」欄位。<strong>推薦碼只能在註冊當下填寫</strong>，之後無法補填，建議先截圖保存。</p>
 </div>
-<p>有問題直接寫信給我們：<a href="mailto:tim@vstrel.com">tim@vstrel.com</a></p>
+<p>如有問題，請來信：<a href="mailto:tim@vstrel.com">tim@vstrel.com</a></p>
 </div>
 
 </main>
@@ -223,8 +223,8 @@ function fail(m) { var e = $('err'); e.textContent = m; e.className = 'err'; }
 async function send() {
   $('err').className = 'err hide';
   var body = { role: role, email: $('email').value.trim(), phone: $('phone').value.trim() };
-  if (!body.email) return fail('請填 Email。');
-  if (!body.phone) return fail('請填手機 —— 開放的時候我們要找得到你。');
+  if (!body.email) return fail('請填寫 Email。');
+  if (!body.phone) return fail('請填寫手機，開放時我們才能聯絡您。');
 
   if (role === 'shipper') {
     body.county = $('s_county').value;
@@ -257,10 +257,10 @@ async function send() {
     if (!res.ok) { throw new Error(data && data.error ? data.error : '送出失敗，請稍後再試'); }
     $('code').textContent = data.code;
     $('donemsg').textContent = data.already
-      ? '你之前已經登記過了，這是你原本的推薦碼 —— 沒有重複登記，不用再送一次。'
+      ? '您已經登記過了，這是您原本的推薦碼，不需要再送出一次。'
       : (role === 'shipper'
-         ? '我們開放的時候會第一批通知你。'
-         : '我們開放的時候會第一批通知你。到時候記得帶著駕照、行照與保險證明，審核過就能接單。');
+         ? '開放時我們會第一批通知您。'
+         : '開放時我們會第一批通知您。屆時請準備駕照、行照與保險證明，審核通過即可接單。');
     $('form').className = 'hide';
     $('done').className = '';
     window.scrollTo(0, 0);
