@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Palvoo 刪除帳號</title>
+<meta name="description" content="如何刪除 Palvoo 帳號（貨主 App 與承運人 App）：在 App 內自行刪除或來信申請，以及刪除後哪些資料刪除、哪些資料依法保存及保存期間。">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<meta name="theme-color" content="#0B0D12">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Palvoo">
+<meta property="og:url" content="https://vstrel.com/palvoo/delete-account/">
+<meta property="og:title" content="Palvoo 刪除帳號">
+<meta property="og:description" content="如何刪除 Palvoo 帳號（貨主 App 與承運人 App）：在 App 內自行刪除或來信申請，以及刪除後哪些資料刪除、哪些資料依法保存及保存期間。">
+<meta property="og:image" content="https://vstrel.com/palvoo/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="zh_TW">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root{--bg:#0B0D12;--card:#12151c;--ink:#e9ecf2;--ink2:#a9b0bd;--ink3:#767d8b;
+--line:rgba(255,255,255,.10);--line2:rgba(255,255,255,.06);--o:#FF6A13;--ok:#2ecc71}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang TC','Noto Sans TC','Microsoft JhengHei',Helvetica,Arial,sans-serif;
+line-height:1.75;-webkit-font-smoothing:antialiased;font-size:16px}
+a{color:#ffb07a;text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:820px;margin:0 auto;padding-left:22px;padding-right:22px}
+header.top{border-bottom:1px solid var(--line2);position:sticky;top:0;z-index:20;
+background:rgba(11,13,18,.88);backdrop-filter:saturate(140%) blur(8px)}
+.topin{max-width:820px;margin:0 auto;padding:14px 22px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;color:#fff}
+.brand svg{width:26px;height:26px;display:block}
+.navsp{flex:1 1 auto;min-width:8px}
+nav.top a{font-size:14px;color:var(--ink2);white-space:nowrap}
+nav.top a+a{margin-left:16px}
+h1{font-size:clamp(27px,5.4vw,38px);line-height:1.25;letter-spacing:-.015em;margin:0 0 14px;font-weight:700}
+h2{font-size:clamp(19px,3.4vw,23px);line-height:1.4;margin:44px 0 14px;font-weight:700;
+padding-top:22px;border-top:1px solid var(--line2)}
+h2:first-of-type{border-top:0;padding-top:0}
+h3{font-size:17px;margin:26px 0 10px;font-weight:650;color:#fff}
+p{margin:0 0 15px;color:var(--ink2)}
+ul,ol{margin:0 0 16px;padding-left:22px;color:var(--ink2)}
+li{margin:0 0 8px}
+strong{color:var(--ink);font-weight:650}
+.lead{font-size:18px;color:var(--ink2);margin-bottom:26px}
+.rule{width:64px;height:4px;border-radius:2px;background:var(--o);margin:0 0 26px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin:0 0 18px}
+.card h3{margin-top:0}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:0 0 20px}
+@media (max-width:680px){.grid{grid-template-columns:1fr}}
+.note{border-left:3px solid var(--o);background:rgba(255,106,19,.07);
+border-radius:0 10px 10px 0;padding:14px 18px;margin:0 0 20px}
+.note p:last-child{margin-bottom:0}
+.todo{border-left:3px solid #ffd24a;background:rgba(255,210,74,.09);
+border-radius:0 10px 10px 0;padding:14px 18px;margin:0 0 20px;font-size:14.5px}
+.todo p:last-child{margin-bottom:0}
+.tw{overflow-x:auto;margin:0 0 20px;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:460px;font-size:15px}
+th,td{padding:11px 14px;text-align:left;border-bottom:1px solid var(--line2);vertical-align:top}
+th{color:var(--ink3);font-weight:600;font-size:13.5px;letter-spacing:.02em;white-space:nowrap}
+td{color:var(--ink2)}
+.meta{font-size:13.5px;color:var(--ink3);margin:0 0 30px}
+.art{margin:0 0 20px}
+.art>.n{font-weight:650;color:#fff;margin:0 0 8px;font-size:16px}
+.art ol{margin-top:6px}
+footer.f{border-top:1px solid var(--line2);margin-top:60px;padding:28px 0 46px;font-size:13.5px;color:var(--ink3)}
+footer.f p{color:var(--ink3);margin:0 0 7px;font-size:13.5px}
+footer.f a{color:var(--ink3);text-decoration:underline}
+.pill{display:inline-block;font-size:12.5px;color:var(--o);border:1px solid rgba(255,106,19,.35);
+border-radius:999px;padding:3px 11px;margin:0 0 16px}
+.btn{display:inline-block;background:var(--o);color:#fff;font-weight:650;font-size:15.5px;
+padding:12px 26px;border-radius:9px;margin:4px 10px 4px 0}
+.btn:hover{text-decoration:none;opacity:.92}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.toc{font-size:14.5px}
+.toc a{color:var(--ink2);display:block;padding:3px 0}
+[data-fill]{color:#ffd24a;border-bottom:1px dashed rgba(255,210,74,.55)}
+</style>
+</head>
+<body>
+<header class="top"><div class="topin">
+  <a class="brand" href="/palvoo/"><svg viewBox="0 0 512 512" aria-hidden="true"><g transform="skewX(-11) translate(34,0)"><path d="M118 96 H314 A88 88 0 0 1 314 272 H196 V416 H118 Z M196 140 H314 A44 44 0 0 1 314 228 H196 Z" fill="#fff" fill-rule="evenodd"/></g><rect x="24" y="150" width="70" height="20" rx="10" fill="#fff" opacity=".85"/><rect x="4" y="204" width="90" height="20" rx="10" fill="#fff" opacity=".5"/><rect x="34" y="258" width="60" height="20" rx="10" fill="#fff" opacity=".3"/></svg>Palvoo</a>
+  <span class="navsp"></span>
+  <nav class="top"><a href="/palvoo/">服務說明</a><a href="/palvoo/waitlist/">預先登記</a><a href="/palvoo/pricing/">費用</a><a href="/palvoo/terms/">貨主條款</a><a href="/palvoo/carrier/">承運人條款</a><a href="/palvoo/refund/">取消與退款</a></nav>
+</div></header>
+<main class="wrap" style="padding-block:44px">
+<h1>Palvoo 刪除帳號</h1><div class="rule"></div><p class="meta">最後更新：民國 115 年 9 月 25 日</p>
+<p class="lead">本頁說明如何刪除您的 Palvoo 帳號，以及刪除後各項資料之處理方式與保存期間。貨主使用之「Palvoo」App 與承運人使用之「Palvoo 承運人」App 皆適用；兩者均由維斯托有限公司（VSTREL CO., LTD.）開發與營運。<a href="#en">English version below.</a></p>
+
+<h2>一、在 App 內自行刪除（立即完成）</h2>
+<ol>
+<li>開啟 Palvoo App 並登入（貨主：「Palvoo」App 或網頁版 <a href="https://palvoo.vstrel.com">palvoo.vstrel.com</a>；承運人：「Palvoo 承運人」App 或網頁版 <a href="https://driver.vstrel.com">driver.vstrel.com</a>）。</li>
+<li>點選畫面下方之「帳戶」分頁，並捲動至最下方。</li>
+<li>點選「刪除帳號」，依畫面指示確認兩次後，帳號即刪除，您所有裝置上之登入亦同時登出。</li>
+</ol>
+<p>尚有進行中之訂單（等候承接、已承接或運送中）者，須先完成或取消該訂單，始得刪除帳號。</p>
+
+<h2>二、無法登入或已移除 App：來信申請</h2>
+<ol>
+<li>請以註冊 Palvoo 時使用之電子郵件，寄信至 <a href="mailto:tim@vstrel.com">tim@vstrel.com</a>，主旨請註明「申請刪除 Palvoo 帳號」。</li>
+<li>信中請寫明註冊時使用之手機號碼，以及您的身分（貨主或承運人）。</li>
+<li>本公司回信確認您為帳號本人後代為刪除，並於收到申請後 <strong>15 日內</strong>回覆處理結果。無法使用註冊之電子郵件者，請於信中說明，本公司將另行確認身分。</li>
+</ol>
+<p>來信申請與於 App 內自行刪除，刪除之範圍及保存期間相同。</p>
+
+<h2>三、刪除後之資料處理</h2>
+<p><strong>未曾有任何訂單紀錄之帳號</strong>：帳號及全部個人資料（含已上傳之證件影像）立即刪除，該電子郵件與手機號碼得重新註冊。</p>
+<p><strong>有訂單紀錄之帳號</strong>：為履行法定之保存義務，交易紀錄依下表保存，其餘資料立即刪除；帳號改以「已刪除帳號」顯示，且無法再登入。</p>
+<div class="tw"><table style="min-width:0">
+<tr><th>資料</th><th>處理方式</th></tr>
+<tr><td>姓名、電子郵件、手機號碼、公司名稱</td><td>立即刪除（姓名改顯示為「已刪除帳號」，電子郵件釋出）</td></tr>
+<tr><td>大頭照、推播通知訂閱、LINE 綁定、承運人目前位置</td><td>立即刪除</td></tr>
+<tr><td>承運人之撥款帳戶資料及存摺封面影像</td><td>立即刪除</td></tr>
+<tr><td>承運人之證件影像（身分證、駕照、行照、保險）</td><td>曾承運訂單者，保存 <strong>1 年</strong>後刪除，保存期間僅本公司審核人員得存取；未曾承運訂單者立即刪除</td></tr>
+<tr><td>訂單、電子運送契約、付款與發票紀錄</td><td>保存 <strong>5 年</strong>（自該筆交易所屬會計年度決算終了起算），不再與可登入之帳號連結；成立時之記載為雙方之契約內容，不予竄改</td></tr>
+<tr><td>現場貨物照片（下單、裝貨、卸貨）及放單、檢舉、爭議所附照片</td><td>該趟運送結束後保存 <strong>1 年</strong>；有爭議者保存至爭議結案後 <strong>180 日</strong>（以較晚者為準）</td></tr>
+<tr><td>承運人上傳之發票影像</td><td>上傳後保存 <strong>12 個月</strong></td></tr>
+<tr><td>位置軌跡</td><td>該趟運送結束後保存 <strong>6 個月</strong>；有爭議者保存至爭議結束</td></tr>
+<tr><td>登入與操作事件紀錄</td><td>保存 <strong>12 個月</strong></td></tr>
+<tr><td>依平台服務條款終止之帳號之終止紀錄及雜湊值</td><td>保存至終止處分撤銷為止，不因刪除帳號而刪除</td></tr>
+</table></div>
+<p>保存期間屆滿後，本公司將刪除該等資料，或以無法還原之方式予以去識別化。帳號刪除後無法復原，且不影響刪除前已成立之運送契約及付款義務。詳細內容請參閱 Palvoo App 內之《隱私權政策》第 5 節（保存期間）及第 6 節（帳號刪除）。</p>
+
+<h2>四、聯絡方式</h2>
+<p>個人資料保護聯絡窗口：<a href="mailto:tim@vstrel.com">tim@vstrel.com</a>（客服時間：平日 09:00–18:00）</p>
+
+<h2 id="en">Delete your Palvoo account (English)</h2>
+<p>This page explains how to delete your Palvoo account and what happens to your data. It applies to both the <strong>Palvoo</strong> app (for shippers) and the <strong>Palvoo 承運人</strong> app (for carriers), developed and operated by VSTREL CO., LTD. (維斯托有限公司).</p>
+<h3>Option 1 — In the app (takes effect immediately)</h3>
+<ol>
+<li>Open the Palvoo app and sign in (shippers: the Palvoo app or <a href="https://palvoo.vstrel.com">palvoo.vstrel.com</a>; carriers: the Palvoo 承運人 app or <a href="https://driver.vstrel.com">driver.vstrel.com</a>).</li>
+<li>Tap the <strong>帳戶</strong> (Account) tab at the bottom and scroll to the end.</li>
+<li>Tap <strong>刪除帳號</strong> (Delete account) and confirm twice. Your account is deleted and you are signed out on all devices.</li>
+</ol>
+<p>Orders that are still in progress must be completed or cancelled first.</p>
+<h3>Option 2 — By email (if you cannot sign in or have removed the app)</h3>
+<p>Email <a href="mailto:tim@vstrel.com">tim@vstrel.com</a> from the address you registered with, with the subject “Delete my Palvoo account”, and include your registered mobile number and whether you are a shipper or a carrier. After confirming that you are the account holder, we will delete the account and reply within <strong>15 days</strong>. The result is the same as deleting in the app.</p>
+<h3>What is deleted and what is kept</h3>
+<ul>
+<li><strong>Accounts with no orders</strong>: the account and all personal data (including uploaded documents) are deleted immediately.</li>
+<li><strong>Accounts with orders</strong>: your name, email, mobile number, company name, profile photo, notification subscriptions, LINE link, current location, and carriers’ bank account details and passbook image are deleted immediately; the account is shown as “已刪除帳號” (deleted account) and can no longer sign in.</li>
+<li>Kept as required by law or for dispute handling, then deleted: orders, electronic transport contracts, payment and invoice records — <strong>5 years</strong>; carriers’ ID, licence, vehicle registration and insurance images (carriers who completed orders) — <strong>1 year</strong>; cargo and evidence photos — <strong>1 year</strong> after the trip (or 180 days after a dispute closes, whichever is later); carrier-uploaded invoice images — <strong>12 months</strong>; location tracks — <strong>6 months</strong> after the trip (or until a dispute ends); sign-in and activity logs — <strong>12 months</strong>.</li>
+<li>For accounts terminated under the platform terms, the termination record and its hashes are kept until the termination is revoked, even if the account is deleted.</li>
+</ul>
+<p>Deletion cannot be undone and does not affect transport contracts or payment obligations formed before deletion.</p>
+</main>
+<footer class="f"><div class="wrap">
+<p><strong style="color:#a9b0bd">Palvoo</strong> 由 維斯托有限公司（VSTREL CO., LTD.）營運</p>
+<p>統一編號：62050829</p>
+<p>客服電話：<a href="tel:+886913534909">0913-534-909</a>　客服信箱：<a href="mailto:tim@vstrel.com">tim@vstrel.com</a>　客服時間：平日 09:00–18:00</p>
+<p style="margin-top:12px"><a href="/palvoo/terms/">貨主服務條款</a>　<a href="/palvoo/carrier/">承運人條款</a>　<a href="/palvoo/pricing/">費用政策</a>　<a href="/palvoo/refund/">取消與退款政策</a>　<a href="/privacy/">隱私權政策</a>　<a href="/palvoo/delete-account/">刪除帳號</a></p>
+</div></footer>
+</body>
+</html>
