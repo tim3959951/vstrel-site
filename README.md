@@ -28,3 +28,17 @@ VSTREL 公司首頁 — 單一靜態 HTML，部署於 GitHub Pages (vstrel.com)�
 - /privacy/ 是本公司的隱私權政策（整個網站與所有產品，寫得比較概括）；第一條寫明就 Palvoo 以《Palvoo 隱私權政策》為準
   （跟「官網條款與 App 內不一致時以 App 內為準」同一個原則）。Palvoo 各頁頁尾的「隱私權政策」連到 /palvoo/privacy/；
   預先登記表單蒐集的資料屬於網站本身，那一句仍連到 /privacy/。
+
+## 首頁的 3D 版（/palvoo/3d/，預覽）
+
+- 2026-09-26 起跟 /palvoo/ 並存，用來比較兩種版面：**沒有任何頁面連過去**、`noindex`，不取代 /palvoo/。
+- 內容與 /palvoo/ 相同（服務說明、貨主與承運人服務、服務範圍、收費方式、常見問題、頁尾），另外多開場的 3D 場景
+  與一張車型與基本費率表（照費用政策第二點）。場景裡的狀態字跟貨主 App 同一套說法。
+- **原始碼在 `_src/palvoo-3d/`**（底線開頭的資料夾 GitHub Pages 不會送出）：`page.html` 是版面、`scene.js` 是 three.js 場景。
+  改完在 repo 根目錄跑 `python3 _src/palvoo-3d/build.py`，產生 `palvoo/3d/index.html` 與 `app.js`
+  （拿掉 CSS 註解、JS 壓縮，對外頁面不留註解）。標題改了字要先跑 `fonts.py`：字型子集只含標題用到的字，build.py 會檢查缺字。
+- 不從第三方載入任何東西（跟其他頁一樣）：three.js r169 放在 `palvoo/3d/lib/`（npm 原檔，MIT，授權檔在旁邊）、
+  字型子集放在 `palvoo/3d/fonts/`（SIL OFL 1.1，授權在 `OFL.txt`）。沒有 WebGL 或載入失敗時，畫面停在黃昏的漸層底，文字與連結照常可用。
+- 分享預覽圖 `og.jpg` 是開場畫面的截圖（1200×630）。
+- **如果之後改用這一版當 /palvoo/**：費率表與試算卡上的數字（起步價、每公里、每板、最多、重貨門檻、NT$7,750 的算式）
+  要加進 truck-uber `check-public-terms` 的檢查，頁面也要加進它的 `PUBLIC_PAGES`（正式用語、原始碼註解）。
