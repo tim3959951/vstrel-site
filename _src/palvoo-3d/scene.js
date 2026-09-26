@@ -93,13 +93,14 @@ function main() {
   const canvas = $('#world');
   let renderer;
   try {
-    renderer = new THREE.WebGLRenderer({ canvas, antialias: true, powerPreference: 'high-performance' });
+    // 不要求高效能顯示卡：雙顯示卡的筆電會切到獨立顯示卡，又熱又耗電（這是官網，不是遊戲）
+    renderer = new THREE.WebGLRenderer({ canvas, antialias: true, powerPreference: 'default' });
   } catch (e) {
     root.classList.add('no-webgl');
     return;
   }
   const phone = Math.min(window.innerWidth, window.innerHeight) < 600;
-  let dprCap = phone ? 1.5 : 1.75;
+  let dprCap = 1.5;
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, dprCap));
   renderer.setSize(window.innerWidth, window.innerHeight, false);
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
@@ -115,7 +116,7 @@ function main() {
   const sunDir = V(-0.86, 0.36, -0.40).normalize();
   const sun = new THREE.DirectionalLight(0xffb27a, 3.3);
   sun.castShadow = true;
-  sun.shadow.mapSize.set(phone ? 1024 : 2048, phone ? 1024 : 2048);
+  sun.shadow.mapSize.set(phone ? 1024 : 1536, phone ? 1024 : 1536);
   sun.shadow.bias = -0.0004;
   sun.shadow.normalBias = 0.05;
   sun.shadow.camera.near = 1;
@@ -923,6 +924,9 @@ function main() {
     const ox = lerp(A.ox, B.ox, f), oy = lerp(A.oy, B.oy, f);
     if (aspect >= 1) camera.setViewOffset(w, h, -ox * w, 0, w, h);
     else camera.setViewOffset(w, h, 0, oy * h, w, h);
+    // 畫面上的小卡用 camera.project() 找位置，要用這一幀的鏡頭（render 之前 matrixWorldInverse 還是上一幀的；
+    // 以前每一幀都畫所以只差一幀，改成只在需要時才畫之後，停下來的那一幀小卡會停在上一個鏡頭的位置）
+    camera.updateMatrixWorld();
     sky.position.copy(camera.position);
     // 霧跟著距離走：主體清楚、遠景淡進天色
     const dist = camera.position.distanceTo(camTgt);
@@ -986,16 +990,29 @@ function main() {
     hud(hudStatus, heroPos.clone().setY(3.6), text ? bump(s, 2.35, 2.45, 5.2, 5.5) : 0);
   }
 
-  /* ── 迴圈 ── */
+  /* ── 迴圈：只在需要的時候畫 ──
+     放著不動也每秒畫 60 次的話，開著這一頁的筆電會又熱又卡，整台電腦跟著變慢。
+     · 捲動中、鏡頭還在追捲動位置：每一幀都畫
+     · 放著不動：只剩環境動畫（風機、車流、火車），最多每秒 24 幀；減少動態時不畫
+     · 15 秒沒有任何操作、分頁看不到、捲過行程之後（畫布被蓋住）：完全停止，一有操作（捲動、滑鼠、觸控、按鍵）再開始 */
   const details = $('#details');
-  let sCur = 0, first = true, tAcc = 0, frames = 0, slow = 0;
+  const IDLE_STOP_MS = 15000, AMBIENT_MS = 1000 / 24;
+  let sCur = 0, sDrawn = -1, first = true, running = false, lastInput = performance.now(), lastDraw = 0;
+  let motionT = 0, motionN = 0;
   const clock = new THREE.Clock();
-  function frame() {
+  function wake() {
+    lastInput = performance.now();
+    if (!running) { running = true; clock.getDelta(); requestAnimationFrame(frame); }
+  }
+  function frame(now) {
+    const past = !first && details.getBoundingClientRect().top <= 0;
+    if (!first && (past || document.hidden || now - lastInput > IDLE_STOP_MS)) { running = false; return; }
     requestAnimationFrame(frame);
+    const sTarget = scrollS();
+    const moving = first || sTarget !== sDrawn || Math.abs(sTarget - sCur) > 0.0005;
+    if (!moving && (reduceMotion || now - lastDraw < AMBIENT_MS)) return;
     const dt = Math.min(clock.getDelta(), 0.06);
     const t = clock.elapsedTime;
-    if (!first && details.getBoundingClientRect().top <= 0) return;  // 行程之後，畫布被蓋住了，不用畫
-    const sTarget = scrollS();
     sCur = reduceMotion || first ? sTarget : sCur + (sTarget - sCur) * (1 - Math.exp(-dt * 6));
     updateHero(sCur);
     updateCamera(sCur);
@@ -1011,24 +1028,31 @@ function main() {
       trainU += 4.2 * dt / railLen; if (trainU > 1.05) trainU = -0.02; placeTrain();
     }
     renderer.render(scene, camera);
+    sDrawn = sTarget; lastDraw = now;
     if (first) { canvas.classList.add('ready'); first = false; }
-    // 手機太慢的話降低解析度
-    tAcc += dt; frames++;
-    if (tAcc > 2) { if (frames / tAcc < 28 && dprCap > 1) { slow++; if (slow >= 2) { dprCap = 1; renderer.setPixelRatio(1); } } tAcc = 0; frames = 0; }
+    // 捲動中量每秒幾幀：不到 30 就把解析度降到 1 倍（放著不動時本來就只畫 24 幀，不算）
+    if (moving && dprCap > 1) {
+      motionT += dt; motionN++;
+      if (motionT > 1.5) { if (motionN / motionT < 30) { dprCap = 1; renderer.setPixelRatio(1); } motionT = 0; motionN = 0; }
+    }
   }
+  ['scroll', 'wheel', 'pointermove', 'pointerdown', 'touchstart', 'keydown'].forEach((e) => window.addEventListener(e, wake, { passive: true }));
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) wake(); });
 
   function resize() {
     renderer.setSize(window.innerWidth, window.innerHeight, false);
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     measure();
+    wake();
   }
   window.addEventListener('resize', resize);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
   window.addEventListener('load', measure);
   measure();
   updateHero(0);
-  frame();
+  running = true;
+  requestAnimationFrame(frame);
 }
 
 main();
