@@ -2,6 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<script>
+(function () {
+  var p = location.pathname;
+  var m = /^([\/A-Za-z0-9._~-]*)([\s\S]*)$/.exec(p);
+  var fix = m[1].replace(/[.~-]+$/, '').toLowerCase();
+  if (fix && fix !== p) location.replace(fix);
+})();
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Page not found — VSTREL</title>
 <meta name="robots" content="noindex">
