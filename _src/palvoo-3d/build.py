@@ -60,7 +60,7 @@ body = re.sub(r'<style>(.*?)</style>',
               body, count=1, flags=re.S)
 body = body.replace('<!--@LABEL-->\n', '')
 body = body.replace('<!--@CONTACT-->',
-                    '<p>客服電話：<a href="tel:+886913534909">0913-534-909</a>　客服信箱：<a href="mailto:tim@vstrel.com">tim@vstrel.com</a>　客服時間：平日 09:00–18:00</p>')
+                    '<p>客服電話：<a href="tel:+886913534909">0913-534-909</a>　客服信箱：<a href="mailto:service@vstrel.com">service@vstrel.com</a>　客服時間：平日 09:00–18:00</p>')
 body = body.replace('<!--@SCRIPTS-->',
                     '<script type="importmap">{"imports":{"three":"./' + THREE + '"}}</script>\n'
                     f'<script type="module" src="./app.js?v={ver}"></script>')
