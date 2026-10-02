@@ -52,7 +52,8 @@ VSTREL 公司首頁 — 單一靜態 HTML，部署於 GitHub Pages (vstrel.com)�
 - `sitemap.xml`：手寫，列要被搜尋到的頁面（首頁、本公司條款與隱私權政策、Palvoo 首頁與各政策、預先登記）；
   不列 /palvoo/3d/（轉址頁）與 /palvoo/delete-account/。新增對外頁面時一起加。
 - canonical：每一頁指向自己的完整網址（結尾斜線跟實際網址一樣）。/palvoo/privacy/ 由 truck-uber 的產生器產生、
-  外框取自 /palvoo/delete-account/，這兩頁的 canonical 要在產生器那邊處理（不要把 delete-account 的 canonical 帶進 privacy）。
+  外框取自 /palvoo/delete-account/：產生器先拿掉外框自己的 canonical、再放 privacy 的（delete-account 那一頁的 canonical 手寫在它自己的檔案裡）。
+  truck-uber `check-public-terms` 對 Palvoo 每一頁查「只有一個 canonical、指向自己」，/palvoo/ 不能有 noindex，/palvoo/3d/ 要轉到 /palvoo/。
 - 結構化資料（JSON-LD）：首頁 `/` 是 Organization（`@id` https://vstrel.com/#organization）、/palvoo/ 是 Service（provider 用同一個 `@id`）。
   只放頁面上看得到的資料；不放地址、不放電話（首頁沒有電話）。FAQ 結構化資料不做（Google 2023-08 起只給政府、醫療網站）。
 
