@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-"""組出 /palvoo/3d/（首頁的 3D 版，預覽用、不列入搜尋）。
+"""組出 /palvoo/（Palvoo 首頁，3D 版）。
 
     python3 _src/palvoo-3d/build.py          # 在 repo 根目錄跑
 
 輸入：_src/palvoo-3d/page.html（版面）、scene.js（3D 場景）
-輸出：palvoo/3d/index.html、palvoo/3d/app.js
-另外兩樣是先放好、build 不動的：palvoo/3d/fonts/（fonts.py 產生）、palvoo/3d/lib/（three.js r169，npm 原檔與授權）。
+輸出：palvoo/index.html、palvoo/app.js
+另外兩樣是先放好、build 不動的：palvoo/fonts/（fonts.py 產生）、palvoo/lib/（three.js r169，npm 原檔與授權）。
+舊網址 /palvoo/3d/ 是一頁手寫的轉址頁（palvoo/3d/index.html），build 不動它。
 
 對外頁面的原始碼人人看得到（README「對外頁面的寫法」），所以這支會：
   - 拿掉 CSS 註解；JS 用 esbuild 壓縮（註解一起拿掉）；輸出裡有任何 HTML 註解就失敗
@@ -16,7 +17,7 @@ import hashlib, html, json, pathlib, re, subprocess, sys
 
 HERE = pathlib.Path(__file__).resolve().parent
 SITE = HERE.parent.parent
-OUT = SITE / 'palvoo' / '3d'
+OUT = SITE / 'palvoo'
 ESBUILD = ['npx', '--yes', 'esbuild@0.24.0']
 THREE = 'lib/three-r169.module.min.js'
 
@@ -95,16 +96,16 @@ head = f'''<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Palvoo｜大貨車、聯結車媒合平台 — 貨有所託，車有所行</title>
 <meta name="description" content="{desc}">
-<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://vstrel.com/palvoo/">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="theme-color" content="#0B0F16">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Palvoo">
-<meta property="og:url" content="https://vstrel.com/palvoo/3d/">
+<meta property="og:url" content="https://vstrel.com/palvoo/">
 <meta property="og:title" content="Palvoo — 貨有所託，車有所行">
 <meta property="og:description" content="{desc}">
-<meta property="og:image" content="https://vstrel.com/palvoo/3d/og.jpg">
+<meta property="og:image" content="https://vstrel.com/palvoo/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="zh_TW">
@@ -121,4 +122,4 @@ if '<!--' in out or '/*' in re.search(r'<style>(.*?)</style>', out, re.S).group(
 if re.search(r'[一-鿿]', re.sub(r'"(?:[^"\\]|\\.)*"|\'(?:[^\'\\]|\\.)*\'|`(?:[^`\\]|\\.)*`', '', app)):
     sys.exit('app.js 裡字串以外還有中文（註解沒拿乾淨？）')
 (OUT / 'index.html').write_text(out, encoding='utf-8')
-print(f'palvoo/3d/index.html {len(out.encode()):,} bytes；app.js {len(app.encode()):,} bytes（v={ver}）')
+print(f'palvoo/index.html {len(out.encode()):,} bytes；app.js {len(app.encode()):,} bytes（v={ver}）')

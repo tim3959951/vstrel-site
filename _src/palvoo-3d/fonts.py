@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""下載 /palvoo/3d/ 用的字型子集（只在標題的字改了之後重跑；需要網路）。
+"""下載 /palvoo/（3D 版）用的字型子集（只在標題的字改了之後重跑；需要網路）。
 
 - 標題用 Noto Serif TC：只取頁面上 h1（900）與 h2（700）用到的字，檔案才小。
 - 數字用 Barlow Condensed（500／600／700）：只取 ASCII 與幾個符號。
-- 內文用系統字型（跟 /palvoo/ 一樣），不下載。
+- 內文用系統字型（跟網站其他頁一樣），不下載。
 
-字型放在 palvoo/3d/fonts/，網站自己送，不從第三方載入（跟網站其他頁一致）。
+字型放在 palvoo/fonts/，網站自己送，不從第三方載入（跟網站其他頁一致）。
 兩套字型都是 SIL Open Font License 1.1，授權與著作權聲明寫在 fonts/OFL.txt。
 下載用 Google Fonts 的 css2 API 的 text= 參數（回傳只含那些字的 woff2）。
 """
@@ -13,7 +13,7 @@ import html, pathlib, re, subprocess, urllib.parse
 
 HERE = pathlib.Path(__file__).resolve().parent
 SITE = HERE.parent.parent
-OUT = SITE / 'palvoo' / '3d' / 'fonts'
+OUT = SITE / 'palvoo' / 'fonts'
 UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36'
 
 

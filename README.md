@@ -29,20 +29,32 @@ VSTREL 公司首頁 — 單一靜態 HTML，部署於 GitHub Pages (vstrel.com)�
   （跟「官網條款與 App 內不一致時以 App 內為準」同一個原則）。Palvoo 各頁頁尾的「隱私權政策」連到 /palvoo/privacy/；
   預先登記表單蒐集的資料屬於網站本身，那一句仍連到 /privacy/。
 
-## 首頁的 3D 版（/palvoo/3d/，預覽）
+## Palvoo 首頁（/palvoo/，3D 版）
 
-- 2026-09-26 起跟 /palvoo/ 並存，用來比較兩種版面：**沒有任何頁面連過去**、`noindex`，不取代 /palvoo/。
-- 內容與 /palvoo/ 相同（服務說明、貨主與承運人服務、服務範圍、收費方式、常見問題、頁尾），另外多開場的 3D 場景
-  與一張車型與基本費率表（照費用政策第二點）。場景裡的狀態字跟貨主 App 同一套說法。
-- **原始碼在 `_src/palvoo-3d/`**（底線開頭的資料夾 GitHub Pages 不會送出）：`page.html` 是版面、`scene.js` 是 three.js 場景。
-  改完在 repo 根目錄跑 `python3 _src/palvoo-3d/build.py`，產生 `palvoo/3d/index.html` 與 `app.js`
+- 2026-09-26 起以 /palvoo/3d/ 預覽、跟舊版並存；2026-10 改成正式的 /palvoo/，舊的純文字版拿掉。
+  舊網址 /palvoo/3d/ 留一頁手寫的轉址頁（`palvoo/3d/index.html`：立即轉到 /palvoo/、canonical 指向 /palvoo/、`noindex`），
+  因為之前寄給別人的連結用的是那個網址；build 不動它。
+- 內容：服務說明、貨主與承運人服務、車型與基本費率表（照費用政策第二點）、服務範圍、收費方式、常見問題、頁尾，前面加開場的 3D 場景。
+  場景裡的狀態字跟貨主 App 同一套說法。
+- **原始碼在 `_src/palvoo-3d/`**（資料夾名稱沿用預覽時的；底線開頭的資料夾 GitHub Pages 不會送出）：`page.html` 是版面、`scene.js` 是 three.js 場景。
+  改完在 repo 根目錄跑 `python3 _src/palvoo-3d/build.py`，產生 `palvoo/index.html` 與 `palvoo/app.js`
   （拿掉 CSS 註解、JS 壓縮，對外頁面不留註解）。標題改了字要先跑 `fonts.py`：字型子集只含標題用到的字，build.py 會檢查缺字。
-- `<head>`（`<title>`、分享預覽、結構化資料 JSON-LD）寫在 build.py 裡，不在 page.html；JSON-LD 不放地址。
-- 不從第三方載入任何東西（跟其他頁一樣）：three.js r169 放在 `palvoo/3d/lib/`（npm 原檔，MIT，授權檔在旁邊）、
-  字型子集放在 `palvoo/3d/fonts/`（SIL OFL 1.1，授權在 `OFL.txt`）。沒有 WebGL 或載入失敗時，畫面停在黃昏的漸層底，文字與連結照常可用。
-- 分享預覽圖 `og.jpg` 是開場畫面的截圖（1200×630）。
-- **如果之後改用這一版當 /palvoo/**：費率表與試算卡上的數字（起步價、每公里、每板、最多、重貨門檻、NT$7,750 的算式）
-  要加進 truck-uber `check-public-terms` 的檢查，頁面也要加進它的 `PUBLIC_PAGES`（正式用語、原始碼註解）。
+- `<head>`（`<title>`、canonical、分享預覽、結構化資料 JSON-LD）寫在 build.py 裡，不在 page.html；JSON-LD 不放地址。
+- 不從第三方載入任何東西（跟其他頁一樣）：three.js r169 放在 `palvoo/lib/`（npm 原檔，MIT，授權檔在旁邊）、
+  字型子集放在 `palvoo/fonts/`（SIL OFL 1.1，授權在 `OFL.txt`）。沒有 WebGL 或載入失敗時，畫面停在黃昏的漸層底，文字與連結照常可用。
+- 分享預覽圖 `palvoo/og.jpg` 是開場畫面的截圖（1200×630）。其他 Palvoo 頁的分享圖仍是 `palvoo/og.png`，不要刪。
+- 費率表與試算卡上的數字（起步價、每公里、每板、最多、重貨門檻、NT$7,750 的算式）與常見問題裡的取消費、時限，
+  由 truck-uber `check-public-terms` 對線上設定；改寫句子時要同步改那支的錨點。
+
+## 搜尋引擎（robots.txt、sitemap.xml、canonical、結構化資料）
+
+- `robots.txt`：全部允許，指到 `sitemap.xml`。
+- `sitemap.xml`：手寫，列要被搜尋到的頁面（首頁、本公司條款與隱私權政策、Palvoo 首頁與各政策、預先登記）；
+  不列 /palvoo/3d/（轉址頁）與 /palvoo/delete-account/。新增對外頁面時一起加。
+- canonical：每一頁指向自己的完整網址（結尾斜線跟實際網址一樣）。/palvoo/privacy/ 由 truck-uber 的產生器產生、
+  外框取自 /palvoo/delete-account/，這兩頁的 canonical 要在產生器那邊處理（不要把 delete-account 的 canonical 帶進 privacy）。
+- 結構化資料（JSON-LD）：首頁 `/` 是 Organization（`@id` https://vstrel.com/#organization）、/palvoo/ 是 Service（provider 用同一個 `@id`）。
+  只放頁面上看得到的資料；不放地址、不放電話（首頁沒有電話）。FAQ 結構化資料不做（Google 2023-08 起只給政府、醫療網站）。
 
 ## 404 頁（/404.html）
 
