@@ -37,6 +37,7 @@ VSTREL 公司首頁 — 單一靜態 HTML，部署於 GitHub Pages (vstrel.com)�
 - **原始碼在 `_src/palvoo-3d/`**（底線開頭的資料夾 GitHub Pages 不會送出）：`page.html` 是版面、`scene.js` 是 three.js 場景。
   改完在 repo 根目錄跑 `python3 _src/palvoo-3d/build.py`，產生 `palvoo/3d/index.html` 與 `app.js`
   （拿掉 CSS 註解、JS 壓縮，對外頁面不留註解）。標題改了字要先跑 `fonts.py`：字型子集只含標題用到的字，build.py 會檢查缺字。
+- `<head>`（`<title>`、分享預覽、結構化資料 JSON-LD）寫在 build.py 裡，不在 page.html；JSON-LD 不放地址。
 - 不從第三方載入任何東西（跟其他頁一樣）：three.js r169 放在 `palvoo/3d/lib/`（npm 原檔，MIT，授權檔在旁邊）、
   字型子集放在 `palvoo/3d/fonts/`（SIL OFL 1.1，授權在 `OFL.txt`）。沒有 WebGL 或載入失敗時，畫面停在黃昏的漸層底，文字與連結照常可用。
 - 分享預覽圖 `og.jpg` 是開場畫面的截圖（1200×630）。

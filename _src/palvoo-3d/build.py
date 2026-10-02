@@ -12,7 +12,7 @@
   - 檢查標題用到的每一個字都在字型子集裡（標題改了字，要先跑 fonts.py）
 esbuild 版本固定：npx --yes esbuild@0.24.0（需要 Node）。
 """
-import hashlib, html, pathlib, re, subprocess, sys
+import hashlib, html, json, pathlib, re, subprocess, sys
 
 HERE = pathlib.Path(__file__).resolve().parent
 SITE = HERE.parent.parent
@@ -67,12 +67,33 @@ body = body.replace('<!--@SCRIPTS-->',
 
 desc = ('Palvoo 為臺灣大型貨車與聯結車之運輸媒合平台，提供 11 噸至 35 噸級車輛之即時與預約媒合、'
         '公開之參考價及運送狀態追蹤。由維斯托有限公司（VSTREL）營運。')   # 與 /palvoo/ 相同
+
+# 結構化資料（JSON-LD）：服務名稱、營運公司與服務範圍。不放地址。
+ld = json.dumps({
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': 'https://vstrel.com/palvoo/#service',
+    'name': 'Palvoo',
+    'serviceType': '大型貨車與聯結車運輸媒合平台',
+    'description': desc,
+    'url': 'https://vstrel.com/palvoo/',
+    'areaServed': {'@type': 'Country', 'name': '臺灣'},
+    'provider': {
+        '@type': 'Organization',
+        '@id': 'https://vstrel.com/#organization',
+        'name': 'VSTREL',
+        'legalName': '維斯托有限公司',
+        'alternateName': ['維斯托', 'VSTREL Co., Ltd.'],
+        'taxID': '62050829',
+        'url': 'https://vstrel.com/',
+    },
+}, ensure_ascii=False, separators=(',', ':'))
 head = f'''<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Palvoo — 貨有所託，車有所行</title>
+<title>Palvoo｜大貨車、聯結車媒合平台 — 貨有所託，車有所行</title>
 <meta name="description" content="{desc}">
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" href="/favicon.ico" sizes="any">
@@ -88,6 +109,7 @@ head = f'''<!DOCTYPE html>
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="zh_TW">
 <meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{ld}</script>
 <link rel="preload" href="fonts/serif-900.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="modulepreload" href="./{THREE}">
 '''
