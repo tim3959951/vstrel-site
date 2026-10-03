@@ -44,8 +44,8 @@ def head(*, viewport, theme_color, og_image, extra=''):
 <title>Palvoo｜大貨車、聯結車媒合平台 — 貨有所託，車有所行</title>
 <meta name="description" content="{DESC}">
 <link rel="canonical" href="https://vstrel.com/palvoo/">
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" href="/palvoo/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/palvoo/apple-touch-icon.png">
 <meta name="theme-color" content="{theme_color}">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Palvoo">

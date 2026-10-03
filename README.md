@@ -8,6 +8,11 @@ VSTREL 公司首頁 — 單一靜態 HTML，部署於 GitHub Pages (vstrel.com)�
 - 條款類頁面（貨主條款、承運人條款、費用政策、取消與退款政策）改字就升版本號，並更新「最後更新／生效日」。
 - **HTML 與 JS 註解一樣看得到**（瀏覽器「檢視原始碼」）。設計脈絡寫在這份 README 或 truck-uber 的 docs/，不寫在頁面裡。
 - 頁面上的數字與關鍵句由 truck-uber 的 `scripts/check-public-terms.mjs` 逐條對線上設定；改寫句子時要同步改那支的錨點。
+- **分頁圖示**：/palvoo/ 底下每一頁用 Palvoo 的 P（`/palvoo/favicon.ico`、`/palvoo/apple-touch-icon.png`），
+  其他頁用 VSTREL 的（根目錄的 `/favicon.ico`）。新增 Palvoo 頁面時照抄這兩行；首頁兩個版本在 `_src/palvoo-3d/common.py`，
+  隱私權政策頁照刪除帳號頁的外框產生。兩個檔是從 truck-uber 的 `apps/customer/assets/icon.png` 縮出來的
+  （分頁圖示裁掉四周留白、16／32／48 三種大小；apple-touch-icon 整張縮成 180）。App 圖示換了，這兩個要跟著重做。
+  Google 搜尋結果旁的小圖示是一個網域一個（看 vstrel.com 首頁），那一個仍是 VSTREL。
 
 ## 預先登記表單（/palvoo/waitlist/）
 
