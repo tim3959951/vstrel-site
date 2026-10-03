@@ -15,6 +15,9 @@ VSTREL 公司首頁 — 單一靜態 HTML，部署於 GitHub Pages (vstrel.com)�
   所以由 Edge Function 以 service_role 呼叫 `waitlist_join()`。頁面本身不含任何金鑰。
 - 貨主只問四件事且都必填（主要出貨縣市、主要送達縣市、每月趟次、常用車型）：這份名單是正式開放前的統計，
   看各地缺的是貨主還是承運人、缺哪一種車。公司名稱與統編在註冊 App 時才填。
+- 承運人兩件必填（主要接單縣市、車型級距；Tim 2026-10-03），設備四題選填。
+- 必填**伺服器也擋**（truck-uber 0247，規則 B19）：網頁的必填只是先講，`waitlist_join` 缺哪一格就回「請選擇…」（Edge Function 原樣回 400，網頁照字顯示）。
+  兩邊要一起改：網頁比伺服器嚴沒關係，反過來網頁會讓人送出伺服器擋掉的東西 —— 改必填時官網先上、再推 truck-uber。
 - 選項的 `value`（agency／regular／own／adhoc、11t…35t）是送到伺服器的值，改畫面文字時不要動。
 
 ## Palvoo 隱私權政策（/palvoo/privacy/）
