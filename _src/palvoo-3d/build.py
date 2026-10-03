@@ -3,7 +3,7 @@
 
     python3 _src/palvoo-3d/build.py          # 在 repo 根目錄跑
 
-輸入：_src/palvoo-3d/page.html（版面）、scene.js（3D 場景）
+輸入：_src/palvoo-3d/page.html（版面）、scene.js（3D 場景）、common.py（<head> 與客服資訊，純文字版共用）
 輸出：palvoo/index.html、palvoo/app.js
 另外兩樣是先放好、build 不動的：palvoo/fonts/（fonts.py 產生）、palvoo/lib/（three.js r169，npm 原檔與授權）。
 舊網址 /palvoo/3d/ 是一頁手寫的轉址頁（palvoo/3d/index.html），build 不動它。
@@ -13,7 +13,9 @@
   - 檢查標題用到的每一個字都在字型子集裡（標題改了字，要先跑 fonts.py）
 esbuild 版本固定：npx --yes esbuild@0.24.0（需要 Node）。
 """
-import hashlib, html, json, pathlib, re, subprocess, sys
+import hashlib, html, pathlib, re, subprocess, sys
+
+from common import CONTACT, head as page_head   # <head> 與客服資訊：跟純文字版（_src/palvoo-2d）共用
 
 HERE = pathlib.Path(__file__).resolve().parent
 SITE = HERE.parent.parent
@@ -60,60 +62,14 @@ body = re.sub(r'<style>(.*?)</style>',
               lambda m: '<style>' + re.sub(r'\n\s*\n+', '\n', re.sub(r'/\*.*?\*/', '', m.group(1), flags=re.S)) + '</style>',
               body, count=1, flags=re.S)
 body = body.replace('<!--@LABEL-->\n', '')
-body = body.replace('<!--@CONTACT-->',
-                    '<p>客服電話：<a href="tel:+886913534909">0913-534-909</a>　客服信箱：<a href="mailto:service@vstrel.com">service@vstrel.com</a>　客服時間：平日 09:00–18:00</p>')
+body = body.replace('<!--@CONTACT-->', CONTACT)
 body = body.replace('<!--@SCRIPTS-->',
                     '<script type="importmap">{"imports":{"three":"./' + THREE + '"}}</script>\n'
                     f'<script type="module" src="./app.js?v={ver}"></script>')
 
-desc = ('Palvoo 為臺灣大型貨車與聯結車之運輸媒合平台，提供 11 噸至 35 噸級車輛之即時與預約媒合、'
-        '公開之參考價及運送狀態追蹤。由維斯托有限公司（VSTREL）營運。')   # 與 /palvoo/ 相同
-
-# 結構化資料（JSON-LD）：服務名稱、營運公司與服務範圍。不放地址。
-ld = json.dumps({
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    '@id': 'https://vstrel.com/palvoo/#service',
-    'name': 'Palvoo',
-    'serviceType': '大型貨車與聯結車運輸媒合平台',
-    'description': desc,
-    'url': 'https://vstrel.com/palvoo/',
-    'areaServed': {'@type': 'Country', 'name': '臺灣'},
-    'provider': {
-        '@type': 'Organization',
-        '@id': 'https://vstrel.com/#organization',
-        'name': 'VSTREL',
-        'legalName': '維斯托有限公司',
-        'alternateName': ['維斯托', 'VSTREL Co., Ltd.'],
-        'taxID': '62050829',
-        'url': 'https://vstrel.com/',
-    },
-}, ensure_ascii=False, separators=(',', ':'))
-head = f'''<!DOCTYPE html>
-<html lang="zh-Hant">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Palvoo｜大貨車、聯結車媒合平台 — 貨有所託，車有所行</title>
-<meta name="description" content="{desc}">
-<link rel="canonical" href="https://vstrel.com/palvoo/">
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="theme-color" content="#0B0F16">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Palvoo">
-<meta property="og:url" content="https://vstrel.com/palvoo/">
-<meta property="og:title" content="Palvoo — 貨有所託，車有所行">
-<meta property="og:description" content="{desc}">
-<meta property="og:image" content="https://vstrel.com/palvoo/og.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:locale" content="zh_TW">
-<meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{ld}</script>
-<link rel="preload" href="fonts/serif-900.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="modulepreload" href="./{THREE}">
-'''
+head = page_head(viewport='width=device-width, initial-scale=1, viewport-fit=cover', theme_color='#0B0F16', og_image='og.jpg',
+                 extra='<link rel="preload" href="fonts/serif-900.woff2" as="font" type="font/woff2" crossorigin>\n'
+                       f'<link rel="modulepreload" href="./{THREE}">\n')
 out = head + body.replace('<style>', '<style>\n', 1).replace('</style>\n', '</style>\n</head>\n<body>\n', 1) + '</body>\n</html>\n'
 
 # 對外頁面不留註解（CSS 已經拿掉；HTML 一個都不能有）

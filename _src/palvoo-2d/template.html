@@ -1,0 +1,150 @@
+<style>
+/* /palvoo/ 純文字版的版面，跟 Palvoo 其他頁（費用政策、條款……）同一套樣式（舊版 /palvoo/ 也是這一套）。
+   內文的 class（.sec、.feat、.faq、.hud-* …）沿用 3D 版 page.html 的，這裡把它們排成單欄。
+   註解只留在 _src（網站不會送出），build.py 會拿掉。 */
+:root{color-scheme:dark;--bg:#0B0D12;--card:#12151c;--ink:#e9ecf2;--ink2:#a9b0bd;--ink3:#767d8b;
+--line:rgba(255,255,255,.10);--line2:rgba(255,255,255,.06);--o:#FF6A13}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang TC','Noto Sans TC','Microsoft JhengHei',Helvetica,Arial,sans-serif;
+line-height:1.75;-webkit-font-smoothing:antialiased;font-size:16px}
+a{color:#ffb07a;text-decoration:none}
+a:hover{text-decoration:underline}
+:focus-visible{outline:2px solid #ffb07a;outline-offset:3px;border-radius:4px}
+.wrap{max-width:820px;margin:0 auto;padding-left:22px;padding-right:22px}
+
+/* 上方選單：跟其他 Palvoo 頁一模一樣 */
+header.top{border-bottom:1px solid var(--line2);position:sticky;top:0;z-index:20;
+background:rgba(11,13,18,.88);backdrop-filter:saturate(140%) blur(8px);-webkit-backdrop-filter:saturate(140%) blur(8px)}
+.topin{max-width:820px;margin:0 auto;padding:14px 22px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;color:#fff}
+.brand:hover{text-decoration:none}
+.brand svg{width:26px;height:26px;display:block}
+.navsp{flex:1 1 auto;min-width:8px}
+nav.top a{font-size:14px;color:var(--ink2);white-space:nowrap}
+nav.top a+a{margin-left:16px}
+
+h1{font-size:clamp(27px,5.4vw,38px);line-height:1.25;letter-spacing:-.015em;margin:0 0 14px;font-weight:700;text-wrap:balance}
+h2{font-size:clamp(19px,3.4vw,23px);line-height:1.4;margin:0;font-weight:700;text-wrap:balance}
+h3{font-size:17px;line-height:1.5;margin:0 0 8px;font-weight:650;color:#fff}
+p{margin:0 0 15px;color:var(--ink2)}
+strong,b{color:var(--ink);font-weight:650}
+
+/* 開場 */
+main{padding-block:44px 0}
+.pill{display:inline-block;font-size:12.5px;color:var(--o);border:1px solid rgba(255,106,19,.35);
+border-radius:999px;padding:3px 11px;margin:0 0 16px}
+.rule{width:64px;height:4px;border-radius:2px;background:var(--o);margin:0 0 26px}
+.lead{font-size:18px;color:var(--ink2);margin-bottom:26px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 14px}
+.btn{display:inline-block;background:var(--o);color:#fff;font-weight:650;font-size:15.5px;
+padding:12px 26px;border-radius:9px}
+.btn:hover{text-decoration:none;opacity:.92}
+.btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.hero .fine{font-size:14px;color:var(--ink3)}
+
+/* 每一段：上方一條細線、標題、內容 */
+.sec{padding-top:44px;scroll-margin-top:64px}
+@media (max-width:760px){.sec{scroll-margin-top:136px}}
+.sec .wrap::before{content:"";display:block;border-top:1px solid var(--line2);margin-bottom:26px}
+.sec-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 16px;margin:0 0 16px}
+.sec-head p{margin:0;font-size:13.5px;color:var(--ink3)}
+.col-title{font-size:18px;font-weight:700;color:#fff;margin:30px 0 12px}
+
+/* 運送流程（3D 版的五個章節） */
+.flow{list-style:none;margin:0 0 20px;padding:0}
+.flow li{display:grid;grid-template-columns:44px 1fr;gap:0 12px;padding:16px 0;border-top:1px solid var(--line2);margin:0}
+.flow li:first-child{border-top:0;padding-top:4px}
+.flow .n{font-size:22px;font-weight:700;color:var(--o);line-height:1.45;font-variant-numeric:tabular-nums}
+.flow .k{margin:0;font-size:12.5px;font-weight:700;letter-spacing:.2em;color:var(--o)}
+.flow h3{margin:2px 0 6px}
+.flow p{margin:0 0 6px}
+.flow .fine{font-size:13.5px;color:var(--ink3)}
+.note{border-left:3px solid var(--o);background:rgba(255,106,19,.07);
+border-radius:0 10px 10px 0;padding:14px 18px;margin:0}
+.note p:last-child{margin-bottom:0}
+
+/* 服務說明：貨主、承運人兩組卡片（每組兩欄；單數的最後一張占整列） */
+.intro{margin:0 0 4px}
+.feat{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.feat li{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin:0}
+.feat li:last-child:nth-child(odd){grid-column:1/-1}
+.feat .n{display:none}
+.feat p{margin:0;font-size:15px}
+@media (max-width:680px){.feat{grid-template-columns:1fr}}
+
+/* 車型與基本費率 */
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:12px;margin:0 0 16px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:14.5px}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line2);white-space:nowrap;vertical-align:top}
+thead th{color:var(--ink3);font-weight:600;font-size:12.5px;letter-spacing:.02em;background:var(--card)}
+tbody tr:last-child td{border-bottom:0}
+td{color:var(--ink2)}
+td.num{color:var(--ink);font-variant-numeric:tabular-nums}
+td.cls{color:var(--ink);font-weight:650}
+td.cls small{display:block;font-weight:400;font-size:12px;color:var(--ink3)}
+.formula{font-size:15px}
+.quote{display:inline-block;min-width:min(300px,100%);background:var(--card);border:1px solid var(--line);border-radius:12px;
+padding:14px 18px;margin:0 0 6px;font-size:14px;line-height:1.6}
+.hud-k{font-size:12px;font-weight:700;letter-spacing:.18em;color:var(--o);margin-bottom:6px}
+.hud-row{display:flex;justify-content:space-between;gap:18px;color:var(--ink2)}
+.hud-row b{font-variant-numeric:tabular-nums}
+.hud-total{display:flex;justify-content:space-between;align-items:baseline;gap:18px;margin-top:8px;padding-top:8px;border-top:1px solid var(--line);color:var(--ink2)}
+.hud-total b{font-size:22px;color:var(--o);font-weight:700;font-variant-numeric:tabular-nums}
+.hud-f{font-size:13px;color:var(--ink3);font-variant-numeric:tabular-nums}
+.fees p{font-size:15px}
+.scope{margin:0;display:grid;grid-template-columns:auto 1fr;gap:8px 18px;font-size:15px}
+.scope dt{color:var(--ink3);font-weight:600;white-space:nowrap}
+.scope dd{margin:0;color:var(--ink2)}
+@media (max-width:520px){.scope{grid-template-columns:1fr;gap:2px}.scope dd{margin-bottom:10px}}
+
+/* 常見問題：全部展開（跟舊版一樣，一題一個小標） */
+.qa{margin:0 0 22px}
+.qa h3{margin-bottom:6px}
+.qa p{margin:0 0 10px}
+
+/* 頁尾 */
+.foot{border-top:1px solid var(--line2);margin-top:60px}
+.foot .wrap{padding-block:28px 46px}
+.foot p{color:var(--ink3);margin:0 0 7px;font-size:13.5px}
+.foot b{color:var(--ink2)}
+.foot a{color:var(--ink3);text-decoration:underline}
+.foot-links{display:flex;flex-wrap:wrap;gap:4px 16px;margin-top:12px!important}
+</style>
+</head>
+<body>
+<header class="top"><div class="topin">
+  <a class="brand" href="/palvoo/"><svg viewBox="0 0 512 512" aria-hidden="true"><g transform="skewX(-11) translate(34,0)"><path d="M118 96 H314 A88 88 0 0 1 314 272 H196 V416 H118 Z M196 140 H314 A44 44 0 0 1 314 228 H196 Z" fill="#fff" fill-rule="evenodd"/></g><rect x="24" y="150" width="70" height="20" rx="10" fill="#fff" opacity=".85"/><rect x="4" y="204" width="90" height="20" rx="10" fill="#fff" opacity=".5"/><rect x="34" y="258" width="60" height="20" rx="10" fill="#fff" opacity=".3"/></svg>Palvoo</a>
+  <span class="navsp"></span>
+  <nav class="top"><a href="/palvoo/">服務說明</a><a href="/palvoo/waitlist/">預先登記</a><a href="/palvoo/pricing/">費用</a><a href="/palvoo/terms/">貨主條款</a><a href="/palvoo/carrier/">承運人條款</a><a href="/palvoo/refund/">取消與退款</a></nav>
+</div></header>
+
+<main id="top">
+<div class="wrap hero">
+<span class="pill"><!--@EYEBROW--></span>
+<h1><!--@H1--></h1>
+<div class="rule"></div>
+<!--@LEAD-->
+<!--@ACTIONS-->
+<p class="fine"><!--@SIGNUP--></p>
+</div>
+
+<section class="sec" id="flow" aria-labelledby="flow-title"><div class="wrap">
+<div class="sec-head"><h2 id="flow-title">運送流程</h2></div>
+<ol class="flow">
+<!--@STEPS-->
+</ol>
+<!--@NOTE-->
+</div></section>
+
+<!--@SERVICES-->
+
+<!--@RATES-->
+
+<!--@FAQ-->
+</main>
+
+<!--@FOOT-->
+</body>
+</html>
