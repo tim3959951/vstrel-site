@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vstrel Uploader — VSTREL</title>
+<meta name="description" content="Vstrel Uploader is VSTREL's internal tool for publishing our own short videos to our own YouTube channel, Instagram account and Facebook Page.">
+<meta name="robots" content="index,follow">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#050b18">
+  <link rel="canonical" href="https://vstrel.com/uploader/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="VSTREL">
+  <meta property="og:url" content="https://vstrel.com/uploader/">
+  <meta property="og:title" content="Vstrel Uploader — VSTREL">
+  <meta property="og:description" content="VSTREL's internal tool for publishing our own videos to our own YouTube channel, Instagram and Facebook Page.">
+  <meta property="og:image" content="https://vstrel.com/og-v2.png">
+<style>
+  :root{--bg:#050b18;--ink:#e8eefb;--ink-2:#a9b8d4;--ink-3:#64748b;--line:rgba(120,170,230,.14);--accent:#38bdf8}
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);line-height:1.8;font-size:16px;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang TC","Noto Sans TC","Microsoft JhengHei",Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:760px;margin:0 auto;padding-left:22px;padding-right:22px;padding-block:26px 60px}
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-bottom:22px;border-bottom:1px solid var(--line);margin-bottom:34px}
+  .home{color:var(--ink-2);text-decoration:none;font-size:14px;letter-spacing:.14em;font-weight:700}
+  .home:hover{color:var(--ink)}
+  .lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;flex:none}
+  .lang button{appearance:none;background:transparent;border:0;color:var(--ink-2);font:inherit;font-size:12.5px;padding:6px 13px;cursor:pointer}
+  .lang button[aria-pressed="true"]{background:rgba(56,189,248,.16);color:#bae6fd}
+  h1{font-size:clamp(24px,5.4vw,32px);line-height:1.3;margin:0 0 6px;letter-spacing:-.01em}
+  .updated{color:var(--ink-3);font-size:13.5px;margin:0 0 34px}
+  h2{font-size:17px;margin:36px 0 10px;color:#bae6fd;font-weight:650;line-height:1.5}
+  p,li{color:var(--ink-2);font-size:15.3px;margin:0 0 12px}
+  ul,ol{padding-left:22px;margin:0 0 12px}
+  li{margin-bottom:7px}
+  strong{color:var(--ink);font-weight:650}
+  a{color:#7dd3fc}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13.5px;color:#bae6fd;background:rgba(255,255,255,.05);padding:1px 6px;border-radius:6px}
+  .policies{display:flex;flex-wrap:wrap;gap:10px;margin:6px 0 12px;padding:0;list-style:none}
+  .policies li{margin:0}
+  .policies a{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:7px 15px;text-decoration:none;font-size:14.5px;background:rgba(255,255,255,.025)}
+  .policies a:hover{background:rgba(56,189,248,.12)}
+  footer{margin-top:54px;padding-top:24px;border-top:1px solid var(--line);color:var(--ink-3);font-size:13px}
+  footer a{color:var(--ink-3);text-decoration:none}
+  footer a:hover{color:var(--ink-2)}
+  #zh{display:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="bar">
+    <a class="home" href="/">← VSTREL</a>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="zh" aria-pressed="false">中文</button>
+    </div>
+  </div>
+
+  <!-- ================= English ================= -->
+  <div id="en">
+    <h1>Vstrel Uploader</h1>
+    <p class="updated">An internal publishing tool operated by VSTREL</p>
+
+    <ul class="policies">
+      <li><a href="/uploader/privacy/">Privacy Policy</a></li>
+      <li><a href="/uploader/terms/">Terms of Use</a></li>
+    </ul>
+
+    <p>Vstrel Uploader is the tool VSTREL uses to publish its own short videos — the Traditional Chinese AI-explainer series <strong>Vstrel</strong> — to VSTREL's own accounts on a fixed schedule:</p>
+    <ul>
+      <li>YouTube: <a href="https://www.youtube.com/@VSTREL-AI">@VSTREL-AI</a></li>
+      <li>Instagram: <a href="https://www.instagram.com/vstrel.ai/">@vstrel.ai</a></li>
+      <li>Facebook Page: <a href="https://www.facebook.com/1265853586621111">Vstrel</a></li>
+    </ul>
+
+    <h2>Who uses it</h2>
+    <p>Only VSTREL. The tool runs on a computer owned by VSTREL and is not offered to the public: there is no sign-up, there are no other users, and no third party has access. The only Google account that authorizes it is the account that manages VSTREL's own YouTube channel.</p>
+
+    <h2>How it uses YouTube API Services</h2>
+    <p>Vstrel Uploader uses YouTube API Services (YouTube Data API v3). After the channel owner signs in with Google (OAuth 2.0), the tool:</p>
+    <ul>
+      <li><strong>Uploads our videos</strong> (<code>videos.insert</code>) with the title, description and publish time we prepare — published right away, or uploaded as private with a scheduled publish time.</li>
+      <li><strong>Confirms the connected channel</strong> (<code>channels.list</code>, <code>mine=true</code>), so videos can only go to VSTREL's channel.</li>
+      <li><strong>Reads details of our own videos</strong> (<code>videos.list</code>) — title, description and category — so the same text can be reused when we post the video on our other accounts.</li>
+    </ul>
+    <p>It does not read, collect or store anything about viewers, subscribers, commenters or other channels, and it does not display YouTube content to anyone.</p>
+
+    <h2>Related policies</h2>
+    <ul>
+      <li><a href="/uploader/privacy/">Vstrel Uploader Privacy Policy</a></li>
+      <li><a href="/uploader/terms/">Vstrel Uploader Terms of Use</a></li>
+      <li><a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a></li>
+      <li><a href="https://www.google.com/policies/privacy">Google Privacy Policy</a></li>
+    </ul>
+
+    <h2>Contact</h2>
+    <p><a href="mailto:service@vstrel.com">service@vstrel.com</a></p>
+  </div>
+
+  <!-- ================= 中文 ================= -->
+  <div id="zh">
+    <h1>Vstrel Uploader</h1>
+    <p class="updated">VSTREL 內部使用的影片發布工具</p>
+
+    <ul class="policies">
+      <li><a href="/uploader/privacy/">隱私權政策</a></li>
+      <li><a href="/uploader/terms/">使用條款</a></li>
+    </ul>
+
+    <p>Vstrel Uploader 是 VSTREL 用來把自家短影音（繁體中文 AI 科普系列 <strong>Vstrel</strong>）依排程發布到 VSTREL 自己帳號的工具：</p>
+    <ul>
+      <li>YouTube：<a href="https://www.youtube.com/@VSTREL-AI">@VSTREL-AI</a></li>
+      <li>Instagram：<a href="https://www.instagram.com/vstrel.ai/">@vstrel.ai</a></li>
+      <li>Facebook 粉絲專頁：<a href="https://www.facebook.com/1265853586621111">Vstrel</a></li>
+    </ul>
+
+    <h2>誰會使用</h2>
+    <p>只有 VSTREL。這個工具在 VSTREL 自己的電腦上執行，不對外開放：沒有註冊、沒有其他使用者，也不提供第三方存取。唯一授權它的 Google 帳號，就是管理 VSTREL 自家 YouTube 頻道的帳號。</p>
+
+    <h2>如何使用 YouTube API 服務</h2>
+    <p>Vstrel Uploader 使用 YouTube API 服務（YouTube Data API v3）。頻道擁有者以 Google 帳號登入授權（OAuth 2.0）後，工具會：</p>
+    <ul>
+      <li><strong>上傳我們的影片</strong>（<code>videos.insert</code>），附上我們準備好的標題、說明與發布時間，可以立即發布，或先設為私人並排程公開。</li>
+      <li><strong>確認連結的頻道</strong>（<code>channels.list</code>、<code>mine=true</code>），確保影片只會上傳到 VSTREL 的頻道。</li>
+      <li><strong>讀取我們自己影片的資料</strong>（<code>videos.list</code>）：標題、說明與分類，方便同一支影片發到我們其他帳號時沿用相同文字。</li>
+    </ul>
+    <p>本工具不讀取、不蒐集、也不儲存任何觀眾、訂閱者、留言者或其他頻道的資料，也不會向任何人顯示 YouTube 內容。</p>
+
+    <h2>相關政策</h2>
+    <ul>
+      <li><a href="/uploader/privacy/">Vstrel Uploader 隱私權政策</a></li>
+      <li><a href="/uploader/terms/">Vstrel Uploader 使用條款</a></li>
+      <li><a href="https://www.youtube.com/t/terms">YouTube 服務條款</a></li>
+      <li><a href="https://www.google.com/policies/privacy">Google 隱私權政策</a></li>
+    </ul>
+
+    <h2>聯絡我們</h2>
+    <p><a href="mailto:service@vstrel.com">service@vstrel.com</a></p>
+  </div>
+
+  <footer>
+    <span>© <span class="yr">2026</span> VSTREL · 維斯托</span> ·
+    <a href="/uploader/privacy/">Privacy 隱私權</a> ·
+    <a href="/uploader/terms/">Terms 條款</a>
+  </footer>
+
+</div>
+
+<script>
+  var y = new Date().getFullYear();
+  var yrs = document.querySelectorAll('.yr');
+  for (var i = 0; i < yrs.length; i++) yrs[i].textContent = y;
+
+  var btns = document.querySelectorAll('.lang button');
+  function setLang(lang){
+    document.getElementById('en').style.display = (lang === 'en') ? 'block' : 'none';
+    document.getElementById('zh').style.display = (lang === 'zh') ? 'block' : 'none';
+    document.documentElement.lang = (lang === 'zh') ? 'zh-Hant' : 'en';
+    for (var j = 0; j < btns.length; j++){
+      btns[j].setAttribute('aria-pressed', btns[j].getAttribute('data-lang') === lang ? 'true' : 'false');
+    }
+    try { localStorage.setItem('vstrel-lang', lang); } catch(e){}
+  }
+  for (var k = 0; k < btns.length; k++){
+    btns[k].addEventListener('click', function(){ setLang(this.getAttribute('data-lang')); });
+  }
+  var saved = null;
+  try { saved = localStorage.getItem('vstrel-lang'); } catch(e){}
+  if (saved === 'zh') setLang('zh');
+</script>
+</body>
+</html>
