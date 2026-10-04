@@ -50,6 +50,14 @@
   footer a{color:var(--ink-3);text-decoration:none}
   footer a:hover{color:var(--ink-2)}
   #zh{display:none}
+  @media print{
+    :root{--bg:#fff;--ink:#111827;--ink-2:#1f2937;--ink-3:#4b5563;--line:#d1d5db}
+    body{background:#fff}
+    h2,a,code{color:#0b4f8a}
+    code{background:#f3f4f6}
+    .lang{display:none}
+    .policies a{background:#fff}
+  }
 </style>
 </head>
 <body>
