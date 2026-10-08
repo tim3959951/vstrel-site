@@ -48,6 +48,7 @@ VSTREL 公司首頁 — 單一靜態 HTML，部署於 GitHub Pages (vstrel.com)�
   改完在 repo 根目錄跑 `python3 _src/palvoo-3d/build.py`，產生 `palvoo/index.html` 與 `palvoo/app.js`
   （拿掉 CSS 註解、JS 壓縮，對外頁面不留註解）。標題改了字要先跑 `fonts.py`：字型子集只含標題用到的字，build.py 會檢查缺字。
 - `<head>`（`<title>`、canonical、分享預覽、結構化資料 JSON-LD）與頁尾的客服資訊寫在 `_src/palvoo-3d/common.py`，不在 page.html；JSON-LD 不放地址。
+  社群帳號（頁尾「追蹤 Palvoo」那一行與 JSON-LD 的 `sameAs`）也在 common.py 的 `SOCIAL`；其他 Palvoo 頁（條款、費用政策、刪除帳號……）的頁尾是手寫的，換帳號時那幾頁要一起改。
   純文字版（下一節）也用這一份，兩個版本的標題、說明、分享預覽才不會一邊改了一邊沒改。
 - 不從第三方載入任何東西（跟其他頁一樣）：three.js r169 放在 `palvoo/lib/`（npm 原檔，MIT，授權檔在旁邊）、
   字型子集放在 `palvoo/fonts/`（SIL OFL 1.1，授權在 `OFL.txt`）。沒有 WebGL 或載入失敗時，畫面停在黃昏的漸層底，文字與連結照常可用。

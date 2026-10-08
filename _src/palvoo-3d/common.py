@@ -12,6 +12,18 @@ DESC = ('Palvoo 為臺灣大型貨車與聯結車之運輸媒合平台，提供 
 CONTACT = ('<p>客服電話：<a href="tel:+886913534909">0913-534-909</a>　'
            '客服信箱：<a href="mailto:service@vstrel.com">service@vstrel.com</a>　客服時間：平日 09:00–18:00</p>')
 
+# Palvoo 的社群帳號：頁尾「追蹤 Palvoo」那一行與 JSON-LD 的 sameAs 都從這裡來（兩個版本、兩處同一份）。
+# 其他 Palvoo 頁（條款、費用政策……）的頁尾是手寫的，改這裡要一起改那幾頁（README）。
+SOCIAL = (
+    ('Facebook', 'https://www.facebook.com/palvoo.tw'),
+    ('Instagram', 'https://www.instagram.com/palvoo/'),
+    ('YouTube', 'https://www.youtube.com/@palvoo_tw'),
+    ('TikTok', 'https://www.tiktok.com/@palvoo_tw'),
+)
+CONTACT += ('<p>追蹤 Palvoo：'
+            + '　'.join(f'<a href="{url}" target="_blank" rel="noopener">{name}</a>' for name, url in SOCIAL)
+            + '</p>')
+
 # 結構化資料（JSON-LD）：服務名稱、營運公司與服務範圍。不放地址。
 LD = json.dumps({
     '@context': 'https://schema.org',
@@ -22,6 +34,7 @@ LD = json.dumps({
     'description': DESC,
     'url': 'https://vstrel.com/palvoo/',
     'areaServed': {'@type': 'Country', 'name': '臺灣'},
+    'sameAs': [url for _, url in SOCIAL],
     'provider': {
         '@type': 'Organization',
         '@id': 'https://vstrel.com/#organization',
