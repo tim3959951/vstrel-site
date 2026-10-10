@@ -25,6 +25,19 @@ VSTREL 公司首頁 — 單一靜態 HTML，部署於 GitHub Pages (vstrel.com)�
   兩邊要一起改：網頁比伺服器嚴沒關係，反過來網頁會讓人送出伺服器擋掉的東西 —— 改必填時官網先上、再推 truck-uber。
 - 選項的 `value`（agency／regular／own／adhoc、11t…35t）是送到伺服器的值，改畫面文字時不要動。
 
+## 從哪來（/palvoo/attr.js；truck-uber 0269，lane2-inbox L2-R17）
+
+- 廣告、KOL、推薦連結在網址後面帶參數：`utm_source`、`utm_medium`、`utm_campaign`、`utm_content`（廣告）、`ref`（KOL 或推薦連結的代碼）。
+  例：`https://vstrel.com/palvoo/waitlist/?utm_source=meta&utm_campaign=1015_phone`、`https://vstrel.com/palvoo/?ref=NICK2026`。
+- `attr.js` 第一次看到就記在瀏覽器（localStorage，30 天），晚點回來登記也帶得到；**30 天內再從別的連結進來，照第一次那個**。
+  只收英數與 `. _ -`、最多 64 字（utm 轉小寫、ref 轉大寫），其他的當作沒帶 —— 跟 truck-uber 的 `clean_attr`（資料庫）、
+  `packages/shared/src/attributionRules.ts`（App）同一套，改一邊要三邊一起改。記不住（無痕模式）時只看這一次的網址。
+- 載入它的頁面：預先登記頁（送出時把 `window.palvooAttr()` 併進表單）、/palvoo/ 首頁（`_src/palvoo-3d/common.py` 的 `<head>`，
+  廣告多半連到首頁、再按「預先登記」）。運費說明頁（`/palvoo/guide/`）還沒有；要的話在 `<head>` 加同一行 `<script src="/palvoo/attr.js" defer></script>`。
+- 伺服器那一端：Edge Function `waitlist-join` 的白名單收這五格，`waitlist_join()` 洗過才存；同一個人再登記一次**不覆蓋**第一次的來源。
+  後台「成長 → 從哪來」看各來源的預先登記、註冊、通過審核、完成第一單人數。
+- 這個檔案沒有任何註解（頁面原始碼人人看得到）；說明寫在這裡。
+
 ## Palvoo 隱私權政策（/palvoo/privacy/）
 
 - 這一頁是 **Palvoo App 內《隱私權政策》的全文**，兩個商店（Google Play、App Store）的「隱私權政策網址」填這一頁：

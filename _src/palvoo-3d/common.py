@@ -71,4 +71,5 @@ def head(*, viewport, theme_color, og_image, extra=''):
 <meta property="og:locale" content="zh_TW">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">{LD}</script>
+<script src="/palvoo/attr.js" defer></script>
 {extra}'''
