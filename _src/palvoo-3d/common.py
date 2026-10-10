@@ -54,7 +54,7 @@ def head(*, viewport, theme_color, og_image, extra=''):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="{viewport}">
-<title>Palvoo｜大貨車、聯結車媒合平台 — 貨有所託，車有所行</title>
+<title>Palvoo｜大貨車叫車、聯結車媒合平台 — 貨有所託，車有所行</title>
 <meta name="description" content="{DESC}">
 <link rel="canonical" href="https://vstrel.com/palvoo/">
 <link rel="icon" href="/palvoo/favicon.ico" sizes="any">
