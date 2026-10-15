@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="light">
 <title>ShopSitter｜LINE AI 店員，你不在的時候幫你顧店</title>
-<meta name="description" content="ShopSitter 是你的 LINE AI 店員：客人在你的 LINE 官方帳號問價錢、問時間、要預約，它 24 小時馬上回，還會幫你收預約和訂單，每一筆都等你按「確認」。由維斯托有限公司（VSTREL）營運。">
+<meta name="description" content="ShopSitter 是你的 LINE AI 店員：客人在你的 LINE 官方帳號問價錢、問時間、要預約，它 24 小時馬上回，時間沒問題就照你的規則直接約好、不會撞期，訂單也幫你收好。由維斯托有限公司（VSTREL）營運。">
 <link rel="canonical" href="https://vstrel.com/shopsitter/">
 <link rel="icon" href="/shopsitter/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="/shopsitter/apple-touch-icon.png">
@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="ShopSitter">
 <meta property="og:url" content="https://vstrel.com/shopsitter/">
 <meta property="og:title" content="ShopSitter｜LINE AI 店員，你不在的時候幫你顧店">
-<meta property="og:description" content="客人在你的 LINE 官方帳號問價錢、問時間、要預約，ShopSitter 24 小時馬上回，還會幫你收預約和訂單。你只要按「確認」。">
+<meta property="og:description" content="客人在你的 LINE 官方帳號問價錢、問時間、要預約，ShopSitter 24 小時馬上回，時間沒問題就直接幫你約好，不會撞期。">
 <meta property="og:image" content="https://vstrel.com/shopsitter/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -22,9 +22,9 @@
 <meta property="og:locale" content="zh_TW">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="ShopSitter｜LINE AI 店員，你不在的時候幫你顧店">
-<meta name="twitter:description" content="客人在你的 LINE 官方帳號問價錢、問時間、要預約，ShopSitter 24 小時馬上回，還會幫你收預約和訂單。你只要按「確認」。">
+<meta name="twitter:description" content="客人在你的 LINE 官方帳號問價錢、問時間、要預約，ShopSitter 24 小時馬上回，時間沒問題就直接幫你約好，不會撞期。">
 <meta name="twitter:image" content="https://vstrel.com/shopsitter/og.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://vstrel.com/#organization","name":"VSTREL","legalName":"維斯托有限公司","alternateName":["維斯托","VSTREL Co., Ltd."],"url":"https://vstrel.com/","logo":"https://vstrel.com/brand/vstrel-mark-light-1024.png","email":"service@vstrel.com","taxID":"62050829"},{"@type":"SoftwareApplication","@id":"https://vstrel.com/shopsitter/#app","name":"ShopSitter","alternateName":"LINE AI 店員","description":"ShopSitter 是 LINE AI 店員：客人在店家的 LINE 官方帳號問價錢、營業時間、怎麼預約，AI 24 小時回覆，並收預約、訂位、訂單與報名；每筆預約都由店家按確認，AI 不確定的事會轉給店家。","url":"https://vstrel.com/shopsitter/","image":"https://vstrel.com/shopsitter/og.png","applicationCategory":"BusinessApplication","applicationSubCategory":"LINE 官方帳號 AI 店員","operatingSystem":"Web","inLanguage":"zh-Hant-TW","featureList":["24 小時回覆客人的問題","收預約、訂位、訂單與報名","每筆預約由店家按確認","用 LINE 對話修改營業資料","不確定的事轉給店家處理"],"publisher":{"@id":"https://vstrel.com/#organization"},"provider":{"@id":"https://vstrel.com/#organization"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://vstrel.com/#organization","name":"VSTREL","legalName":"維斯托有限公司","alternateName":["維斯托","VSTREL Co., Ltd."],"url":"https://vstrel.com/","logo":"https://vstrel.com/brand/vstrel-mark-light-1024.png","email":"service@vstrel.com","taxID":"62050829"},{"@type":"SoftwareApplication","@id":"https://vstrel.com/shopsitter/#app","name":"ShopSitter","alternateName":"LINE AI 店員","description":"ShopSitter 是 LINE AI 店員：客人在店家的 LINE 官方帳號問價錢、營業時間、怎麼預約，AI 24 小時回覆；預約、訂位與報名依店家設定的規則自動成立、不會撞期，訂單由店家確認，AI 不確定的事會轉給店家。","url":"https://vstrel.com/shopsitter/","image":"https://vstrel.com/shopsitter/og.png","applicationCategory":"BusinessApplication","applicationSubCategory":"LINE 官方帳號 AI 店員","operatingSystem":"Web","inLanguage":"zh-Hant-TW","featureList":["24 小時回覆客人的問題","預約、訂位與報名依店家規則自動成立","客人可以自己改期與取消","收訂單給店家確認","用 LINE 對話修改營業資料","不確定的事轉給店家處理"],"publisher":{"@id":"https://vstrel.com/#organization"},"provider":{"@id":"https://vstrel.com/#organization"}}]}</script>
 <script>document.documentElement.className=document.documentElement.className.replace("no-js","js");</script>
 <link rel="preload" href="/shopsitter/fonts/num-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="modulepreload" href="/palvoo/lib/three-r169.module.min.js">
@@ -173,6 +173,10 @@ a{color:inherit}
 .cardlet .after .done,.is-done .after .todo{display:none}
 .is-done .after{color:var(--green-ink)}
 .is-done .after .done{display:inline}
+.cardlet.auto{border-top-color:var(--green)}
+.cardlet.auto .k{color:var(--green-ink)}
+.cbtn.auto{background:var(--tint);color:var(--green-ink)}
+.cbtn.auto::after{display:none}
 .mini{display:flex;flex-direction:column;gap:6px;width:236px;font-size:13.5px;line-height:1.5}
 .mini .m{max-width:230px;box-shadow:0 8px 22px rgba(16,24,40,.14)}
 .mini .ai{box-shadow:0 8px 22px rgba(16,24,40,.14)}
@@ -278,6 +282,7 @@ a{color:inherit}
   .ai::before{left:8px;top:8px;width:14px;height:14px}
   .cardlet{width:206px;padding:10px 12px 12px;font-size:12.5px}
   .cardlet .big{font-size:15.5px}
+  .cardlet .k{gap:6px;font-size:12px;white-space:nowrap}
   .cbtn{height:32px;font-size:13px;margin-top:8px}
   .mini{width:204px;font-size:12.5px}
   .mini .m{max-width:196px}
@@ -333,7 +338,7 @@ html.no-js .closing,html.no-webgl .closing{padding-bottom:72px}
     <div class="hero-inner">
       <p class="eyebrow">LINE AI 店員</p>
       <h1 id="hero-title">你不在的時候<span class="pn">，</span><br>幫你顧店<span class="pn">。</span></h1>
-      <p class="lead">客人在你的 LINE 官方帳號問價錢、問時間、要預約，ShopSitter <span class="hl">24 小時馬上回</span>，還會幫你把預約和訂單收好。你只要按「確認」。</p>
+      <p class="lead">客人在你的 LINE 官方帳號問價錢、問時間、要預約，ShopSitter <span class="hl">24 小時馬上回</span>，時間沒問題就當場幫你約好，訂單也幫你收好。</p>
       <div class="actions">
         <a class="btn btn-primary" href="https://line.me/R/ti/p/%40692vyhnp" target="_blank" rel="noopener">加 LINE 好友，免費試用</a>
         <a class="btn btn-ghost" href="https://line-ai-store-agent.vstrel-ai-sales.workers.dev/start">直接做試用版</a>
@@ -365,16 +370,16 @@ html.no-js .closing,html.no-webgl .closing{padding-bottom:72px}
     <div class="card">
       <p class="ch-tag"><span class="ch-num">03</span><span class="ch-label">收預約和訂單</span></p>
       <h2 id="ch3-title"><span class="ph">預約、訂位、下單、報名，</span><span class="ph">都幫你收好</span></h2>
-      <p>客人選好時間，ShopSitter 幫你整理成一筆預約，傳到你的 LINE。時間和金額由程式算，不會重複預約。</p>
+      <p>客人選好時間，ShopSitter 照你的規則排進去，不會重複預約；訂單整理好傳到你的 LINE 給你確認。時間和金額都由程式算。</p>
     </div>
   </section>
 
   <section class="chapter" data-ch="4" aria-labelledby="ch4-title">
     <div class="card">
-      <p class="ch-tag"><span class="ch-num">04</span><span class="ch-label">你按確認才算數</span></p>
-      <h2 id="ch4-title"><span class="ph">早上起來，</span><span class="ph">按一下「確認」</span></h2>
-      <p>每一筆預約都要你按「確認」才算數。你按下去，ShopSitter 就通知客人預約好了。</p>
-      <p class="fine">客訴、特殊需求、AI 不確定的事，也會直接轉給你處理。</p>
+      <p class="ch-tag"><span class="ch-num">04</span><span class="ch-label">不用等你按確認</span></p>
+      <h2 id="ch4-title"><span class="ph">早上起來，</span><span class="ph">預約已經排好了</span></h2>
+      <p>時間沒問題，ShopSitter 當場就幫客人約好、通知客人，再傳一份給你。服務做多久、客人之間休息多久、哪些時段不接，都照你設的規則排，不會撞期。</p>
+      <p class="fine">要你判斷的才會問你：你指定要先看的服務、太臨時的預約；客訴、特殊需求和 AI 不確定的事，也會直接轉給你。</p>
     </div>
   </section>
 
@@ -390,7 +395,7 @@ html.no-js .closing,html.no-webgl .closing{padding-bottom:72px}
   <section class="closing" data-ch="6" aria-labelledby="close-title">
     <div class="card">
       <h2 id="close-title"><span class="ph">回覆交給它，</span><span class="ph">決定還是你。</span></h2>
-      <p>ShopSitter 只照你給的資料回答；每一筆預約都等你按「確認」；它不確定的事，會直接轉給你。</p>
+      <p>ShopSitter 只照你給的資料回答；預約照你定的規則排好，例外才問你；它不確定的事，會直接轉給你。</p>
       <p class="fine">不用下載 App，不用學後台。試用免費。</p>
       <div class="actions">
         <a class="btn btn-primary" href="https://line.me/R/ti/p/%40692vyhnp" target="_blank" rel="noopener">加 LINE 好友，免費試用</a>
@@ -413,7 +418,7 @@ html.no-js .closing,html.no-webgl .closing{padding-bottom:72px}
         <div class="feat">
           <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4M9 15l2.2 2.2L15.5 13"/></svg></div>
           <h3>收預約和訂單</h3>
-          <p>預約、訂位、下單、報名都收；時間和金額由程式算，不會重複預約。</p>
+          <p>預約、訂位、報名照你的規則自動排好，不會撞期，客人也能自己改期；訂單收好給你確認。</p>
         </div>
         <div class="feat">
           <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 12.2c0 4-3.8 7.1-8.5 7.1-1.2 0-2.3-.2-3.3-.5L4 20.2l1.3-3.6C4.2 15.4 3.5 13.9 3.5 12.2 3.5 8.3 7.3 5 12 5s8.5 3.3 8.5 7.2Z"/><path d="M8.5 12.3h7M8.5 9.6h4.5"/></svg></div>
@@ -472,8 +477,9 @@ html.no-js .closing,html.no-webgl .closing{padding-bottom:72px}
       <div class="sec-head"><h2 id="faq-title">常見問題</h2></div>
       <div class="faq">
         <details><summary>會不會亂回答？</summary><p>只用你給的資料回答，價錢和時間由程式算；不確定的就跟客人說會請店家回覆，並通知你。你改的資料都要按確認，改錯了說「復原」就好。</p></details>
+        <details><summary>每一筆預約都要我按確認嗎？</summary><p>不用。開通時選好規則：每個服務做多久、客人之間休息多久、太臨時的要不要先問你、客人最晚多久前可以自己改期或取消。時間沒問題，ShopSitter 就直接幫客人約好，再通知你；你指定要先看的服務才會等你確認。想每筆都自己確認，也可以選「每筆我確認」。訂單一律等你確認。</p></details>
         <details><summary>一定要有 LINE 官方帳號嗎？</summary><p>試用不用。正式使用要接上你自己的 LINE 官方帳號（可以免費開），我們會一步一步帶你做。</p></details>
-        <details><summary>AI 回覆會用掉我的 LINE 訊息則數嗎？</summary><p>回覆客人用的是 LINE 的回覆訊息，不算則數；只有主動通知（例如預約確認）會用到少量則數。</p></details>
+        <details><summary>AI 回覆會用掉我的 LINE 訊息則數嗎？</summary><p>回覆客人用的是 LINE 的回覆訊息，不算則數；只有主動推送的通知（例如告訴你有新預約）會用到少量則數。</p></details>
         <details><summary>外國客人用英文、日文問也可以嗎？</summary><p>可以。客人用哪種語言問，就用同一種語言回答；你的資料用中文填就好。</p></details>
         <details><summary>規模比較大，或想整合到自己的系統？</summary><p>歡迎來信 <a href="mailto:service@vstrel.com">service@vstrel.com</a> 或用 LINE 聯絡我們，一起討論合作方式，例如 SaaS 或系統整合。</p></details>
       </div>
@@ -513,7 +519,7 @@ html.no-js .closing,html.no-webgl .closing{padding-bottom:72px}
       <p class="m me" data-at="0.62">請問週六下午可以剪髮嗎？</p>
       <p class="m ai" data-at="1.5">可以喔！週六 14:00、15:30 還有空，要幫你約哪個時間？</p>
       <p class="m me" data-at="2.1">15:30</p>
-      <p class="m ai" data-at="2.3">好的，幫你約週六 15:30 剪髮 ✂️ 店家確認後會通知你。</p>
+      <p class="m ai" data-at="2.3">好的，幫你約好週六 15:30 剪髮 ✂️ 到時候見！</p>
     </div></div>
   </div>
 </div>
@@ -524,15 +530,15 @@ html.no-js .closing,html.no-webgl .closing{padding-bottom:72px}
   </div>
 </div>
 <div class="hud" id="hud-owner" aria-hidden="true">
-  <div class="cardlet" id="owner-card">
-    <div class="k"><span class="av s"><svg viewBox="0 0 512 512"><use href="#ss-mark"/></svg></span>新預約，等你確認<span class="t">23:52</span></div>
+  <div class="cardlet auto" id="owner-card">
+    <div class="k"><span class="av s"><svg viewBox="0 0 512 512"><use href="#ss-mark"/></svg></span>新預約・已自動排好<span class="t">23:52</span></div>
     <div class="big"><span class="num">週六 15:30</span>　剪髮</div>
     <div class="sub">陳小姐・LINE 預約</div>
-    <div class="cbtn"><span class="todo">確認</span><span class="done">✓ 已確認</span></div>
-    <div class="after"><span class="todo">你確認後，會通知客人</span><span class="done">已通知客人：預約完成</span></div>
+    <div class="cbtn auto"><span class="todo">✓ 已排好，不會撞期</span><span class="done">✓ 早上看一眼就好</span></div>
+    <div class="after"><span class="todo">客人當場收到：預約完成</span><span class="done">要取消，按一下就好</span></div>
   </div>
 </div>
-<div class="hud" id="hud-notify" aria-hidden="true"><div class="pill open"><i></i>預約完成，已通知客人</div></div>
+<div class="hud" id="hud-notify" aria-hidden="true"><div class="pill open"><i></i>客人半夜就收到確認了</div></div>
 <div class="hud" id="hud-manage" aria-hidden="true">
   <div class="chat" id="manage-card">
     <div class="chat-h"><span class="av s"><svg viewBox="0 0 512 512"><use href="#ss-mark"/></svg></span>你的 LINE・店家管理<span class="t">10:02</span></div>

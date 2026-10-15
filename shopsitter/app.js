@@ -1,7 +1,7 @@
 // ShopSitter — scroll-driven story scene for https://vstrel.com/shopsitter/
 // A Taiwanese street at 23:47: the salon is shuttered and the owner is asleep upstairs,
-// customers keep messaging, ShopSitter (the green S tile) answers; in the morning the owner
-// taps 確認 and later changes things just by chatting. Everything is driven by one number t
+// customers keep messaging, ShopSitter (the green S tile) answers and books them; in the morning
+// the owner finds it all booked and later changes things just by chatting. Everything is driven by one number t
 // (0 = hero … 6 = closing) taken from the scroll position, like the Palvoo page.
 // three.js is the copy Palvoo already serves (/palvoo/lib/three-r169.module.min.js).
 import * as THREE from "three";

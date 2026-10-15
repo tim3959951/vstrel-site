@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
 <title>ShopSitter 資料刪除說明｜Data Deletion</title>
-<meta name="description" content="如何刪除 ShopSitter 保存的資料：店家停止使用、解除 Instagram 或 LINE 連結，以及店家的客人如何刪除對話與預約資料。">
+<meta name="description" content="如何刪除 ShopSitter 保存的資料：店家停止使用、解除 Instagram、LINE 或 Google 日曆連結，以及店家的客人如何刪除對話與預約資料。">
 <link rel="icon" href="/shopsitter/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="/shopsitter/apple-touch-icon.png">
 <meta name="theme-color" content="#ffffff">
@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="ShopSitter">
 <meta property="og:url" content="https://vstrel.com/shopsitter/data-deletion/">
 <meta property="og:title" content="ShopSitter 資料刪除說明｜Data Deletion">
-<meta property="og:description" content="如何刪除 ShopSitter 保存的資料：店家停止使用、解除 Instagram 或 LINE 連結，以及店家的客人如何刪除對話與預約資料。">
+<meta property="og:description" content="如何刪除 ShopSitter 保存的資料：店家停止使用、解除 Instagram、LINE 或 Google 日曆連結，以及店家的客人如何刪除對話與預約資料。">
 <meta property="og:image" content="https://vstrel.com/shopsitter/og.png">
 <meta property="og:locale" content="zh_TW">
 <style>
@@ -74,14 +74,14 @@ footer.f a{color:var(--ink3);text-decoration:underline}
 <main class="wrap" style="padding-block:40px">
 
 <h1>ShopSitter 資料刪除說明</h1><div class="rule"></div>
-<p class="meta">v1.0　最後更新：民國 115 年 10 月 15 日</p>
-<p class="lead">本頁說明如何刪除 ShopSitter 保存的資料，包括透過 LINE 或 Instagram 取得的資料。<a href="#en">English version below.</a></p>
+<p class="meta">v1.1　最後更新：民國 115 年 10 月 16 日</p>
+<p class="lead">本頁說明如何刪除 ShopSitter 保存的資料，包括透過 LINE、Instagram 或 Google 取得的資料。<a href="#en">English version below.</a></p>
 
 <h2>一、店家：停止使用並刪除資料</h2>
 <ol>
 <li>寄信到 <a href="mailto:service@vstrel.com">service@vstrel.com</a>，主旨寫「申請刪除 ShopSitter 資料」。</li>
 <li>信中寫店名，以及店家代號（試用頁網址 <code>/d/</code> 後面那一段）或付款時填的收據 Email。</li>
-<li>本公司會從您付款時的 Email 或已綁定的管理員 LINE 跟您確認是本人，確認後 <strong>30 日內</strong>刪除：店家資料與修改紀錄、客人的對話紀錄、預約與訂單紀錄、LINE Channel secret、Instagram 存取權杖。</li>
+<li>本公司會從您付款時的 Email 或已綁定的管理員 LINE 跟您確認是本人，確認後 <strong>30 日內</strong>刪除：店家資料與修改紀錄、客人的對話紀錄、預約與訂單紀錄、LINE Channel secret、Instagram 存取權杖、Google 日曆授權權杖。</li>
 <li>付款與發票紀錄依商業會計法保存 5 年，期滿刪除。</li>
 </ol>
 <p>只想先暫停：取消自動續訂後，方案用到這期結束就不再扣款，AI 也會停止回覆客人；資料會保留，之後還可以恢復。</p>
@@ -95,31 +95,39 @@ footer.f a{color:var(--ink3);text-decoration:underline}
 <h2>三、解除 LINE 連結</h2>
 <p>在 LINE 官方帳號管理後台的「回應設定」關閉 Webhook，AI 就不會再收到訊息；寫信給本公司，我們會刪除加密保存的 Channel secret。要刪除全部資料，請依第一點申請。</p>
 
-<h2>四、店家的客人：刪除您的對話或預約資料</h2>
+<h2>四、解除 Google 日曆連結</h2>
+<ol>
+<li>在 ShopSitter 設定頁的「連結 Google 日曆」按「中斷連結」：本公司<strong>立即</strong>刪除 Google 授權權杖，並請 Google 撤銷授權。也可以在 Google 帳號的安全性設定（第三方應用程式的存取權）移除 ShopSitter；本公司下次存取被拒時，立即刪除授權權杖。</li>
+<li>「ShopSitter 預約」日曆和已寫入的行程在您自己的 Google 帳號裡，中斷連結後不會被刪除；不需要的話，可以在 Google 日曆自行刪除整個日曆。</li>
+</ol>
+
+<h2>五、店家的客人：刪除您的對話或預約資料</h2>
 <ul>
 <li>您傳給店家帳號的對話紀錄，會在最後一則訊息後 <strong>30 日</strong>自動刪除。</li>
 <li>想提早刪除，或刪除您的預約、訂單、消息訂閱資料：店家是您資料的蒐集者，請先聯絡該店家；也可以直接寫信到 <a href="mailto:service@vstrel.com">service@vstrel.com</a>，寫下店名、您在 LINE 或 Instagram 顯示的名稱、大約的對話時間。本公司確認後 <strong>30 日內</strong>刪除，並通知該店家。</li>
 </ul>
 
-<h2>五、聯絡方式</h2>
+<h2>六、聯絡方式</h2>
 <p>維斯托有限公司（VSTREL CO., LTD.）　Email：<a href="mailto:service@vstrel.com">service@vstrel.com</a>　電話：0913-534-909（平日 09:00–18:00）。完整說明請看 <a href="/shopsitter/privacy/">隱私權政策</a>。</p>
 
 <section class="en" id="en" lang="en">
 
 <h1>ShopSitter Data Deletion Instructions</h1><div class="rule"></div>
-<p class="meta">v1.0 · Last updated 15 October 2026</p>
+<p class="meta">v1.1 · Last updated 16 October 2026</p>
 <h2>1. Businesses: stop using ShopSitter and delete your data</h2>
 <ol>
 <li>Email <a href="mailto:service@vstrel.com">service@vstrel.com</a> with the subject "Delete my ShopSitter data".</li>
 <li>Include your business name and either your store code (the part after <code>/d/</code> in your trial page link) or the receipt email you used to pay.</li>
-<li>We confirm the request with your receipt email or your connected manager LINE account, then delete within <strong>30 days</strong>: your business details and change history, customer chat history, bookings and orders, your LINE channel secret and your Instagram access token.</li>
+<li>We confirm the request with your receipt email or your connected manager LINE account, then delete within <strong>30 days</strong>: your business details and change history, customer chat history, bookings and orders, your LINE channel secret, your Instagram access token and your Google Calendar authorization token.</li>
 <li>Payment and invoice records are kept for 5 years as required by Taiwan's accounting laws, then deleted.</li>
 </ol>
 <h2>2. Disconnect Instagram</h2>
 <p>Remove ShopSitter under "Apps and websites" in your Instagram settings, or email us. When Meta notifies us, we delete your Instagram access token <strong>immediately</strong>, stop sending and receiving messages for that account, and delete messages and data obtained from Instagram within <strong>30 days</strong> (bookings and orders the business has confirmed are handled as in section 1).</p>
 <h2>3. Disconnect LINE</h2>
 <p>Turn off the webhook under "Response settings" in LINE Official Account Manager; email us and we will delete your encrypted channel secret. To delete everything, follow section 1.</p>
-<h2>4. Customers of a business</h2>
+<h2>4. Disconnect Google Calendar</h2>
+<p>On your ShopSitter settings page, under &ldquo;連結 Google 日曆&rdquo;, tap &ldquo;中斷連結&rdquo; (Disconnect): we delete your Google authorization token <strong>immediately</strong> and ask Google to revoke the access. You can also remove ShopSitter from the third-party access settings in your Google Account; we delete the token as soon as Google refuses it. The &ldquo;ShopSitter 預約&rdquo; calendar and the events already written to it are in your own Google account and are not deleted when you disconnect; you can delete the whole calendar in Google Calendar if you no longer need it.</p>
+<h2>5. Customers of a business</h2>
 <p>Your chat history with a business account is deleted automatically <strong>30 days</strong> after your last message. To delete it sooner, or to delete your bookings, orders or update subscriptions, contact the business (it is the controller of your data), or email <a href="mailto:service@vstrel.com">service@vstrel.com</a> with the business name, the name shown on your LINE or Instagram account, and roughly when you chatted. We delete it within <strong>30 days</strong> of confirming and let the business know.</p>
 <p>Full details: <a href="/shopsitter/privacy/">Privacy Policy</a>.</p>
 

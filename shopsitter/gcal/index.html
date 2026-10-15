@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<meta name="color-scheme" content="light">
+<title>連結 Google 日曆｜ShopSitter</title>
+<link rel="icon" href="/shopsitter/favicon.ico" sizes="any">
+<script>
+// Google sends the store owner back here after they allow ShopSitter to use their calendar.
+// The result goes straight to ShopSitter, which finishes the connection and returns them to their settings page.
+(function () {
+  if (/[?&]state=/.test(location.search)) location.replace("https://line-ai-store-agent.vstrel-ai-sales.workers.dev/gcal/callback" + location.search);
+})();
+</script>
+<style>
+body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#fff;color:#0B0F14;
+font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang TC','Noto Sans TC','Microsoft JhengHei',Helvetica,Arial,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+main{max-width:420px;padding:32px 22px;text-align:center}
+.dot{width:40px;height:40px;margin:0 auto 18px;border-radius:50%;border:4px solid #EAFAF2;border-top-color:#16C784;animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.dot{animation:none}}
+h1{font-size:20px;margin:0 0 8px;font-weight:700}
+p{margin:0 0 10px;color:#3d4856;font-size:15px}
+a{color:#0B875A}
+</style>
+</head>
+<body>
+<main id="m">
+<div class="dot" aria-hidden="true"></div>
+<h1>正在連結 Google 日曆…</h1>
+<p>馬上帶你回到 ShopSitter 的設定頁。</p>
+<noscript><p>這一步需要開啟瀏覽器的 JavaScript。</p></noscript>
+</main>
+<script>
+if (!/[?&]state=/.test(location.search)) {
+  document.getElementById("m").innerHTML = '<h1>連結 Google 日曆</h1><p>這是 ShopSitter 連結 Google 日曆時，Google 送你回來的頁面。要連結，請從 ShopSitter 設定頁的「連結 Google 日曆」開始。</p><p><a href="/shopsitter/">ShopSitter 服務說明</a></p>';
+}
+</script>
+</body>
+</html>
