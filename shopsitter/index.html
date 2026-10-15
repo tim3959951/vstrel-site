@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>ShopSitter｜LINE AI 店員，你不在的時候幫你顧店</title>
+<meta name="description" content="ShopSitter 是你的 LINE AI 店員：客人在你的 LINE 官方帳號問價錢、問時間、要預約，它 24 小時馬上回，還會幫你收預約和訂單，每一筆都等你按「確認」。由維斯托有限公司（VSTREL）營運。">
+<link rel="canonical" href="https://vstrel.com/shopsitter/">
+<link rel="icon" href="/shopsitter/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/shopsitter/apple-touch-icon.png">
+<meta name="theme-color" content="#FFFFFF">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ShopSitter">
+<meta property="og:url" content="https://vstrel.com/shopsitter/">
+<meta property="og:title" content="ShopSitter｜LINE AI 店員，你不在的時候幫你顧店">
+<meta property="og:description" content="客人在你的 LINE 官方帳號問價錢、問時間、要預約，ShopSitter 24 小時馬上回，還會幫你收預約和訂單。你只要按「確認」。">
+<meta property="og:image" content="https://vstrel.com/shopsitter/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ShopSitter：你不在的時候，幫你顧店。">
+<meta property="og:locale" content="zh_TW">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ShopSitter｜LINE AI 店員，你不在的時候幫你顧店">
+<meta name="twitter:description" content="客人在你的 LINE 官方帳號問價錢、問時間、要預約，ShopSitter 24 小時馬上回，還會幫你收預約和訂單。你只要按「確認」。">
+<meta name="twitter:image" content="https://vstrel.com/shopsitter/og.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://vstrel.com/#organization","name":"VSTREL","legalName":"維斯托有限公司","alternateName":["維斯托","VSTREL Co., Ltd."],"url":"https://vstrel.com/","logo":"https://vstrel.com/brand/vstrel-mark-light-1024.png","email":"service@vstrel.com","taxID":"62050829"},{"@type":"SoftwareApplication","@id":"https://vstrel.com/shopsitter/#app","name":"ShopSitter","alternateName":"LINE AI 店員","description":"ShopSitter 是 LINE AI 店員：客人在店家的 LINE 官方帳號問價錢、營業時間、怎麼預約，AI 24 小時回覆，並收預約、訂位、訂單與報名；每筆預約都由店家按確認，AI 不確定的事會轉給店家。","url":"https://vstrel.com/shopsitter/","image":"https://vstrel.com/shopsitter/og.png","applicationCategory":"BusinessApplication","applicationSubCategory":"LINE 官方帳號 AI 店員","operatingSystem":"Web","inLanguage":"zh-Hant-TW","featureList":["24 小時回覆客人的問題","收預約、訂位、訂單與報名","每筆預約由店家按確認","用 LINE 對話修改營業資料","不確定的事轉給店家處理"],"publisher":{"@id":"https://vstrel.com/#organization"},"provider":{"@id":"https://vstrel.com/#organization"}}]}</script>
+<script>document.documentElement.className=document.documentElement.className.replace("no-js","js");</script>
+<link rel="preload" href="/shopsitter/fonts/num-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="modulepreload" href="/palvoo/lib/three-r169.module.min.js">
+<style>
+@font-face{font-family:"SS Num";font-style:normal;font-weight:700;font-display:optional;src:url(/shopsitter/fonts/num-700.woff2) format("woff2")}
+:root{
+  color-scheme:light;
+  --page:#FFFFFF; --soft:#F5F8FA; --ink:#0B0F14; --ink-2:#26303C; --muted:#4F5B6B; --muted-2:#66717F;
+  --line:#E3E8EE; --hair:rgba(11,15,20,.08);
+  --green:#16C784; --green-hi:#12B877; --green-ink:#0B875A; --green-dk:#052E1C; --mark:#12B47A; --tint:#EAFAF2;
+  --amber:#F5A524; --amber-ink:#8A5A00;
+  --focus:#0B6BCB;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang TC","Noto Sans TC","Microsoft JhengHei",Helvetica,Arial,sans-serif;
+  --num:"SS Num",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --gutter:clamp(16px,5vw,64px);
+  --shadow:0 18px 50px rgba(16,24,40,.12);
+}
+*{box-sizing:border-box}
+html{background:var(--page);scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--page);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.8;letter-spacing:.01em;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--focus);outline-offset:3px;border-radius:6px}
+.num{font-family:var(--num);font-variant-numeric:tabular-nums}
+
+/* backdrop (shown before the scene is ready, and when there is no WebGL / no JS) */
+.backdrop{position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(70% 55% at 88% 8%,rgba(22,199,132,.14),rgba(22,199,132,0) 70%),linear-gradient(180deg,#FFFFFF 0%,#F5F8FA 100%)}
+.backdrop::after{content:"";position:absolute;right:-6vmin;bottom:-4vmin;width:min(62vmin,560px);aspect-ratio:1;opacity:.07;
+  background:no-repeat center/contain url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20512%20512'%3E%3Cpath%20fill='%2316C784'%20fill-rule='evenodd'%20d='M%20229.1%2040.7%20L%20221.8%2041.2%20L%20214.5%2042.1%20L%20207.2%2043.5%20L%20199.8%2045.4%20L%20192.5%2047.7%20L%20185.3%2050.4%20L%20178.2%2053.6%20L%20171.2%2057.2%20L%20164.4%2061.2%20L%20157.8%2065.6%20L%20151.3%2070.3%20L%20145.2%2075.4%20L%20136.5%2083.6%20L%20131.0%2089.4%20L%20126.0%2095.5%20L%20121.2%20101.9%20L%20116.9%20108.4%20L%20112.9%20115.1%20L%20109.4%20122.0%20L%20104.8%20132.5%20L%20102.4%20139.7%20L%20100.4%20146.8%20L%2098.9%20154.0%20L%2097.8%20161.2%20L%2097.2%20168.3%20L%2097.3%20178.8%20L%2097.9%20185.7%20L%2099.0%20192.4%20L%20100.6%20199.0%20L%20102.6%20205.3%20L%20105.1%20211.4%20L%20108.1%20217.3%20L%20111.4%20222.8%20L%20117.3%20230.6%20L%20124.0%20237.5%20L%20131.6%20243.7%20L%20139.9%20248.9%20L%20148.9%20253.2%20L%20158.4%20256.5%20L%20168.5%20258.8%20L%20175.4%20259.7%20L%20185.7%20260.2%20L%20352.0%20260.2%20L%20357.4%20260.6%20L%20363.4%20261.9%20L%20366.8%20263.2%20L%20369.9%20264.9%20L%20372.8%20266.9%20L%20375.4%20269.2%20L%20379.1%20273.7%20L%20380.9%20276.7%20L%20382.3%20279.9%20L%20383.8%20285.8%20L%20384.2%20289.5%20L%20384.2%20293.2%20L%20383.8%20297.1%20L%20383.1%20300.9%20L%20381.9%20304.8%20L%20380.4%20308.6%20L%20377.2%20314.8%20L%20373.0%20320.5%20L%20368.1%20325.7%20L%20363.6%20329.3%20L%20358.9%20332.4%20L%20352.6%20335.6%20L%20346.0%20337.7%20L%20339.5%20338.9%20L%20335.3%20339.1%20L%2094.7%20339.1%20L%2080.2%20407.3%20L%2078.7%20407.3%20L%2075.8%20417.2%20L%2072.2%20426.6%20L%2069.1%20433.3%20L%2065.7%20439.7%20L%2062.0%20445.7%20L%2057.9%20451.5%20L%2053.5%20456.9%20L%2048.8%20462.0%20L%2043.8%20466.8%20L%2038.4%20471.4%20L%2063.8%20458.0%20L%2091.7%20442.2%20L%20118.4%20426.0%20L%20143.9%20409.4%20L%20324.2%20409.4%20L%20331.5%20408.9%20L%20342.5%20407.3%20L%20349.8%20405.7%20L%20360.8%20402.4%20L%20371.6%20398.1%20L%20378.6%20394.7%20L%20385.5%20390.9%20L%20392.3%20386.8%20L%20398.8%20382.2%20L%20405.1%20377.3%20L%20411.1%20372.1%20L%20416.8%20366.5%20L%20422.3%20360.7%20L%20427.3%20354.6%20L%20432.1%20348.2%20L%20438.5%20338.3%20L%20442.2%20331.5%20L%20445.6%20324.6%20L%20448.5%20317.5%20L%20452.0%20306.8%20L%20454.4%20296.1%20L%20455.5%20288.9%20L%20456.1%20281.8%20L%20456.0%20271.2%20L%20454.9%20261.0%20L%20453.6%20254.3%20L%20450.7%20244.8%20L%20448.2%20238.7%20L%20445.2%20232.8%20L%20440.0%20224.6%20L%20436.0%20219.5%20L%20429.3%20212.6%20L%20424.3%20208.4%20L%20416.3%20202.8%20L%20410.5%20199.7%20L%20404.4%20196.9%20L%20394.9%20193.6%20L%20384.8%20191.3%20L%20374.4%20190.1%20L%20367.6%20189.9%20L%20201.3%20189.9%20L%20197.2%20189.7%20L%20193.5%20189.1%20L%20188.8%20187.8%20L%20183.4%20185.2%20L%20178.7%20181.7%20L%20174.9%20177.4%20L%20171.9%20172.3%20L%20170.0%20166.7%20L%20169.1%20160.6%20L%20169.3%20154.3%20L%20169.9%20150.4%20L%20170.9%20146.6%20L%20172.3%20142.7%20L%20174.1%20139.0%20L%20177.7%20133.0%20L%20180.3%20129.6%20L%20183.2%20126.4%20L%20186.3%20123.5%20L%20189.7%20120.8%20L%20193.2%20118.4%20L%20196.9%20116.3%20L%20200.7%20114.5%20L%20204.6%20113.1%20L%20211.2%20111.5%20L%20218.0%20111.0%20L%20458.6%20111.0%20L%20473.6%2040.6%20Z'/%3E%3C/svg%3E")}
+#world{position:fixed;inset:0;width:100%;height:100%;display:block;z-index:1;opacity:0;transition:opacity .9s ease}
+#world.ready{opacity:1}
+.no-webgl #world{display:none}
+
+/* top bar */
+.topbar{position:fixed;left:0;right:0;top:0;z-index:20;display:flex;align-items:center;gap:20px;
+  padding:calc(env(safe-area-inset-top,0px) + 12px) var(--gutter) 12px;
+  background:linear-gradient(180deg,rgba(255,255,255,.92),rgba(255,255,255,0)) no-repeat;background-origin:border-box;
+  border-bottom:1px solid transparent;transition:background-color .3s ease,border-color .3s ease}
+.scrolled .topbar{background-color:rgba(255,255,255,.86);border-bottom-color:rgba(11,15,20,.07);
+  -webkit-backdrop-filter:blur(12px) saturate(1.2);backdrop-filter:blur(12px) saturate(1.2)}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink);flex:none}
+.brand svg{width:128px;height:28px;display:block}
+.topnav{margin-left:auto;display:flex;align-items:center;gap:24px;font-size:14.5px;font-weight:600}
+.topnav a{text-decoration:none}
+.topnav a:not(.btn){color:var(--muted)}
+.topnav a:not(.btn):hover{color:var(--ink)}
+@media (max-width:860px){.topnav a:not(.btn){display:none}}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 22px;border-radius:999px;
+  font-weight:800;font-size:16px;text-decoration:none;letter-spacing:.03em;white-space:nowrap;transition:background-color .2s ease,border-color .2s ease,box-shadow .2s ease}
+.btn-primary{background:var(--green);color:var(--green-dk);box-shadow:0 6px 18px rgba(22,199,132,.28)}
+.btn-primary:hover{background:var(--green-hi)}
+.btn-ghost{background:#fff;color:var(--ink);border:1px solid #D5DCE3;font-weight:700}
+.btn-ghost:hover{border-color:#AEB8C4}
+.topnav .btn{min-height:40px;padding:0 18px;font-size:14.5px;box-shadow:0 4px 12px rgba(22,199,132,.22)}
+
+/* story */
+.story{position:relative;z-index:3}
+.chapter{display:flex;align-items:center;padding:36px var(--gutter)}
+.js .chapter{min-height:115vh;min-height:115svh}
+.chapter.hero{min-height:100vh;min-height:100svh;padding-block:112px 72px;position:relative}
+.chapter.hero::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(90deg,rgba(255,255,255,.95) 0%,rgba(255,255,255,.86) 30%,rgba(255,255,255,0) 60%)}
+.hero-inner{position:relative;max-width:40rem;display:flex;flex-direction:column;gap:20px}
+.eyebrow{display:flex;align-items:center;gap:12px;margin:0;font-size:14px;font-weight:800;letter-spacing:.28em;color:var(--green-ink)}
+.eyebrow::before{content:"";width:28px;height:2px;background:var(--green)}
+.hero h1{font-weight:800;font-size:clamp(42px,6.6vw,86px);line-height:1.14;letter-spacing:.02em;margin:0;color:var(--ink)}
+.hero h1 .pn{color:var(--green)}
+.hero .lead{margin:0;max-width:33em;font-size:17.5px;color:var(--ink-2)}
+.hl{background:linear-gradient(180deg,rgba(245,165,36,0) 58%,rgba(245,165,36,.42) 58%);padding:0 .08em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.note{margin:-4px 0 0;font-size:14px;color:var(--muted)}
+.scroll-hint{display:flex;align-items:center;gap:10px;margin:8px 0 0;font-size:13.5px;color:var(--muted);letter-spacing:.12em}
+.scroll-hint svg{flex:none;animation:nudge 2.2s ease-in-out infinite}
+@keyframes nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+.no-js .scroll-hint,.no-webgl .scroll-hint{display:none}
+
+.card{width:min(30rem,100%);background:rgba(255,255,255,.9);border:1px solid var(--hair);border-radius:18px;padding:24px 26px 26px;
+  -webkit-backdrop-filter:blur(14px) saturate(1.2);backdrop-filter:blur(14px) saturate(1.2);box-shadow:var(--shadow)}
+.ch-tag{display:flex;align-items:baseline;gap:12px;margin:0 0 8px}
+.ch-num{font-family:var(--num);font-weight:700;font-size:38px;line-height:1;color:var(--green-ink);font-variant-numeric:tabular-nums;letter-spacing:.01em}
+.ch-label{font-size:13px;font-weight:800;letter-spacing:.22em;color:var(--green-ink)}
+.card h2{font-weight:800;font-size:clamp(25px,2.6vw,31px);line-height:1.38;margin:0 0 12px}
+.ph{display:inline-block}
+.card p{margin:0;color:var(--muted);max-width:32em}
+.card p + p{margin-top:10px}
+.card .fine{font-size:13.5px;color:var(--muted-2);line-height:1.7}
+.closing{display:flex;align-items:center;padding:36px var(--gutter)}
+.js .closing{min-height:100vh;min-height:100svh}
+.closing .card{width:min(35rem,100%)}
+.closing h2{font-size:clamp(27px,3vw,36px)}
+.closing .actions{margin-top:20px}
+
+/* HUD: labels pinned to the 3D scene (decorative; the cards carry the content) */
+.hud{position:fixed;left:0;top:0;z-index:2;pointer-events:none;opacity:0;visibility:hidden;will-change:transform,opacity;color:var(--ink);
+  padding-bottom:16px;background:linear-gradient(rgba(11,15,20,.32),rgba(11,15,20,0)) no-repeat 50% 100% / 2px 16px}
+.hud.nostem{padding-bottom:0;background:none}
+.pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.96);border:1px solid rgba(11,15,20,.1);border-radius:999px;
+  padding:6px 14px 6px 11px;font-size:13px;font-weight:700;white-space:nowrap;box-shadow:0 8px 22px rgba(16,24,40,.14);line-height:1.4}
+.pill b{display:inline-block;min-width:2.95em;text-align:center;font-family:var(--num);font-weight:700;font-size:14px;letter-spacing:.02em;font-variant-numeric:tabular-nums}
+.pill i{width:9px;height:9px;border-radius:50%;flex:none;background:#6C7BD0;box-shadow:0 0 0 4px rgba(108,123,208,.2)}
+.pill.dawn i{background:var(--amber);box-shadow:0 0 0 4px rgba(245,165,36,.24)}
+.pill.open i,.pill.g i{background:var(--green);box-shadow:0 0 0 4px rgba(22,199,132,.22)}
+.pill.g i{animation:live 1.8s ease-in-out infinite}
+@keyframes live{50%{box-shadow:0 0 0 7px rgba(22,199,132,0)}}
+.pill .sep{width:1px;height:12px;background:rgba(11,15,20,.15)}
+.chat{width:262px;background:#fff;border:1px solid rgba(11,15,20,.09);border-radius:16px;box-shadow:0 16px 40px rgba(16,24,40,.16);overflow:hidden;font-size:13.5px;line-height:1.5}
+.chat-h{display:flex;align-items:center;gap:8px;padding:8px 12px;border-bottom:1px solid #EDF0F3;font-size:12.5px;font-weight:700;color:var(--ink-2)}
+.chat-h .t{margin-left:auto;font-family:var(--num);font-weight:700;color:var(--muted-2);font-size:12px}
+.av{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;flex:none;background:#2B3A4A;color:#fff;font-size:11.5px;font-weight:800}
+.av.s{background:var(--green)}
+.av svg{width:13px;height:13px;fill:#fff}
+.chat-b{padding:10px 10px 12px;max-height:196px;overflow:hidden;background:#EEF2F6}
+.chat-b.over{-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 22px);mask-image:linear-gradient(180deg,transparent 0,#000 22px)}
+.chat-in{display:flex;flex-direction:column;gap:7px;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.m{display:none;margin:0;max-width:88%;padding:7px 11px;border-radius:15px;color:#16202B}
+.m.on{display:block;animation:pop .32s cubic-bezier(.2,.9,.3,1.2)}
+@keyframes pop{from{opacity:0;transform:translateY(6px) scale(.96)}to{opacity:1;transform:none}}
+.me{align-self:flex-end;background:#C9F1D9;border-bottom-right-radius:5px}
+.ai{align-self:flex-start;background:#fff;border-bottom-left-radius:5px;box-shadow:0 1px 2px rgba(16,24,40,.06);position:relative;padding-left:30px}
+.ai::before{content:"";position:absolute;left:9px;top:9px;width:15px;height:15px;border-radius:5px;
+  background:var(--green) no-repeat center/9px url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20512%20512'%3E%3Cpath%20fill='%23fff'%20fill-rule='evenodd'%20d='M%20229.1%2040.7%20L%20221.8%2041.2%20L%20214.5%2042.1%20L%20207.2%2043.5%20L%20199.8%2045.4%20L%20192.5%2047.7%20L%20185.3%2050.4%20L%20178.2%2053.6%20L%20171.2%2057.2%20L%20164.4%2061.2%20L%20157.8%2065.6%20L%20151.3%2070.3%20L%20145.2%2075.4%20L%20136.5%2083.6%20L%20131.0%2089.4%20L%20126.0%2095.5%20L%20121.2%20101.9%20L%20116.9%20108.4%20L%20112.9%20115.1%20L%20109.4%20122.0%20L%20104.8%20132.5%20L%20102.4%20139.7%20L%20100.4%20146.8%20L%2098.9%20154.0%20L%2097.8%20161.2%20L%2097.2%20168.3%20L%2097.3%20178.8%20L%2097.9%20185.7%20L%2099.0%20192.4%20L%20100.6%20199.0%20L%20102.6%20205.3%20L%20105.1%20211.4%20L%20108.1%20217.3%20L%20111.4%20222.8%20L%20117.3%20230.6%20L%20124.0%20237.5%20L%20131.6%20243.7%20L%20139.9%20248.9%20L%20148.9%20253.2%20L%20158.4%20256.5%20L%20168.5%20258.8%20L%20175.4%20259.7%20L%20185.7%20260.2%20L%20352.0%20260.2%20L%20357.4%20260.6%20L%20363.4%20261.9%20L%20366.8%20263.2%20L%20369.9%20264.9%20L%20372.8%20266.9%20L%20375.4%20269.2%20L%20379.1%20273.7%20L%20380.9%20276.7%20L%20382.3%20279.9%20L%20383.8%20285.8%20L%20384.2%20289.5%20L%20384.2%20293.2%20L%20383.8%20297.1%20L%20383.1%20300.9%20L%20381.9%20304.8%20L%20380.4%20308.6%20L%20377.2%20314.8%20L%20373.0%20320.5%20L%20368.1%20325.7%20L%20363.6%20329.3%20L%20358.9%20332.4%20L%20352.6%20335.6%20L%20346.0%20337.7%20L%20339.5%20338.9%20L%20335.3%20339.1%20L%2094.7%20339.1%20L%2080.2%20407.3%20L%2078.7%20407.3%20L%2075.8%20417.2%20L%2072.2%20426.6%20L%2069.1%20433.3%20L%2065.7%20439.7%20L%2062.0%20445.7%20L%2057.9%20451.5%20L%2053.5%20456.9%20L%2048.8%20462.0%20L%2043.8%20466.8%20L%2038.4%20471.4%20L%2063.8%20458.0%20L%2091.7%20442.2%20L%20118.4%20426.0%20L%20143.9%20409.4%20L%20324.2%20409.4%20L%20331.5%20408.9%20L%20342.5%20407.3%20L%20349.8%20405.7%20L%20360.8%20402.4%20L%20371.6%20398.1%20L%20378.6%20394.7%20L%20385.5%20390.9%20L%20392.3%20386.8%20L%20398.8%20382.2%20L%20405.1%20377.3%20L%20411.1%20372.1%20L%20416.8%20366.5%20L%20422.3%20360.7%20L%20427.3%20354.6%20L%20432.1%20348.2%20L%20438.5%20338.3%20L%20442.2%20331.5%20L%20445.6%20324.6%20L%20448.5%20317.5%20L%20452.0%20306.8%20L%20454.4%20296.1%20L%20455.5%20288.9%20L%20456.1%20281.8%20L%20456.0%20271.2%20L%20454.9%20261.0%20L%20453.6%20254.3%20L%20450.7%20244.8%20L%20448.2%20238.7%20L%20445.2%20232.8%20L%20440.0%20224.6%20L%20436.0%20219.5%20L%20429.3%20212.6%20L%20424.3%20208.4%20L%20416.3%20202.8%20L%20410.5%20199.7%20L%20404.4%20196.9%20L%20394.9%20193.6%20L%20384.8%20191.3%20L%20374.4%20190.1%20L%20367.6%20189.9%20L%20201.3%20189.9%20L%20197.2%20189.7%20L%20193.5%20189.1%20L%20188.8%20187.8%20L%20183.4%20185.2%20L%20178.7%20181.7%20L%20174.9%20177.4%20L%20171.9%20172.3%20L%20170.0%20166.7%20L%20169.1%20160.6%20L%20169.3%20154.3%20L%20169.9%20150.4%20L%20170.9%20146.6%20L%20172.3%20142.7%20L%20174.1%20139.0%20L%20177.7%20133.0%20L%20180.3%20129.6%20L%20183.2%20126.4%20L%20186.3%20123.5%20L%20189.7%20120.8%20L%20193.2%20118.4%20L%20196.9%20116.3%20L%20200.7%20114.5%20L%20204.6%20113.1%20L%20211.2%20111.5%20L%20218.0%20111.0%20L%20458.6%20111.0%20L%20473.6%2040.6%20Z'/%3E%3C/svg%3E")}
+.cardlet{width:236px;background:#fff;border:1px solid rgba(11,15,20,.09);border-radius:16px;box-shadow:0 16px 40px rgba(16,24,40,.16);padding:12px 14px 14px;font-size:13.5px;line-height:1.5}
+.cardlet .k{display:flex;align-items:center;gap:8px;font-size:12.5px;font-weight:800;color:var(--green-ink);margin-bottom:8px}
+.cardlet{border-top:3px solid var(--amber);transition:border-color .3s ease}
+.cardlet.is-done{border-top-color:var(--green)}
+.cardlet .k{color:var(--amber-ink);transition:color .3s ease}
+.cardlet.is-done .k{color:var(--green-ink)}
+.cardlet .k .t{margin-left:auto;font-family:var(--num);color:var(--muted-2);font-weight:700;font-size:12px}
+.cardlet .big{font-size:17px;font-weight:800;color:var(--ink);letter-spacing:.02em}
+.cardlet .big .num{font-size:18px}
+.cardlet .sub{color:var(--muted);font-size:13px}
+.cbtn{position:relative;margin-top:10px;height:36px;border-radius:10px;background:var(--green);color:var(--green-dk);font-weight:800;font-size:14px;
+  display:flex;align-items:center;justify-content:center;gap:6px;overflow:hidden;transition:background-color .3s ease,color .3s ease}
+.cbtn .done{display:none}
+.is-done .cbtn{background:var(--tint);color:var(--green-ink)}
+.is-done .cbtn .todo{display:none}
+.is-done .cbtn .done{display:inline}
+.cbtn::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:50%;background:rgba(22,199,132,.45);opacity:0;transform:scale(0)}
+.is-done .cbtn::after{animation:tap .7s ease-out}
+@keyframes tap{0%{opacity:1;transform:scale(0)}100%{opacity:0;transform:scale(18)}}
+.cardlet .after{margin-top:8px;font-size:12.5px;font-weight:700;color:var(--muted-2)}
+.cardlet .after .done,.is-done .after .todo{display:none}
+.is-done .after{color:var(--green-ink)}
+.is-done .after .done{display:inline}
+.mini{display:flex;flex-direction:column;gap:6px;width:236px;font-size:13.5px;line-height:1.5}
+.mini .m{max-width:230px;box-shadow:0 8px 22px rgba(16,24,40,.14)}
+.mini .ai{box-shadow:0 8px 22px rgba(16,24,40,.14)}
+.zzz{display:flex;gap:2px;align-items:flex-end;font-family:var(--num);font-weight:700;color:#6C7BD0}
+.zzz span{display:block;animation:zz 2.6s ease-in-out infinite;opacity:.0}
+.zzz span:nth-child(1){font-size:13px;animation-delay:0s}
+.zzz span:nth-child(2){font-size:16px;animation-delay:.45s;margin-bottom:8px}
+.zzz span:nth-child(3){font-size:20px;animation-delay:.9s;margin-bottom:18px}
+@keyframes zz{0%{opacity:0;transform:translateY(6px)}30%{opacity:.95}80%{opacity:.75}100%{opacity:0;transform:translateY(-8px)}}
+@media (prefers-reduced-motion: reduce){
+  .scroll-hint svg,.pill.g i{animation:none}
+  .chat-in{transition:none}
+  .m.on,.is-done .cbtn::after{animation:none}
+  .zzz span{animation:none;opacity:.85}
+}
+
+/* info */
+.info{position:relative;z-index:5;background:var(--page);box-shadow:0 -40px 60px #fff}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:var(--gutter);padding-block:84px}
+.sec.alt{background:var(--soft)}
+.sec-head{margin:0 0 30px}
+.sec-head h2{font-weight:800;font-size:clamp(26px,3vw,36px);margin:0;line-height:1.3;letter-spacing:.01em}
+.sec-head p{margin:8px 0 0;color:var(--muted);font-size:16px}
+.feats{display:grid;gap:16px;grid-template-columns:repeat(4,minmax(0,1fr))}
+.feat{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px 20px 24px}
+.ic{width:46px;height:46px;border-radius:13px;background:var(--tint);color:var(--green-ink);display:grid;place-items:center;margin-bottom:16px}
+.ic svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.feat h3{font-size:17.5px;line-height:1.45;margin:0 0 6px}
+.feat p{margin:0;color:var(--muted);font-size:15px;line-height:1.75}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:16px;grid-template-columns:repeat(3,minmax(0,1fr))}
+.step{position:relative;background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px 22px 24px}
+.step .n{width:36px;height:36px;border-radius:50%;background:var(--green);color:var(--green-dk);display:grid;place-items:center;
+  font-family:var(--num);font-weight:700;font-size:16px;margin-bottom:14px}
+.step h3{font-size:17.5px;line-height:1.45;margin:0 0 6px}
+.step p{margin:0;color:var(--muted);font-size:15px;line-height:1.75}
+.step .go{display:inline-block;margin-top:12px;font-weight:700;font-size:15px;color:var(--green-ink);text-decoration:none;border-bottom:1px solid rgba(11,135,90,.3)}
+.step .go:hover{border-bottom-color:var(--green-ink)}
+.step + .step::before{content:"";position:absolute;left:-13px;top:39px;width:10px;height:10px;border-top:2px solid #B9C3CE;border-right:2px solid #B9C3CE;transform:rotate(45deg)}
+.ways{display:grid;gap:12px;grid-template-columns:repeat(5,minmax(0,1fr))}
+.way{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 16px 18px}
+.way h3{font-size:17px;margin:0;line-height:1.4}
+.way .d{margin:2px 0 12px;font-size:13.5px;color:var(--muted-2)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}
+.chips li{background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:3px 11px;font-size:14px;line-height:1.6}
+.fit-note{margin:18px 0 0;color:var(--muted);font-size:14.5px}
+.faq{display:flex;flex-direction:column;gap:10px;max-width:880px}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:0 20px}
+.faq summary{cursor:pointer;list-style:none;padding:17px 0;font-weight:700;font-size:16.5px;display:flex;justify-content:space-between;gap:16px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--num);font-weight:700;font-size:22px;color:var(--green-ink);line-height:1}
+.faq details[open] summary::after{content:"−"}
+.faq details p{margin:0 0 18px;color:var(--muted);font-size:15.5px;max-width:62em}
+.final{position:relative;overflow:hidden;background:var(--tint);border:1px solid rgba(22,199,132,.25);border-radius:24px;padding:52px 24px;text-align:center}
+.final::after{content:"";position:absolute;right:-50px;bottom:-60px;width:300px;height:300px;opacity:.09;pointer-events:none;
+  background:no-repeat center/contain url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20512%20512'%3E%3Cpath%20fill='%2316C784'%20fill-rule='evenodd'%20d='M%20229.1%2040.7%20L%20221.8%2041.2%20L%20214.5%2042.1%20L%20207.2%2043.5%20L%20199.8%2045.4%20L%20192.5%2047.7%20L%20185.3%2050.4%20L%20178.2%2053.6%20L%20171.2%2057.2%20L%20164.4%2061.2%20L%20157.8%2065.6%20L%20151.3%2070.3%20L%20145.2%2075.4%20L%20136.5%2083.6%20L%20131.0%2089.4%20L%20126.0%2095.5%20L%20121.2%20101.9%20L%20116.9%20108.4%20L%20112.9%20115.1%20L%20109.4%20122.0%20L%20104.8%20132.5%20L%20102.4%20139.7%20L%20100.4%20146.8%20L%2098.9%20154.0%20L%2097.8%20161.2%20L%2097.2%20168.3%20L%2097.3%20178.8%20L%2097.9%20185.7%20L%2099.0%20192.4%20L%20100.6%20199.0%20L%20102.6%20205.3%20L%20105.1%20211.4%20L%20108.1%20217.3%20L%20111.4%20222.8%20L%20117.3%20230.6%20L%20124.0%20237.5%20L%20131.6%20243.7%20L%20139.9%20248.9%20L%20148.9%20253.2%20L%20158.4%20256.5%20L%20168.5%20258.8%20L%20175.4%20259.7%20L%20185.7%20260.2%20L%20352.0%20260.2%20L%20357.4%20260.6%20L%20363.4%20261.9%20L%20366.8%20263.2%20L%20369.9%20264.9%20L%20372.8%20266.9%20L%20375.4%20269.2%20L%20379.1%20273.7%20L%20380.9%20276.7%20L%20382.3%20279.9%20L%20383.8%20285.8%20L%20384.2%20289.5%20L%20384.2%20293.2%20L%20383.8%20297.1%20L%20383.1%20300.9%20L%20381.9%20304.8%20L%20380.4%20308.6%20L%20377.2%20314.8%20L%20373.0%20320.5%20L%20368.1%20325.7%20L%20363.6%20329.3%20L%20358.9%20332.4%20L%20352.6%20335.6%20L%20346.0%20337.7%20L%20339.5%20338.9%20L%20335.3%20339.1%20L%2094.7%20339.1%20L%2080.2%20407.3%20L%2078.7%20407.3%20L%2075.8%20417.2%20L%2072.2%20426.6%20L%2069.1%20433.3%20L%2065.7%20439.7%20L%2062.0%20445.7%20L%2057.9%20451.5%20L%2053.5%20456.9%20L%2048.8%20462.0%20L%2043.8%20466.8%20L%2038.4%20471.4%20L%2063.8%20458.0%20L%2091.7%20442.2%20L%20118.4%20426.0%20L%20143.9%20409.4%20L%20324.2%20409.4%20L%20331.5%20408.9%20L%20342.5%20407.3%20L%20349.8%20405.7%20L%20360.8%20402.4%20L%20371.6%20398.1%20L%20378.6%20394.7%20L%20385.5%20390.9%20L%20392.3%20386.8%20L%20398.8%20382.2%20L%20405.1%20377.3%20L%20411.1%20372.1%20L%20416.8%20366.5%20L%20422.3%20360.7%20L%20427.3%20354.6%20L%20432.1%20348.2%20L%20438.5%20338.3%20L%20442.2%20331.5%20L%20445.6%20324.6%20L%20448.5%20317.5%20L%20452.0%20306.8%20L%20454.4%20296.1%20L%20455.5%20288.9%20L%20456.1%20281.8%20L%20456.0%20271.2%20L%20454.9%20261.0%20L%20453.6%20254.3%20L%20450.7%20244.8%20L%20448.2%20238.7%20L%20445.2%20232.8%20L%20440.0%20224.6%20L%20436.0%20219.5%20L%20429.3%20212.6%20L%20424.3%20208.4%20L%20416.3%20202.8%20L%20410.5%20199.7%20L%20404.4%20196.9%20L%20394.9%20193.6%20L%20384.8%20191.3%20L%20374.4%20190.1%20L%20367.6%20189.9%20L%20201.3%20189.9%20L%20197.2%20189.7%20L%20193.5%20189.1%20L%20188.8%20187.8%20L%20183.4%20185.2%20L%20178.7%20181.7%20L%20174.9%20177.4%20L%20171.9%20172.3%20L%20170.0%20166.7%20L%20169.1%20160.6%20L%20169.3%20154.3%20L%20169.9%20150.4%20L%20170.9%20146.6%20L%20172.3%20142.7%20L%20174.1%20139.0%20L%20177.7%20133.0%20L%20180.3%20129.6%20L%20183.2%20126.4%20L%20186.3%20123.5%20L%20189.7%20120.8%20L%20193.2%20118.4%20L%20196.9%20116.3%20L%20200.7%20114.5%20L%20204.6%20113.1%20L%20211.2%20111.5%20L%20218.0%20111.0%20L%20458.6%20111.0%20L%20473.6%2040.6%20Z'/%3E%3C/svg%3E")}
+.final h2{position:relative;font-weight:800;font-size:clamp(26px,3vw,36px);line-height:1.3;margin:0 0 10px}
+.final p{position:relative;color:var(--muted);margin:0 auto 24px;max-width:34em}
+.final .actions{position:relative;justify-content:center}
+.foot{border-top:1px solid var(--line)}
+.foot .wrap{padding-block:30px 46px;font-size:13.5px;color:var(--muted-2)}
+.foot p{margin:0 0 6px}
+.foot b{color:var(--ink-2)}
+.foot a{color:var(--muted-2);text-decoration:underline;text-underline-offset:3px}
+.foot a:hover{color:var(--ink)}
+.foot-links{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:14px!important}
+.foot .lock{display:block;width:110px;height:24px;margin:0 0 14px;color:var(--ink)}
+
+@media (max-width:1000px){
+  .feats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ways{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+/* portrait screens (phones, tablets held upright): the scene sits above, the chapter card at the bottom */
+@media (orientation:portrait){
+  .js .chapter{align-items:flex-end;padding-block:0 calc(7.5vh + 18px);padding-block:0 calc(7.5svh + 18px)}
+  .js .chapter.hero{align-items:flex-end}
+  .chapter.hero::before{background:none}
+  .hero-inner::before{content:"";position:absolute;z-index:-1;pointer-events:none;top:-110px;bottom:-40px;
+    left:calc(-1 * var(--gutter));right:calc(100% + var(--gutter) - 100vw);
+    background:linear-gradient(0deg,rgba(255,255,255,.97) 0,rgba(255,255,255,.92) calc(100% - 110px),rgba(255,255,255,0) 100%)}
+  .js .closing{align-items:flex-end;padding-block:0 28px}
+}
+@media (max-width:760px){
+  .brand svg{width:119px;height:26px}
+  .chapter.hero{padding-block:96px 34px}
+  .hero-inner{gap:16px}
+  .hero h1{font-size:clamp(38px,11vw,46px)}
+  .hero .lead{font-size:16px}
+  .actions{flex-direction:column;align-items:stretch}
+  .actions .btn{width:100%}
+  .card{padding:18px 18px 20px;border-radius:16px}
+  .ch-num{font-size:30px}
+  .card h2{font-size:22px;margin-bottom:8px}
+  .card p{font-size:15px;line-height:1.75}
+  .card .fine{font-size:13px}
+  .steps{grid-template-columns:1fr}
+  .step + .step::before{left:39px;top:-13px;transform:rotate(135deg)}
+  .wrap{padding-block:60px}
+  .chat{width:244px;font-size:12.5px}
+  .chat-b{max-height:150px;padding:8px 8px 10px}
+  .chat-in{gap:6px}
+  .m{padding:6px 10px}
+  .ai{padding-left:28px}
+  .ai::before{left:8px;top:8px;width:14px;height:14px}
+  .cardlet{width:206px;padding:10px 12px 12px;font-size:12.5px}
+  .cardlet .big{font-size:15.5px}
+  .cbtn{height:32px;font-size:13px;margin-top:8px}
+  .mini{width:204px;font-size:12.5px}
+  .mini .m{max-width:196px}
+  .pill{font-size:12px;padding:5px 12px 5px 10px}
+  .pill b{font-size:13px}
+}
+@media (max-width:560px){
+  .feats{grid-template-columns:1fr;gap:12px}
+  .feat{display:grid;grid-template-columns:46px minmax(0,1fr);column-gap:14px;align-items:start;padding:18px 18px 20px}
+  .feat .ic{grid-row:1 / span 2;margin:0}
+  .feat h3{margin-top:9px}
+  .ways{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .way{padding:16px 14px}
+  .way:last-child{grid-column:1 / -1}
+  .final{padding:40px 18px;border-radius:20px}
+}
+@media (max-width:360px){
+  .card h2{font-size:20px}
+  .hero h1{font-size:36px}
+}
+/* without the animated scene (no JS / no WebGL) the story is a plain stack of cards */
+html.no-js .chapter.hero,html.no-webgl .chapter.hero{min-height:0;padding-block:128px 48px}
+html.no-js .chapter,html.no-js .closing,html.no-webgl .chapter,html.no-webgl .closing{min-height:0;align-items:center;padding-block:12px}
+html.no-js .closing,html.no-webgl .closing{padding-bottom:72px}
+@media (max-width:760px){html.no-js .chapter.hero,html.no-webgl .chapter.hero{padding-block:104px 36px}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="ss-mark" viewBox="0 0 512 512"><path d="M 229.1 40.7 L 221.8 41.2 L 214.5 42.1 L 207.2 43.5 L 199.8 45.4 L 192.5 47.7 L 185.3 50.4 L 178.2 53.6 L 171.2 57.2 L 164.4 61.2 L 157.8 65.6 L 151.3 70.3 L 145.2 75.4 L 136.5 83.6 L 131.0 89.4 L 126.0 95.5 L 121.2 101.9 L 116.9 108.4 L 112.9 115.1 L 109.4 122.0 L 104.8 132.5 L 102.4 139.7 L 100.4 146.8 L 98.9 154.0 L 97.8 161.2 L 97.2 168.3 L 97.3 178.8 L 97.9 185.7 L 99.0 192.4 L 100.6 199.0 L 102.6 205.3 L 105.1 211.4 L 108.1 217.3 L 111.4 222.8 L 117.3 230.6 L 124.0 237.5 L 131.6 243.7 L 139.9 248.9 L 148.9 253.2 L 158.4 256.5 L 168.5 258.8 L 175.4 259.7 L 185.7 260.2 L 352.0 260.2 L 357.4 260.6 L 363.4 261.9 L 366.8 263.2 L 369.9 264.9 L 372.8 266.9 L 375.4 269.2 L 379.1 273.7 L 380.9 276.7 L 382.3 279.9 L 383.8 285.8 L 384.2 289.5 L 384.2 293.2 L 383.8 297.1 L 383.1 300.9 L 381.9 304.8 L 380.4 308.6 L 377.2 314.8 L 373.0 320.5 L 368.1 325.7 L 363.6 329.3 L 358.9 332.4 L 352.6 335.6 L 346.0 337.7 L 339.5 338.9 L 335.3 339.1 L 94.7 339.1 L 80.2 407.3 L 78.7 407.3 L 75.8 417.2 L 72.2 426.6 L 69.1 433.3 L 65.7 439.7 L 62.0 445.7 L 57.9 451.5 L 53.5 456.9 L 48.8 462.0 L 43.8 466.8 L 38.4 471.4 L 63.8 458.0 L 91.7 442.2 L 118.4 426.0 L 143.9 409.4 L 324.2 409.4 L 331.5 408.9 L 342.5 407.3 L 349.8 405.7 L 360.8 402.4 L 371.6 398.1 L 378.6 394.7 L 385.5 390.9 L 392.3 386.8 L 398.8 382.2 L 405.1 377.3 L 411.1 372.1 L 416.8 366.5 L 422.3 360.7 L 427.3 354.6 L 432.1 348.2 L 438.5 338.3 L 442.2 331.5 L 445.6 324.6 L 448.5 317.5 L 452.0 306.8 L 454.4 296.1 L 455.5 288.9 L 456.1 281.8 L 456.0 271.2 L 454.9 261.0 L 453.6 254.3 L 450.7 244.8 L 448.2 238.7 L 445.2 232.8 L 440.0 224.6 L 436.0 219.5 L 429.3 212.6 L 424.3 208.4 L 416.3 202.8 L 410.5 199.7 L 404.4 196.9 L 394.9 193.6 L 384.8 191.3 L 374.4 190.1 L 367.6 189.9 L 201.3 189.9 L 197.2 189.7 L 193.5 189.1 L 188.8 187.8 L 183.4 185.2 L 178.7 181.7 L 174.9 177.4 L 171.9 172.3 L 170.0 166.7 L 169.1 160.6 L 169.3 154.3 L 169.9 150.4 L 170.9 146.6 L 172.3 142.7 L 174.1 139.0 L 177.7 133.0 L 180.3 129.6 L 183.2 126.4 L 186.3 123.5 L 189.7 120.8 L 193.2 118.4 L 196.9 116.3 L 200.7 114.5 L 204.6 113.1 L 211.2 111.5 L 218.0 111.0 L 458.6 111.0 L 473.6 40.6 Z" fill-rule="evenodd"/></symbol>
+    <symbol id="ss-lockup" viewBox="0 0 128 28"><use href="#ss-mark" width="28" height="28" fill="#12B47A"/><path transform="translate(34.16 20.58) scale(0.1736)" d="M4.2 -21H22.4Q22.8 -17.1 25.1 -15.05Q27.4 -13 31.1 -13Q34.9 -13 37.1 -14.75Q39.3 -16.5 39.3 -19.6Q39.3 -22.2 37.55 -23.9Q35.8 -25.6 33.25 -26.7Q30.7 -27.8 26 -29.2Q19.2 -31.3 14.9 -33.4Q10.6 -35.5 7.5 -39.6Q4.4 -43.7 4.4 -50.3Q4.4 -60.1 11.5 -65.65Q18.6 -71.2 30 -71.2Q41.6 -71.2 48.7 -65.65Q55.8 -60.1 56.3 -50.2H37.8Q37.6 -53.6 35.3 -55.55Q33 -57.5 29.4 -57.5Q26.3 -57.5 24.4 -55.85Q22.5 -54.2 22.5 -51.1Q22.5 -47.7 25.7 -45.8Q28.9 -43.9 35.7 -41.7Q42.5 -39.4 46.75 -37.3Q51 -35.2 54.1 -31.2Q57.2 -27.2 57.2 -20.9Q57.2 -14.9 54.15 -10Q51.1 -5.1 45.3 -2.2Q39.5 0.7 31.6 0.7Q23.9 0.7 17.8 -1.8Q11.7 -4.3 8.05 -9.2Q4.4 -14.1 4.2 -21ZM123.2 -32.6V0H106.2V-30.3Q106.2 -35.9 103.3 -39Q100.4 -42.1 95.5 -42.1Q90.6 -42.1 87.7 -39Q84.8 -35.9 84.8 -30.3V0H67.7V-74H84.8V-48.3Q87.4 -52 91.9 -54.2Q96.4 -56.4 102 -56.4Q111.6 -56.4 117.4 -50.05Q123.2 -43.7 123.2 -32.6ZM131.7 -27.9Q131.7 -36.5 135.5 -43.05Q139.3 -49.6 145.9 -53.1Q152.5 -56.6 160.7 -56.6Q168.9 -56.6 175.5 -53.1Q182.1 -49.6 185.9 -43.05Q189.7 -36.5 189.7 -27.9Q189.7 -19.3 185.85 -12.75Q182 -6.2 175.35 -2.7Q168.7 0.8 160.5 0.8Q152.3 0.8 145.75 -2.7Q139.2 -6.2 135.45 -12.7Q131.7 -19.2 131.7 -27.9ZM172.3 -27.9Q172.3 -34.6 168.95 -38.2Q165.6 -41.8 160.7 -41.8Q155.7 -41.8 152.4 -38.25Q149.1 -34.7 149.1 -27.9Q149.1 -21.2 152.35 -17.6Q155.6 -14 160.5 -14Q165.4 -14 168.85 -17.6Q172.3 -21.2 172.3 -27.9ZM233.1 -56.6Q240 -56.6 245.6 -53.1Q251.2 -49.6 254.45 -43.1Q257.7 -36.6 257.7 -28Q257.7 -19.4 254.45 -12.85Q251.2 -6.3 245.6 -2.75Q240 0.8 233.1 0.8Q227.3 0.8 222.85 -1.6Q218.4 -4 215.9 -7.8V26.6H198.8V-55.8H215.9V-47.9Q218.4 -51.8 222.8 -54.2Q227.2 -56.6 233.1 -56.6ZM228 -41.7Q222.9 -41.7 219.35 -38Q215.8 -34.3 215.8 -27.9Q215.8 -21.5 219.35 -17.8Q222.9 -14.1 228 -14.1Q233.1 -14.1 236.7 -17.85Q240.3 -21.6 240.3 -28Q240.3 -34.4 236.75 -38.05Q233.2 -41.7 228 -41.7ZM264.7 -21H282.9Q283.3 -17.1 285.6 -15.05Q287.9 -13 291.6 -13Q295.4 -13 297.6 -14.75Q299.8 -16.5 299.8 -19.6Q299.8 -22.2 298.05 -23.9Q296.3 -25.6 293.75 -26.7Q291.2 -27.8 286.5 -29.2Q279.7 -31.3 275.4 -33.4Q271.1 -35.5 268 -39.6Q264.9 -43.7 264.9 -50.3Q264.9 -60.1 272 -65.65Q279.1 -71.2 290.5 -71.2Q302.1 -71.2 309.2 -65.65Q316.3 -60.1 316.8 -50.2H298.3Q298.1 -53.6 295.8 -55.55Q293.5 -57.5 289.9 -57.5Q286.8 -57.5 284.9 -55.85Q283 -54.2 283 -51.1Q283 -47.7 286.2 -45.8Q289.4 -43.9 296.2 -41.7Q303 -39.4 307.25 -37.3Q311.5 -35.2 314.6 -31.2Q317.7 -27.2 317.7 -20.9Q317.7 -14.9 314.65 -10Q311.6 -5.1 305.8 -2.2Q300 0.7 292.1 0.7Q284.4 0.7 278.3 -1.8Q272.2 -4.3 268.55 -9.2Q264.9 -14.1 264.7 -21ZM326.6 -70.8Q326.6 -74.8 329.45 -77.45Q332.3 -80.1 336.8 -80.1Q341.2 -80.1 344.05 -77.45Q346.9 -74.8 346.9 -70.8Q346.9 -66.9 344.05 -64.25Q341.2 -61.6 336.8 -61.6Q332.3 -61.6 329.45 -64.25Q326.6 -66.9 326.6 -70.8ZM345.3 -55.8V0H328.2V-55.8ZM388.8 -14.5V0H380.1Q370.8 0 365.6 -4.55Q360.4 -9.1 360.4 -19.4V-41.6H353.6V-55.8H360.4V-69.4H377.5V-55.8H388.7V-41.6H377.5V-19.2Q377.5 -16.7 378.7 -15.6Q379.9 -14.5 382.7 -14.5ZM429.4 -14.5V0H420.7Q411.4 0 406.2 -4.55Q401 -9.1 401 -19.4V-41.6H394.2V-55.8H401V-69.4H418.1V-55.8H429.3V-41.6H418.1V-19.2Q418.1 -16.7 419.3 -15.6Q420.5 -14.5 423.3 -14.5ZM491.2 -23.8H452.5Q452.9 -18.6 455.85 -15.85Q458.8 -13.1 463.1 -13.1Q469.5 -13.1 472 -18.5H490.2Q488.8 -13 485.15 -8.6Q481.5 -4.2 476 -1.7Q470.5 0.8 463.7 0.8Q455.5 0.8 449.1 -2.7Q442.7 -6.2 439.1 -12.7Q435.5 -19.2 435.5 -27.9Q435.5 -36.6 439.05 -43.1Q442.6 -49.6 449 -53.1Q455.4 -56.6 463.7 -56.6Q471.8 -56.6 478.1 -53.2Q484.4 -49.8 487.95 -43.5Q491.5 -37.2 491.5 -28.8Q491.5 -26.4 491.2 -23.8ZM474 -33.3Q474 -37.7 471 -40.3Q468 -42.9 463.5 -42.9Q459.2 -42.9 456.25 -40.4Q453.3 -37.9 452.6 -33.3ZM535.1 -56.4V-38.3H530.4Q524 -38.3 520.8 -35.55Q517.6 -32.8 517.6 -25.9V0H500.5V-55.8H517.6V-46.5Q520.6 -51.1 525.1 -53.75Q529.6 -56.4 535.1 -56.4Z" fill="currentColor"/></symbol>
+  </defs>
+</svg>
+
+<div class="backdrop" aria-hidden="true"></div>
+<canvas id="world" aria-hidden="true"></canvas>
+
+<header class="topbar">
+  <a class="brand" href="#top" aria-label="ShopSitter 首頁"><svg viewBox="0 0 128 28" aria-hidden="true"><use href="#ss-lockup"/></svg></a>
+  <nav class="topnav" aria-label="主選單">
+    <a href="#features">功能</a>
+    <a href="#start">怎麼開始</a>
+    <a href="#fit">適合的店</a>
+    <a href="#faq">常見問題</a>
+    <a class="btn btn-primary" href="https://line.me/R/ti/p/%40692vyhnp" target="_blank" rel="noopener">免費試用</a>
+  </nav>
+</header>
+
+<main class="story" id="top">
+  <section class="chapter hero" data-ch="0" aria-labelledby="hero-title">
+    <div class="hero-inner">
+      <p class="eyebrow">LINE AI 店員</p>
+      <h1 id="hero-title">你不在的時候<span class="pn">，</span><br>幫你顧店<span class="pn">。</span></h1>
+      <p class="lead">客人在你的 LINE 官方帳號問價錢、問時間、要預約，ShopSitter <span class="hl">24 小時馬上回</span>，還會幫你把預約和訂單收好。你只要按「確認」。</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://line.me/R/ti/p/%40692vyhnp" target="_blank" rel="noopener">加 LINE 好友，免費試用</a>
+        <a class="btn btn-ghost" href="https://line-ai-store-agent.vstrel-ai-sales.workers.dev/start">直接做試用版</a>
+      </div>
+      <p class="note">不用下載 App，不用學後台。試用免費。</p>
+      <p class="scroll-hint"><svg width="14" height="18" viewBox="0 0 14 18" aria-hidden="true"><path d="M7 1v15M1 10l6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>向下捲動，看它怎麼幫你顧店</p>
+    </div>
+  </section>
+
+  <section class="chapter" data-ch="1" aria-labelledby="ch1-title">
+    <div class="card">
+      <p class="ch-tag"><span class="ch-num">01</span><span class="ch-label">客人傳訊息</span></p>
+      <h2 id="ch1-title"><span class="ph">晚上 11:47，</span><span class="ph">店關了，</span><span class="ph">客人還在問</span></h2>
+      <p>你已經打烊休息，客人還是會在你的 LINE 官方帳號問：週六可以剪髮嗎？明天幾點開？</p>
+      <p class="fine">畫面中的店家與對話皆為示意。</p>
+    </div>
+  </section>
+
+  <section class="chapter" data-ch="2" aria-labelledby="ch2-title">
+    <div class="card">
+      <p class="ch-tag"><span class="ch-num">02</span><span class="ch-label">AI 秒回</span></p>
+      <h2 id="ch2-title"><span class="ph">照你給的資料，</span><span class="ph">馬上回答</span></h2>
+      <p>價錢、營業時間、地址、怎麼預約，ShopSitter 只用你給的資料回答，不會自己亂編；價錢和時間由程式算。</p>
+      <p class="fine">不確定的事，它會跟客人說會請店家回覆，再通知你。</p>
+    </div>
+  </section>
+
+  <section class="chapter" data-ch="3" aria-labelledby="ch3-title">
+    <div class="card">
+      <p class="ch-tag"><span class="ch-num">03</span><span class="ch-label">收預約和訂單</span></p>
+      <h2 id="ch3-title"><span class="ph">預約、訂位、下單、報名，</span><span class="ph">都幫你收好</span></h2>
+      <p>客人選好時間，ShopSitter 幫你整理成一筆預約，傳到你的 LINE。時間和金額由程式算，不會重複預約。</p>
+    </div>
+  </section>
+
+  <section class="chapter" data-ch="4" aria-labelledby="ch4-title">
+    <div class="card">
+      <p class="ch-tag"><span class="ch-num">04</span><span class="ch-label">你按確認才算數</span></p>
+      <h2 id="ch4-title"><span class="ph">早上起來，</span><span class="ph">按一下「確認」</span></h2>
+      <p>每一筆預約都要你按「確認」才算數。你按下去，ShopSitter 就通知客人預約好了。</p>
+      <p class="fine">客訴、特殊需求、AI 不確定的事，也會直接轉給你處理。</p>
+    </div>
+  </section>
+
+  <section class="chapter" data-ch="5" aria-labelledby="ch5-title">
+    <div class="card">
+      <p class="ch-tag"><span class="ch-num">05</span><span class="ch-label">用 LINE 講話就能管理</span></p>
+      <h2 id="ch5-title"><span class="ph">「明天公休」，</span><span class="ph">跟它說一聲就好</span></h2>
+      <p>營業時間、公休日、價錢要改，用你自己的 LINE 跟它講就好，不用學後台。</p>
+      <p class="fine">你改的資料都要按確認才生效，改錯了說「復原」就好。</p>
+    </div>
+  </section>
+
+  <section class="closing" data-ch="6" aria-labelledby="close-title">
+    <div class="card">
+      <h2 id="close-title"><span class="ph">回覆交給它，</span><span class="ph">決定還是你。</span></h2>
+      <p>ShopSitter 只照你給的資料回答；每一筆預約都等你按「確認」；它不確定的事，會直接轉給你。</p>
+      <p class="fine">不用下載 App，不用學後台。試用免費。</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://line.me/R/ti/p/%40692vyhnp" target="_blank" rel="noopener">加 LINE 好友，免費試用</a>
+        <a class="btn btn-ghost" href="#features">看它會做什麼</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="info" id="details">
+  <section class="sec" id="features" aria-labelledby="feat-title">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="feat-title">它會幫你做這些</h2><p>照你給的資料回答，不會自己亂編。</p></div>
+      <div class="feats">
+        <div class="feat">
+          <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg></div>
+          <h3>24 小時回客人</h3>
+          <p>價錢、營業時間、地址、怎麼預約，半夜問也馬上回。</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4M9 15l2.2 2.2L15.5 13"/></svg></div>
+          <h3>收預約和訂單</h3>
+          <p>預約、訂位、下單、報名都收；時間和金額由程式算，不會重複預約。</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 12.2c0 4-3.8 7.1-8.5 7.1-1.2 0-2.3-.2-3.3-.5L4 20.2l1.3-3.6C4.2 15.4 3.5 13.9 3.5 12.2 3.5 8.3 7.3 5 12 5s8.5 3.3 8.5 7.2Z"/><path d="M8.5 12.3h7M8.5 9.6h4.5"/></svg></div>
+          <h3>用 LINE 講話就能管理</h3>
+          <p>「明天公休」「這週六 10 點才開」，講完按確認就生效，不用學後台。</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8.5a6 6 0 0 1 12 0c0 6.5 2.5 8 2.5 8h-17S6 15 6 8.5Z"/><path d="M10.2 20a2 2 0 0 0 3.6 0"/></svg></div>
+          <h3>需要你的時候轉給你</h3>
+          <p>客訴、特殊需求、AI 不確定的事，直接通知你處理。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec alt" id="start" aria-labelledby="start-title">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="start-title">三步開始</h2><p>先免費試，滿意再接上你的 LINE。</p></div>
+      <ol class="steps">
+        <li class="step">
+          <span class="n">1</span>
+          <h3>填一張表，免費試用</h3>
+          <p>店名、價目表、營業時間填好，就有你的試用頁：左邊當客人、右邊當老闆，玩到滿意為止。</p>
+          <a class="go" href="https://line-ai-store-agent.vstrel-ai-sales.workers.dev/start">直接做試用版 →</a>
+        </li>
+        <li class="step">
+          <span class="n">2</span>
+          <h3>接上你的 LINE 官方帳號</h3>
+          <p>照著畫面一步一步做。接好之後，你用自己的 LINE 就能管理。</p>
+        </li>
+        <li class="step">
+          <span class="n">3</span>
+          <h3>開通方案</h3>
+          <p>信用卡月繳，AI 開始幫你回客人。隨時可以取消，用到這期結束。</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec" id="fit" aria-labelledby="fit-title">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="fit-title">靠 LINE 接客的店都適合</h2><p>不分行業，看你的客人怎麼成交。</p></div>
+      <div class="ways">
+        <div class="way"><h3>預約</h3><p class="d">來店或到府服務</p><ul class="chips"><li>美髮</li><li>美甲美睫</li><li>寵物美容</li><li>按摩</li><li>攝影</li></ul></div>
+        <div class="way"><h3>訂位</h3><p class="d">內用座位</p><ul class="chips"><li>餐廳</li><li>咖啡廳</li></ul></div>
+        <div class="way"><h3>下單</h3><p class="d">自取、宅配、外送</p><ul class="chips"><li>甜點</li><li>花店</li><li>網拍</li></ul></div>
+        <div class="way"><h3>報名</h3><p class="d">課程或活動</p><ul class="chips"><li>瑜伽</li><li>才藝課</li><li>補習</li></ul></div>
+        <div class="way"><h3>先諮詢再報價</h3><p class="d">先聊需求，再估價</p><ul class="chips"><li>室內裝潢</li></ul></div>
+      </div>
+      <p class="fit-note">以上只是例子。你的客人會在 LINE 問，就可以先免費試試看。</p>
+    </div>
+  </section>
+
+  <section class="sec" id="faq" aria-labelledby="faq-title">
+    <div class="wrap" style="padding-top:0">
+      <div class="sec-head"><h2 id="faq-title">常見問題</h2></div>
+      <div class="faq">
+        <details><summary>會不會亂回答？</summary><p>只用你給的資料回答，價錢和時間由程式算；不確定的就跟客人說會請店家回覆，並通知你。你改的資料都要按確認，改錯了說「復原」就好。</p></details>
+        <details><summary>一定要有 LINE 官方帳號嗎？</summary><p>試用不用。正式使用要接上你自己的 LINE 官方帳號（可以免費開），我們會一步一步帶你做。</p></details>
+        <details><summary>AI 回覆會用掉我的 LINE 訊息則數嗎？</summary><p>回覆客人用的是 LINE 的回覆訊息，不算則數；只有主動通知（例如預約確認）會用到少量則數。</p></details>
+        <details><summary>外國客人用英文、日文問也可以嗎？</summary><p>可以。客人用哪種語言問，就用同一種語言回答；你的資料用中文填就好。</p></details>
+        <details><summary>規模比較大，或想整合到自己的系統？</summary><p>歡迎來信 <a href="mailto:service@vstrel.com">service@vstrel.com</a> 或用 LINE 聯絡我們，一起討論合作方式，例如 SaaS 或系統整合。</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="final-title">
+    <div class="wrap" style="padding-top:0">
+      <div class="final">
+        <h2 id="final-title">今晚就讓它幫你顧店</h2>
+        <p>加 LINE 好友，跟 ShopSitter 聊聊；或直接用你的價目表做一個試用版。</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://line.me/R/ti/p/%40692vyhnp" target="_blank" rel="noopener">加 LINE 好友，免費試用</a>
+          <a class="btn btn-ghost" href="https://line-ai-store-agent.vstrel-ai-sales.workers.dev/start">直接做試用版</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="wrap">
+      <svg class="lock" viewBox="0 0 128 28" role="img" aria-label="ShopSitter"><use href="#ss-lockup"/></svg>
+      <p><b>ShopSitter</b> 由 維斯托有限公司（VSTREL）營運</p>
+      <p>統一編號：62050829　客服信箱：<a href="mailto:service@vstrel.com">service@vstrel.com</a></p>
+      <p class="foot-links"><a href="https://vstrel.com/">VSTREL 首頁</a><a href="/shopsitter/terms/">服務條款</a><a href="/shopsitter/privacy/">隱私權政策</a><a href="/shopsitter/data-deletion/">資料刪除</a><a href="https://line.me/R/ti/p/%40692vyhnp" target="_blank" rel="noopener">LINE 聯絡我們</a></p>
+    </div>
+  </footer>
+</div>
+
+<div class="hud" id="hud-status" aria-hidden="true"><div class="pill"><i></i><b id="hud-time">23:47</b><span class="sep"></span><span id="hud-state">已打烊</span></div></div>
+<div class="hud" id="hud-sitter" aria-hidden="true"><div class="pill g"><i></i>ShopSitter 顧店中</div></div>
+<div class="hud nostem" id="hud-zzz" aria-hidden="true"><div class="zzz"><span>z</span><span>z</span><span>Z</span></div></div>
+<div class="hud" id="hud-a" aria-hidden="true">
+  <div class="chat">
+    <div class="chat-h"><span class="av">林</span>小林美髮<span class="t">23:47</span></div>
+    <div class="chat-b"><div class="chat-in">
+      <p class="m me" data-at="0.62">請問週六下午可以剪髮嗎？</p>
+      <p class="m ai" data-at="1.5">可以喔！週六 14:00、15:30 還有空，要幫你約哪個時間？</p>
+      <p class="m me" data-at="2.1">15:30</p>
+      <p class="m ai" data-at="2.3">好的，幫你約週六 15:30 剪髮 ✂️ 店家確認後會通知你。</p>
+    </div></div>
+  </div>
+</div>
+<div class="hud" id="hud-b" aria-hidden="true">
+  <div class="mini">
+    <p class="m me" data-at="0.8">明天幾點開？</p>
+    <p class="m ai" data-at="1.66">明天 10:00 開到 20:00，歡迎過來！</p>
+  </div>
+</div>
+<div class="hud" id="hud-owner" aria-hidden="true">
+  <div class="cardlet" id="owner-card">
+    <div class="k"><span class="av s"><svg viewBox="0 0 512 512"><use href="#ss-mark"/></svg></span>新預約，等你確認<span class="t">23:52</span></div>
+    <div class="big"><span class="num">週六 15:30</span>　剪髮</div>
+    <div class="sub">陳小姐・LINE 預約</div>
+    <div class="cbtn"><span class="todo">確認</span><span class="done">✓ 已確認</span></div>
+    <div class="after"><span class="todo">你確認後，會通知客人</span><span class="done">已通知客人：預約完成</span></div>
+  </div>
+</div>
+<div class="hud" id="hud-notify" aria-hidden="true"><div class="pill open"><i></i>預約完成，已通知客人</div></div>
+<div class="hud" id="hud-manage" aria-hidden="true">
+  <div class="chat" id="manage-card">
+    <div class="chat-h"><span class="av s"><svg viewBox="0 0 512 512"><use href="#ss-mark"/></svg></span>你的 LINE・店家管理<span class="t">10:02</span></div>
+    <div class="chat-b"><div class="chat-in">
+      <p class="m me" data-at="4.5">明天公休</p>
+      <p class="m ai" data-at="4.74">好的，明天（週五）設為公休，客人問就會這樣回答。按「確認」就生效。</p>
+      <p class="m ai cfm" data-at="4.98">✓ 已確認，資料已更新</p>
+    </div></div>
+  </div>
+</div>
+<div class="hud" id="hud-c" aria-hidden="true">
+  <div class="mini">
+    <p class="m me" data-at="5.12">明天有開嗎？</p>
+    <p class="m ai" data-at="5.3">明天公休喔！週六 10:00 照常營業。</p>
+  </div>
+</div>
+
+<script>
+(function () {
+  var r = document.documentElement, on = false;
+  function f() { var s = window.scrollY > 40; if (s !== on) { on = s; r.classList.toggle("scrolled", s); } }
+  window.addEventListener("scroll", f, { passive: true }); f();
+})();
+</script>
+<script type="importmap">{"imports":{"three":"/palvoo/lib/three-r169.module.min.js"}}</script>
+<script type="module" src="/shopsitter/app.js?v=1" onerror="document.documentElement.classList.add('no-webgl')"></script>
+</body>
+</html>
