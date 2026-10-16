@@ -220,7 +220,7 @@ td.cls small{display:block;font-weight:400;font-size:12px;color:var(--ink-3)}
       <p class="ch-tag"><span class="ch-num">01</span><span class="ch-label">下單</span></p>
       <h2 id="ch1-title">填好起訖與貨物，即時取得參考價</h2>
       <p>填寫起訖地點、車型與棧板數後，平台即依公開費率計算參考價，無須逐一詢價或等候回覆。加價項目（多停站點、等待逾時、升降尾門、司機幫忙搬、防雨／防曬遮蔽）均事先公開。</p>
-      <p class="fine">基本運費＝起步價（已含前 50 公里）＋（道路里程超過 50 公里之部分 × 每公里費率）＋（棧板數 × 每板費率）。</p>
+      <p class="fine">基本運費＝起步價（已含前 50 公里）＋里程費＋（棧板數 × 每板費率）；里程費＝（50 至 100 公里之部分 × 第一段每公里費率）＋（100 至 200 公里之部分 × 第二段每公里費率）＋（超過 200 公里之部分 × 第三段每公里費率）。</p>
     </div>
   </section>
 
@@ -316,16 +316,16 @@ td.cls small{display:block;font-weight:400;font-size:12px;color:var(--ink-3)}
       <div class="sec-head"><h2 id="rates-title">車型與基本費率</h2><p>依<a href="/palvoo/pricing/">費用政策</a>；實際可選用之級距以 App 內顯示者為準</p></div>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>級距</th><th>車斗長</th><th>載重</th><th>起步價（含前 50 公里）</th><th>超過 50 公里每公里</th><th>每板</th><th>最多</th><th>重貨門檻</th></tr></thead>
+          <thead><tr><th>級距</th><th>車斗長</th><th>載重</th><th>起步價（含前 50 公里）</th><th>每公里（50–100／<br>100–200／<br>200 公里以上）</th><th>每板</th><th>最多</th><th>重貨門檻</th></tr></thead>
           <tbody>
-            <tr><td class="cls">11 噸級<small>六輪中型</small></td><td class="num">6.0 m</td><td class="num">6 噸</td><td class="num">NT$900</td><td class="num">NT$16</td><td class="num">NT$200</td><td class="num">8 板</td><td class="num">4.6 噸</td></tr>
-            <tr><td class="cls">17 噸級<small>十輪大貨車</small></td><td class="num">7.5 m</td><td class="num">10 噸</td><td class="num">NT$1,100</td><td class="num">NT$21</td><td class="num">NT$250</td><td class="num">12 板</td><td class="num">7.7 噸</td></tr>
-            <tr><td class="cls">26 噸級<small>三軸十二輪</small></td><td class="num">9.6 m</td><td class="num">15 噸</td><td class="num">NT$1,500</td><td class="num">NT$26</td><td class="num">NT$250</td><td class="num">16 板</td><td class="num">11.6 噸</td></tr>
-            <tr><td class="cls">35 噸拖板<small>半聯結車／平板</small></td><td class="num">12.2 m</td><td class="num">24 噸</td><td class="num">NT$1,950</td><td class="num">NT$33</td><td class="num">NT$250</td><td class="num">22 板</td><td class="num">18.6 噸</td></tr>
+            <tr><td class="cls">11 噸級<small>六輪中型</small></td><td class="num">6.0 m</td><td class="num">6 噸</td><td class="num">NT$1,000</td><td class="num">NT$20／30／12</td><td class="num">NT$245</td><td class="num">8 板</td><td class="num">5.0 噸</td></tr>
+            <tr><td class="cls">17 噸級<small>二軸大貨車</small></td><td class="num">7.5 m</td><td class="num">10 噸</td><td class="num">NT$1,220</td><td class="num">NT$26／39／15</td><td class="num">NT$305</td><td class="num">12 板</td><td class="num">8.4 噸</td></tr>
+            <tr><td class="cls">26 噸級<small>三軸十輪</small></td><td class="num">9.6 m</td><td class="num">15 噸</td><td class="num">NT$1,660</td><td class="num">NT$32／48／19</td><td class="num">NT$305</td><td class="num">16 板</td><td class="num">12.6 噸</td></tr>
+            <tr><td class="cls">35 噸拖板<small>半聯結車／平板</small></td><td class="num">12.2 m</td><td class="num">24 噸</td><td class="num">NT$2,160</td><td class="num">NT$41／62／24</td><td class="num">NT$305</td><td class="num">22 板</td><td class="num">20.2 噸</td></tr>
           </tbody>
         </table>
       </div>
-      <p class="formula"><b>基本運費</b>＝起步價（已含前 50 公里）＋（道路里程超過 50 公里之部分 × 每公里費率）＋（棧板數 × 每板費率）。貨物總重量超過該級距之重貨門檻時，基本運費按「重量 ÷ 門檻」等比例加算。金額以新臺幣 10 元為單位四捨五入。加價項目之計算，請參閱<a href="/palvoo/pricing/">費用政策</a>。</p>
+      <p class="formula"><b>基本運費</b>＝起步價（已含前 50 公里）＋里程費＋（棧板數 × 每板費率）；里程費＝（50 至 100 公里之部分 × 第一段每公里費率）＋（100 至 200 公里之部分 × 第二段每公里費率）＋（超過 200 公里之部分 × 第三段每公里費率）。貨物總重量超過該級距之重貨門檻時，基本運費按「重量 ÷ 門檻」等比例加算。金額以新臺幣 10 元為單位四捨五入。加價項目之計算，請參閱<a href="/palvoo/pricing/">費用政策</a>。</p>
       <div class="two fees">
         <div>
           <p class="col-title">收費方式</p>
@@ -374,8 +374,8 @@ td.cls small{display:block;font-weight:400;font-size:12px;color:var(--ink-3)}
     <div class="hud-row"><span>車型</span><b>35 噸拖板</b></div>
     <div class="hud-row"><span>棧板</span><b>10 板</b></div>
     <div class="hud-row"><span>道路里程</span><b>150 公里</b></div>
-    <div class="hud-total"><span>參考價</span><b>NT$7,750</b></div>
-    <div class="hud-f">1,950 ＋ (150 − 50) × 33 ＋ 10 × 250</div>
+    <div class="hud-total"><span>參考價</span><b>NT$10,360</b></div>
+    <div class="hud-f">2,160 ＋ 50 公里 × 41 ＋ 50 公里 × 62 ＋ 10 板 × 305</div>
   </div>
   <div class="hud-stem"></div>
 </div>
