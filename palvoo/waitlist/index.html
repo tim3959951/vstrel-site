@@ -245,7 +245,7 @@ async function send() {
     body.can_side_load = $('can_side_load').checked;
     body.can_cover = $('can_cover').checked;
     if (!body.county) return fail('請選擇主要接單縣市。');
-    if (!body.class_id) return fail('請選擇車型級距。');
+    if (!body.class_id) return fail('請選擇車的總重量。');
   }
 
   var attr = window.palvooAttr ? window.palvooAttr() : {};
