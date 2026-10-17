@@ -23,7 +23,8 @@ VSTREL 公司首頁 — 單一靜態 HTML，部署於 GitHub Pages (vstrel.com)�
 - 承運人兩件必填（主要接單縣市、車型級距；Tim 2026-10-03），設備四題選填。
 - 必填**伺服器也擋**（truck-uber 0247，規則 B19）：網頁的必填只是先講，`waitlist_join` 缺哪一格就回「請選擇…」（Edge Function 原樣回 400，網頁照字顯示）。
   兩邊要一起改：網頁比伺服器嚴沒關係，反過來網頁會讓人送出伺服器擋掉的東西 —— 改必填時官網先上、再推 truck-uber。
-- 選項的 `value`（agency／regular／own／adhoc、11t…35t）是送到伺服器的值，改畫面文字時不要動。
+- 選項的 `value`（agency／regular／own／adhoc、17t／26t／35t）是送到伺服器的值，改畫面文字時不要動。
+  車型只列開放中的級距：11t 自 2026-10-17 起停用（truck-uber 0297），伺服器也不收停用的級距（0304）；truck-uber 的 `check-public-terms` 對線上這一頁，選單裡有停用的級距就紅。
 
 ## 從哪來（/palvoo/attr.js；truck-uber 0269，lane2-inbox L2-R17）
 
@@ -58,6 +59,7 @@ VSTREL 公司首頁 — 單一靜態 HTML，部署於 GitHub Pages (vstrel.com)�
 - 內容：服務說明、貨主與承運人服務、車型與基本費率表（照費用政策第二點）、服務範圍、收費方式、常見問題、頁尾，前面加開場的 3D 場景。
   場景裡的狀態字跟貨主 App 同一套說法。
 - **原始碼在 `_src/palvoo-3d/`**（資料夾名稱沿用預覽時的；底線開頭的資料夾 GitHub Pages 不會送出）：`page.html` 是版面、`scene.js` 是 three.js 場景。
+  **不要直接改 `palvoo/index.html`、`palvoo/app.js`**：改 `_src/palvoo-3d/` 再跑 build.py。2026-10-17 拿掉 11 噸級時直接改了輸出、原始碼沒改，下一次重建 11 噸級就會回到首頁（10-18 補回原始碼）。`.github/workflows/site-check.yml` 每次推上來都用原始碼重建一次，跟 commit 的不一樣就紅；純文字版也建一次。
   改完在 repo 根目錄跑 `python3 _src/palvoo-3d/build.py`，產生 `palvoo/index.html` 與 `palvoo/app.js`
   （拿掉 CSS 註解、JS 壓縮，對外頁面不留註解）。標題改了字要先跑 `fonts.py`：字型子集只含標題用到的字，build.py 會檢查缺字。
 - `<head>`（`<title>`、canonical、分享預覽、結構化資料 JSON-LD）與頁尾的客服資訊寫在 `_src/palvoo-3d/common.py`，不在 page.html；JSON-LD 不放地址。

@@ -1,0 +1,28 @@
+# Palvoo 首頁（/palvoo/）由 _src/palvoo-3d/ 產生：每次推上來用原始碼重建一次，跟 commit 的檔案不一樣就失敗。
+# 純文字版（_src/palvoo-2d/，換版備用）也建一次，確認換得回去。說明見 README「Palvoo 首頁」。
+name: site-check
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  homepage-from-source:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: pip install fonttools==4.65.0 brotli==1.2.0
+      - name: 3D 版：用原始碼重建，要跟 commit 的一模一樣
+        run: |
+          python3 _src/palvoo-3d/build.py
+          git diff --exit-code -- palvoo/index.html palvoo/app.js
+      - name: 純文字版建得出來
+        run: python3 _src/palvoo-2d/build.py
