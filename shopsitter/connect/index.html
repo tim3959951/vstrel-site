@@ -1,0 +1,38 @@
+<!doctype html>
+<!-- The page itself comes from the ShopSitter server: shell.js loads it here. Source: line-sales-agent/engine/site/shopsitter -->
+<html lang="zh-Hant-TW" data-page="connect">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>ShopSitter｜接上你的 LINE 官方帳號</title>
+<meta name="description" content="一步一步接上你的 LINE 官方帳號，客人就由 AI 店員回覆。">
+<meta name="robots" content="noindex">
+<meta name="referrer" content="no-referrer">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ShopSitter">
+<meta property="og:title" content="ShopSitter｜接上你的 LINE 官方帳號">
+<meta property="og:description" content="一步一步接上你的 LINE 官方帳號，客人就由 AI 店員回覆。">
+<meta property="og:image" content="https://vstrel.com/shopsitter/og.png">
+<link rel="icon" href="/shopsitter/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/shopsitter/apple-touch-icon.png">
+<style>
+html,body{margin:0;height:100%;background:#f3f6f9;color:#1d2430;font-family:-apple-system,BlinkMacSystemFont,"PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif}
+main{min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:24px;box-sizing:border-box;text-align:center}
+.mark{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;letter-spacing:.2px}
+.dot{width:14px;height:14px;border-radius:50%;background:#06c755;animation:p 1.1s ease-in-out infinite}
+@keyframes p{50%{transform:scale(.6);opacity:.5}}
+@media (prefers-reduced-motion:reduce){.dot{animation:none}}
+#ss-msg{margin:0;color:#5d6878;font-size:15px;line-height:1.7}
+#ss-msg a{color:#04833a;font-weight:700}
+</style>
+</head>
+<body>
+<main role="status" aria-live="polite">
+<div class="mark"><span class="dot" aria-hidden="true"></span>ShopSitter</div>
+<p id="ss-msg">載入中…</p>
+<noscript><p>這個頁面需要開啟 JavaScript。</p></noscript>
+</main>
+<script src="/shopsitter/shell.js"></script>
+</body>
+</html>
