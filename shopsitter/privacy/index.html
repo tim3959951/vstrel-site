@@ -74,7 +74,7 @@ footer.f a{color:var(--ink3);text-decoration:underline}
 <main class="wrap" style="padding-block:40px">
 
 <h1>ShopSitter 隱私權政策</h1><div class="rule"></div>
-<p class="meta">v1.1　生效日：民國 115 年 10 月 16 日</p>
+<p class="meta">v1.2　生效日：民國 115 年 10 月 18 日</p>
 <p class="lead">ShopSitter 是維斯托有限公司（VSTREL CO., LTD.）（以下稱「本公司」）提供的 LINE AI 店員服務：店家把自己的 LINE 官方帳號（開放後也包括 Instagram 專業帳號）接上 ShopSitter，由 AI 回覆客人、幫客人預約或下單；店家用自己的 LINE 跟 ShopSitter 對話來管理，也可以選擇連結自己的 Google 日曆（開放後）。本政策說明本公司依《個人資料保護法》（以下稱「個資法」）蒐集、處理及利用個人資料的方式。<a href="#en">English version below.</a></p>
 
 <div class="toc">
@@ -124,6 +124,7 @@ footer.f a{color:var(--ink3);text-decoration:underline}
 <tr><th>資料</th><th>保存期間</th></tr>
 <tr><td>客人與店家帳號的對話紀錄</td><td>最後一則訊息後 <strong>30 日</strong>自動刪除</td></tr>
 <tr><td>管理員對話紀錄</td><td><strong>1 日</strong>後自動刪除（修改店家資料的紀錄另外保存，見下）</td></tr>
+<tr><td>AI 回覆品質紀錄（LangSmith，見第 5 點）</td><td><strong>14 日</strong>後自動刪除；挑出來改善回覆品質的範例，保存到不再需要，或店家、客人要求刪除時刪除</td></tr>
 <tr><td>預約、訂位、訂單、報名、諮詢及消息訂閱紀錄</td><td>保存到店家刪除、客人或店家要求刪除，或服務終止後 <strong>30 日</strong>內刪除</td></tr>
 <tr><td>時段占用（排程用）</td><td><strong>200 日</strong>後自動刪除</td></tr>
 <tr><td>店家資料及修改紀錄</td><td>服務期間；服務終止或店家要求刪除後 <strong>30 日</strong>內刪除</td></tr>
@@ -136,7 +137,7 @@ footer.f a{color:var(--ink3);text-decoration:underline}
 </table></div>
 <p>期間屆滿後，本公司刪除該資料，或以無法還原的方式去識別化。</p>
 <h3>地區</h3>
-<p>本公司使用的雲端服務位於臺灣以外的地區，資料會因此傳輸到境外處理：Cloudflare（網站主機與資料庫，資料庫位於亞太區域）、Anthropic（AI 模型，美國等地）、Google（AI 模型；店家連結時的 Google 日曆，美國等地）、LINE（日本、臺灣等地）、Meta（美國等地）、SHOPLINE Payments。</p>
+<p>本公司使用的雲端服務位於臺灣以外的地區，資料會因此傳輸到境外處理：Cloudflare（網站主機與資料庫，資料庫位於亞太區域）、Anthropic（AI 模型，美國等地）、Google（AI 模型；店家連結時的 Google 日曆，美國等地）、LangChain（LangSmith 回覆品質紀錄，美國）、LINE（日本、臺灣等地）、Meta（美國等地）、SHOPLINE Payments。</p>
 <h3>對象</h3>
 <p>本公司；店家（客人的資料）；第 6 點所列受託的服務商；依法令有權調取的機關。</p>
 <h3>方式</h3>
@@ -146,6 +147,7 @@ footer.f a{color:var(--ink3);text-decoration:underline}
 <ul>
 <li>為了產生回覆，客人的訊息、相關的對話紀錄和店家資料會傳送給 AI 模型服務商（主要為 Anthropic 的 Claude，備援為 Google 的 Gemini）處理。</li>
 <li>本公司使用各服務商的<strong>付費 API</strong>；依其對付費 API 的條款，傳送的內容預設不會被拿去訓練其模型。</li>
+<li>為了檢查和改善回覆品質，每則 AI 回覆的過程（客人的訊息、相關對話紀錄、店家資料、AI 的回覆和使用的工具）會記錄到 LangChain 的 LangSmith 服務。<strong>電話號碼、Email、身分證字號和信用卡號會先遮蔽</strong>，語音檔和客人的 LINE、Instagram 識別碼不會傳送。只有本公司授權人員為了改善服務和處理問題而查看；店家可以要求不記錄。</li>
 <li>AI 只依店家提供的資料回答；價格、時間等由程式計算；不確定的事會轉給店家處理。預約是否成立，是由程式依店家設定的規則檢查時段後決定（店家也可以選擇每筆都自己確認），不是由 AI 自行決定；訂單一律要店家確認才算數。</li>
 <li>店家連結 Google 日曆時，忙碌時段只由程式用來算出可以預約的時間，<strong>不會傳給 AI 模型服務商</strong>；AI 只會知道某個時間能不能約。</li>
 </ul>
@@ -156,6 +158,7 @@ footer.f a{color:var(--ink3);text-decoration:underline}
 <tr><td>Cloudflare, Inc.</td><td>網站主機、資料庫</td><td>本服務的全部資料</td></tr>
 <tr><td>Anthropic, PBC</td><td>AI 模型（主要）</td><td>對話內容、店家資料</td></tr>
 <tr><td>Google LLC（Gemini）</td><td>AI 模型（備援）</td><td>對話內容、店家資料</td></tr>
+<tr><td>LangChain, Inc.（LangSmith）</td><td>AI 回覆品質紀錄與檢視</td><td>遮蔽電話、Email、身分證字號及卡號後的對話內容、店家資料、AI 的回覆與使用的工具</td></tr>
 <tr><td>Google LLC（Google 日曆）</td><td>店家選擇連結時（開放後）：讀取忙碌時段、把預約寫入店家的「ShopSitter 預約」日曆</td><td>連結的 Google 帳號 Email、忙碌時段；寫入的預約內容（日期時間、服務、客人稱呼與電話、備註、預約編號）</td></tr>
 <tr><td>LY Corporation（LINE）</td><td>收發 LINE 訊息</td><td>客人與管理員的 LINE 訊息、識別碼</td></tr>
 <tr><td>Meta Platforms, Inc.（Instagram）</td><td>收發 Instagram 訊息（開放後）</td><td>Instagram 訊息、識別碼</td></tr>
@@ -199,7 +202,7 @@ footer.f a{color:var(--ink3);text-decoration:underline}
 <section class="en" id="en" lang="en">
 
 <h1>ShopSitter Privacy Policy</h1><div class="rule"></div>
-<p class="meta">v1.1 · Effective 16 October 2026</p>
+<p class="meta">v1.2 · Effective 18 October 2026</p>
 <p class="lead">ShopSitter is an AI shop assistant for LINE provided by VSTREL CO., LTD. (維斯托有限公司, "we"). A business connects its own LINE Official Account (and, once available, its Instagram professional account) to ShopSitter; the AI answers the business's customers and takes bookings and orders, and the owner manages it by chatting in their own LINE. A business can also connect its Google Calendar (once available). This policy explains how we handle personal data under Taiwan's Personal Data Protection Act (PDPA). The Chinese version above prevails if the two differ.</p>
 <h2>1. Who we are and our role</h2>
 <ul>
@@ -216,7 +219,7 @@ footer.f a{color:var(--ink3);text-decoration:underline}
 <p>To provide ShopSitter (AI replies, bookings and orders, notifications, chat-based management); to bill and issue invoices; to keep the service secure and handle support and disputes; and to produce de-identified usage statistics. We do not sell personal data and do not use customers' data for advertising or marketing.</p>
 <h2>4. How long we keep it, where, and who receives it</h2>
 <ul>
-<li>Chat history: deleted automatically <strong>30 days</strong> after the last message. Manager chat: <strong>1 day</strong>.</li>
+<li>Chat history: deleted automatically <strong>30 days</strong> after the last message. Manager chat: <strong>1 day</strong>. Reply-quality records in LangSmith: deleted automatically after <strong>14 days</strong>; examples kept to improve reply quality are deleted when no longer needed or on request.</li>
 <li>Bookings, orders, sign-ups, enquiries and update subscriptions: until the business deletes them, you or the business ask us to delete them, or within <strong>30 days</strong> after the service ends. Time-slot records: <strong>200 days</strong>.</li>
 <li>Business details and change history: while the service is active; deleted within <strong>30 days</strong> after it ends or on request. LINE channel secrets and Instagram tokens: deleted when the account is replaced, disconnected or the service ends.</li>
 <li>Google Calendar: the authorization token and connected email address are deleted when the business disconnects or the service ends; if access is removed in the Google account, the token is deleted as soon as Google refuses it. Busy times are cached for <strong>2 minutes</strong>. Bookings written to the business's &ldquo;ShopSitter 預約&rdquo; calendar live in the business's own Google account: we delete an event when its booking is cancelled or declined, and events already written stay in the business's calendar after it disconnects.</li>
@@ -224,9 +227,9 @@ footer.f a{color:var(--ink3);text-decoration:underline}
 <li>Data is processed outside Taiwan by the providers below. Recipients: us, the business (for its customers' data), the providers below, and authorities where the law requires.</li>
 </ul>
 <h2>5. AI models</h2>
-<p>To generate replies, customer messages, relevant chat history and the business's details are sent to AI model providers (mainly Anthropic's Claude, with Google's Gemini as a backup). We use their <strong>paid APIs</strong>; under their terms for paid APIs, content is not used to train their models by default. Whether a booking is confirmed is decided by code checking the business's rules (or by the business itself, if it chooses to confirm each one), not by the AI; orders only count once the business confirms them. Google Calendar busy times are used only by code to work out which times are free and are <strong>never sent to AI model providers</strong>.</p>
+<p>To generate replies, customer messages, relevant chat history and the business's details are sent to AI model providers (mainly Anthropic's Claude, with Google's Gemini as a backup). We use their <strong>paid APIs</strong>; under their terms for paid APIs, content is not used to train their models by default. Whether a booking is confirmed is decided by code checking the business's rules (or by the business itself, if it chooses to confirm each one), not by the AI; orders only count once the business confirms them. Google Calendar busy times are used only by code to work out which times are free and are <strong>never sent to AI model providers</strong>. To check and improve reply quality, each AI reply (the customer's message, relevant chat history, the business's details, the AI's answer and the tools it used) is recorded in LangChain's LangSmith service, with <strong>phone numbers, emails, national ID and card numbers masked</strong>; voice recordings and customers' LINE or Instagram IDs are not sent. Only authorised staff view it, to improve the service and fix problems; a business can ask us not to record its chats.</p>
 <h2>6. Service providers</h2>
-<p>Cloudflare, Inc. (hosting and database, database in the Asia-Pacific region); Anthropic, PBC and Google LLC (AI models); Google LLC (Google Calendar, when a business connects it: reading busy times, and writing bookings &mdash; date and time, service, customer name and phone, notes, booking number &mdash; to the business's ShopSitter calendar); LY Corporation (LINE messaging); Meta Platforms, Inc. (Instagram messaging, once available); SHOPLINE Payments (card payments and monthly billing); Amego e-invoice service (光貿科技股份有限公司), our e-invoice provider. E-invoices are issued by VSTREL Co., Ltd. and uploaded through Amego to the Ministry of Finance e-invoice platform, as required by Taiwan law.</p>
+<p>Cloudflare, Inc. (hosting and database, database in the Asia-Pacific region); Anthropic, PBC and Google LLC (AI models); LangChain, Inc. (LangSmith: reply-quality records, with phone numbers, emails, ID and card numbers masked); Google LLC (Google Calendar, when a business connects it: reading busy times, and writing bookings &mdash; date and time, service, customer name and phone, notes, booking number &mdash; to the business's ShopSitter calendar); LY Corporation (LINE messaging); Meta Platforms, Inc. (Instagram messaging, once available); SHOPLINE Payments (card payments and monthly billing); Amego e-invoice service (光貿科技股份有限公司), our e-invoice provider. E-invoices are issued by VSTREL Co., Ltd. and uploaded through Amego to the Ministry of Finance e-invoice platform, as required by Taiwan law.</p>
 <h3 id="google-en">Google user data</h3>
 <p>ShopSitter's use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy" rel="noopener">Google API Services User Data Policy</a>, including the Limited Use requirements. Data from Google Calendar is used only to prevent double bookings and keep bookings in sync. It is not sold, not used for advertising and not used to train AI models; it is not transferred to others except as needed to provide these features or to comply with the law; and our staff do not read it unless the business agrees, or it is needed for security or to comply with the law.</p>
 <h2>7. Your rights</h2>
